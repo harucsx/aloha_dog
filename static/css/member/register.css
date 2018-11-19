@@ -1,0 +1,313 @@
+.errornote{
+    display: block;
+    margin: -50px 0 30px 0;
+    border: 1px solid #c30;
+    background: #fcf;
+    padding: 5px 15px;
+    color: #c30;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: nanum;
+    letter-spacing: -1px;
+}
+*{user-select:none;}
+.form-row{
+    border-bottom: 1px solid #c999ff;
+    margin: 0 100px;
+    font-size: 15px;
+}
+@media screen and (max-width: 800px) {
+    .form-row {
+      margin: 0 100px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .form-row {
+      margin: 0 50px;
+    }
+}
+@media screen and (max-width: 200px) {
+    .form-row {
+      margin: 0;
+    }
+}
+.formA{margin-top:70px;}
+input[type=text], input[type=password],
+input[type=number], input[type=file], input[type=email], input[type=time] {
+    width: 400px;
+    padding: 15px;
+    margin: 0;
+    display: inline-block;
+    background: rgba(204,204,204,0.25);
+    border: none;
+    color: grey;
+}
+input[type=radio], input[type=checkbox]{
+    width: 15px;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    background: grey;
+    color: white;
+}
+/*radio*/
+.radioC {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    margin-right: 100px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 15px;
+    padding: 9px;
+    
+}
+.radioC input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    background: #d9d9d9;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+}
+.radioC:hover input ~ .checkmark {
+    background-color: rgba(241,230,255);
+    color: white;
+}
+.radioC input:checked ~ .checkmark {
+    background-color: #c999ff;
+    color: white;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.radioC input:checked ~ .checkmark:after {
+    display: block;
+}
+.radioC .checkmark:after {
+    top: 18px;
+    right: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+select{
+    width: 150px;
+    padding: 10px;
+    margin: 5px 15px;
+    display: inline-block;
+    background: grey;
+    border: none;
+    font-size: 15px;
+}
+option {
+    background: white;
+    color: #c999ff;
+    font-size: 15px;
+    padding: 10px;
+    border: none;
+}
+input[type=text]:hover, input[type=password]:hover,
+input[type=number]:hover, input[type=file]:hover,
+input[type=radio]:hover, input[type=email]:hover, 
+input[type=time]:hover, select:hover, option:hover {
+    background-color: rgba(241,230,255);
+    outline: none;
+    border: none;
+    color: white;
+}
+input[type=text]:focus, input[type=password]:focus, 
+input[type=number]:focus, input[type=file]:focus,
+input[type=radio]:focus, input[type=email]:focus, 
+input[type=time]:focus, select:focus, option:focus {
+    background-color: #c999ff;
+    outline: none;
+    border: none;
+    color: white;
+}
+.clearfix{
+    position: relative;
+    top: -10px;
+    width: 350px;
+/*     background: green; */
+    margin: 0 auto;
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.blog_area{
+    border: 1px solid #ebebeb;
+}
+
+
+/*----------------------------------------
+------------------------------------------
+----------------------------------------*/
+
+/*-----------------
+signUp.jsp
+--------------*/
+.form-row span.id_{padding: 15px 115px 15px 100px;} /* register */
+.form-row span.pw_1{padding: 15px 74px 15px 100px;} /* register */
+.form-row span.pw_0{padding: 15px 56px 15px 100px;} /* register */
+.form-row span.pw_2{padding: 15px 9px 15px 100px;} /* register */
+.form-row span.pw_1_2{padding: 15px 28px 15px 100px;} /* register */
+.form-row span.registerName{padding: 15px 102px 15px 100px;} /* register */
+.form-row span.registerSex{padding: 15px 102px 15px 100px;} /* register */
+.form-row span.registerBirth{padding: 15px 74px 15px 100px;} /* register */
+.form-row span.registerPhone{padding: 15px 60px 15px 100px;} /* register */
+.form-row span.registerEmail{padding: 15px 88px 15px 100px;} /* register */
+.form-row span.registerPostcode{padding: 15px 74px 15px 100px;} /* register */
+.form-row span.registerAddress1{padding: 15px 102px 15px 100px;} /* register */
+.form-row span.registerAddress2{padding: 15px 74px 15px 100px;} /* register */
+.form-row span.registerProfile{padding: 15px 57px 15px 100px;} /* register */
+.form-row .whether_to_join_agree{margin: 15px auto;} /* register */
+input[name=pw]::placeholder{font-size: 12px; letter-spacing: -1px; color: rgba(0, 0, 0, 0.2);}
+select[name=phone0], select[name=phone1], input[name=phone2], input[name=phone3],
+select[name=birthyy], select[name=birthmm], select[name=birthdd]{
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0;
+    display: inline-block;
+    background: rgba(204,204,204,0.25);
+    border: none;
+    font-size: 15px;
+}
+select[name=phone0]{width: 100px;}
+select[name=phone1]{margin-left: 230px;}
+select[name=birthmm], select[name=birthdd]{width: 80px;}
+input[name=email1], input[name=email2], select[name=email2]{
+    width: 110px;
+    height: 45px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0;
+    display: inline-block;
+    background: rgba(204,204,204,0.25);
+    border: none;
+    font-size: 15px;
+}input[name=email2]{margin-right:100px;}
+input[name=phone2], input[name=phone3], input[name=email2], select[name=email2]{margin-left: 5px;}
+select[name=email2]{width: 120px; margin-left: 230px;}
+input[name=postcode],input[class=signUpID]{
+    width: 200px;
+    height: 45px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0;
+    display: inline-block;
+    background: rgba(204,204,204,0.25);
+    border: none;
+    font-size: 15px;
+}
+input[name=postcode-search], input[name=checkId], input[name=checkPhoneN], input[name=checkEmail]{
+    color: #666;
+    padding: 5px 0;
+    cursor: pointer;
+    width: 120px;
+    height: 45px;
+    margin: 5px;
+    margin-left: 0;
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    float: left;
+    font-size: 15px;
+}input[name=checkPhoneN]{margin-right: 150px;}
+input[name=postcode-search]:hover, input[name=checkId]:hover, input[name=checkPhoneN]:hover, input[name=checkEmail]:hover{
+    color: #fff; 
+    background: #c999ff; 
+    border-color: #c999ff;
+}
+.whether_to_join_agree {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.whether_to_join_agree input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.whether_to_join_agreemark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+.whether_to_join_agree:hover input ~ .whether_to_join_agreemark {
+    background-color: #f1e6ff;
+}
+.whether_to_join_agree input:checked ~ .whether_to_join_agreemark {
+    background-color: #c999ff;
+}
+.whether_to_join_agreemark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.whether_to_join_agree input:checked ~ .whether_to_join_agreemark:after {
+    display: block;
+}
+.whether_to_join_agree .whether_to_join_agreemark:after {
+    left: 5px;
+    top: 2px;
+    width: 10px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.registerbtn,  .registerXbtn{
+    color: #666;
+    padding: 14px 0;
+    margin: 40px 10px;
+    cursor: pointer;
+    width: 150px;
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    float: left;
+    font-size: 15px;
+}
+.registerXbtn:hover,  .registerbtn:hover{
+    color: #fff; 
+    background: #c999ff; 
+    border-color: #c999ff;
+}
+@media screen and (max-width: 300px) {
+    .registerbtn, .registerXbtn {
+       width: 100%;
+    }
+}

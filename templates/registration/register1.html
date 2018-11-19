@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block title %}register.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form/register.css" %}{% endblock %}
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+{% block content %}
+<!-- <div id="content">
+	
+	<h1>New User Registration</h1>
+
+	<form action="." method="post">{% csrf_token %}
+
+	{% if form.errors %}
+	<p class="errornote">Wrong! Please correct the error(s) below.</p>
+	{% endif %}
+
+	<p>Please enter your username etc.</p>
+
+	<fieldset class="aligned">
+
+		<div class="form-row">
+			{{ form.username.label_tag }} {{ form.username }}
+		</div>
+
+		<div class="form-row">
+			{{ form.password1.label_tag }} {{ form.password1 }}
+		</div>
+
+		<div class="form-row">
+			{{ form.password2.label_tag }} {{ form.password2 }}
+		</div>
+
+	</fieldset>
+
+	<div class="submit-row">
+		<input type="submit" value="Register" />
+	</div>
+
+	<script type="text/javascript">document.getElementById('id_username').focus()</script>
+	</form>
+	
+</div> -->
+<div class="main">
+
+	<div class="main-body"><!-- 회원가입폼 -->
+		<div class="column main-body-right">
+			<div class="submenu-title"><a href="{% url 'register' %}">Sign-Up</a></div>
+			<div class="submenu-line"></div><i class="fa fa-chevron-right"></i>
+			<div class="submenu-content">
+				<ul>
+					<li><a href="{% url 'login' %}">로그인</a></li>
+					<li><a href="{% url 'register' %}" class="ONclick">회원가입</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="column main-body-left">
+			<div class="main-body-title"><a href="{% url 'register' %}">회원가입</a></div>
+			<div class="main-body-form">
+				<form method="post" action=".">{% csrf_token %}
+					{% if form.errors %}
+					<p class="errornote">아이디나 비밀번호가 맞지 않습니다.</p>
+					{% endif %}
+					<div class="main-body-path">
+						<a href="{% url 'home' %}">홈</a> / <a href="#">회원가입</a>
+					</div>
+					<div class="main-body-form-img">
+						<img src="{% static 'img/section2-img1.jpg' %}" alt="사진">
+					</div>
+				  	<div class="main-body-container">
+						<div class="inputLine id">
+						    <span>ID: </span>
+						    {{ form.username }}
+						    <!-- <button class="inputbtn idbtn" id="checkId">중복 확인</button> -->
+						</div>
+						
+						<div class="inputLine name">
+							<span>이름: </span>
+							{{ form.name }}
+						</div>
+						
+						<div class="inputLine">
+							<label for="pw">비밀번호</label>
+						    <input type="password" id="pw" class="pw" name="pw" placeholder="Password(비밀번호)" required>
+					    </div>
+						
+						<div class="inputLine">
+							<label for="pwRE">비밀번호 확인</label>
+						    <input type="password" id="pwRE" class="pwRE" name="pwRE" placeholder="Re-Password(비밀번호 재확인)" required>
+						</div>
+						
+						<div class="inputLine">
+							<label for="phone1">전화번호</label>
+					    	<input type="text" id="phone1" class="phone1" name="phone" placeholder="000" required>
+					    	-
+					    	<input type="text" id="phone2" class="phone2" name="phone" placeholder="0000" required>
+					    	-
+					    	<input type="text" id="phone3" class="phone3" name="phone" placeholder="0000" required>
+					    	<!-- <button class="inputbtn phonebtn" id="checkPhone">중복 확인</button> -->
+					    </div>
+						
+						<div class="inputLine">
+							<label for="email">이메일</label>
+					    	<input type="email" id="email" class="email" name="email"
+			maxlength="50"  placeholder="example@example.com" required>
+					    </div>
+
+					    <div class="inputLine">
+					    	<label for="birthyy">생년월일</label>
+					    	<input type="text" id="birthyy" name="birthyy" maxlength="4" size="6" placeholder="0000" required> 년
+				    		<input type="text" id="birthmm" name="birthmm" maxlength="2" size="4" placeholder="00"  style="margin-left: 10px;" required> 월
+				    		<input type="text" id="birthdd" name="birthdd" maxlength="2" size="4" placeholder="00" style="margin-left: 10px;" required> 일
+					    </div>
+
+					    <div class="inputLine">
+					    	<div class="sex-title">성별</div>
+					    	<div class="sex0" >
+							    <input type="radio" name="sex" value="여" id="woman" checked>
+							    <label for="woman">여자</label>
+						    </div>
+						    <div class="sex0" style="margin-left: 10px;">
+							    <input type="radio" name="sex" value="남" id="man">
+							    <label for="man">남자</label>
+							</div>
+					    </div>
+						
+						<div class="address">
+							<div class="addressT">주소</div>
+							<br/>
+							<label for="postcode">우편번호</label>
+						    <input type="text" id="postcode" placeholder="우편번호" required>
+							<input type="button" onclick="daumPostcode()" value="우편번호 찾기" id="postcode-search">
+							<br/>
+							<label for="address">주소</label>
+							<input type="text" id="address" placeholder="주소" required>
+							<br/>
+							<label for="address2">상세주소</label>
+							<input type="text" id="address2" placeholder="상세주소" required>
+							<br/>
+						</div>
+				  	</div>
+				</form>
+				 
+			    <label style="color: grey; font-size: 12px; font-family: nanum; letter-spacing: -2px;" class="terms">
+			      	<input type="checkbox" checked="checked" name="remember" style="margin:15px 0;"> 
+			      	회원가입을 함으로 써 또바기의 
+			      	<a href="#" style="font-family: nanum; color:grey;" onmouseover="this.style.color='black';" onmouseout="this.style.color='grey';">서비스 이용약관</a>, 
+			      	<a href="#" style="font-family: nanum; color:grey;" onmouseover="this.style.color='black';" onmouseout="this.style.color='grey';">개인정보보호정책 및 안전보상지원 프로그램 약관</a>, 
+			      	<a href="#" style="font-family: nanum; color:grey;" onmouseover="this.style.color='black';" onmouseout="this.style.color='grey';">돌보미이용 약관</a>
+			      	에 동의하시게 됩니다.
+			    </label>
+
+			    <div class="clearfix">
+			      <button id="cancel" class="cancelbtn">취소</button>
+			      <button id="process" class="signupbtn">가입</button>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="main-footer">
+	<div class="main-footer-content">
+		<div class="img">
+			<img src="{% static 'logo/logo13.png' %}" alt="black_logo">
+		</div>
+		<div class="text">
+			<a href="#">이용약관</a>|
+			<a href="#">개인정보취급방법</a>|
+			<a href="#">안전보상제도</a>
+			<br/>
+			<b>상호명:</b> ㈜또바기  
+			<b>대표:</b> 김아연, 김샛별, 박기나  
+			<b>사업자등록번호:</b> 000-00-00000  
+			<b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호  
+			<br/>
+			<b>개인정보책임자:</b> 김아연, 김샛별, 박기나   
+			<b>주소:</b> 서울시 성동구 살곶이길 200 3층  
+			<b>또바기 고객센터:</b> 000-0000-0000  
+			<b>E-mail:</b> help@ddobagi.co.kr
+			<br/>
+			© 2018 Ddobagi. All rights reserved.
+		</div>
+	</div>
+</div>
+{% endblock footer %}

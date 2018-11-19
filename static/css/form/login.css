@@ -1,0 +1,147 @@
+﻿
+/*--------------mainCSS*/
+
+body{background: #fff;}
+
+.main{
+    width: 1100px; 
+    height: 750px;
+    margin: 0 auto;
+    overflow: hidden;
+    /*background: lightblue;*/
+}
+/*공통*/
+.submenuPath{
+    position: relative;
+    top: 100px;
+    width: 100%;
+    padding: 10px;
+    background: #f1e6ff;
+    border-left: 5px solid #c999ff;
+    /*border-bottom: 5px dashed #c999ff;*/
+    /*font-size: 20px;*/
+}
+/*공통*/
+.main-body{
+    position: relative;
+    top: 150px;
+    width: 1100px;
+    /*height: 700px;*/
+    /*background: lightgreen;*/
+}
+.main-body:after {
+    content: "";
+    display: table;
+    clear: both;
+}.main-body-title{
+    position: relative;
+    top: 0px;
+    left: 5px;
+    font-size: 50px;
+    color: #000;
+}
+.main-body-title a{color: #c999ff;}
+.main-body-path{
+    position: absolute; top: 35px; right: 5px;
+}
+.main-body-path, .main-body-path a{
+    font-family: sans-serif;
+    font-size: 12px;
+}
+.main-body-path a:hover{color: #c999ff;}
+.main-body-form{
+    position: relative;
+    top: 0px;
+    padding: 100px;
+    width: 80%;
+    margin: 0 auto;
+    border: 7px solid #c999ff;
+    /*background: white;*/
+}
+.errornote{
+    display: block;
+    margin: -50px 0 30px 0;
+    border: 1px solid #c30;
+    background: #fcf;
+    padding: 5px 15px;
+    color: #c30;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: nanum;
+    letter-spacing: -1px;
+}
+/*.Login-container{margin-top: -30px;}*/
+.form-row{
+    border-bottom: 1px solid #f2f2f2;
+}
+.form-row span.id{padding: 0 80px 0 150px;}
+.form-row span.pw{padding: 0 74px 0 150px;}
+input[type=text], input[type=password] {
+    width: 400px;
+    padding: 15px;
+    margin: 0;
+    display: inline-block;
+    background: #fff;
+}
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #f1e6ff;
+    outline: none;
+}
+
+.loginbtn,  .loginXbtn{
+    color: #c999ff;
+    padding: 10px 0;
+    margin: 40px 10px;
+    cursor: pointer;
+    width: 150px;
+    font-size: 20px;
+    background: white;
+    border: 5px solid #c999ff;
+    text-align: center;
+}
+.loginXbtn{background: #c999ff; color:white;}
+.loginXbtn:hover,  .loginbtn:hover{
+    color: #f2f2f2;
+    border: 5px solid #f2f2f2;
+}
+
+.loginbtn, .loginXbtn {
+  float: left;
+}
+
+.clearfix{
+    position: relative;
+    top: -10px;
+    width: 350px;
+    /*background: green;*/
+    margin: 0 auto;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 300px) {
+    .loginbtn, .loginXbtn {
+       width: 100%;
+    }
+}
+
+.aaa {
+    margin-top: 30px;
+	text-align: center;
+}
+
+/*로그인 아래 비번 찾겠슈?*/
+/*.AAA.a {
+  margin: 15px 0 0;
+  color: #000000;
+  font-size: 20px;
+}*/
+/*위에꺼 색상 변경*/
+/*.AAA.a {
+  color: #c999ff;
+  text-decoration: none;
+}*/

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>{% block title %}ALOHA DOG{% endblock %}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="noindex, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<!-- css -->
+	{% load staticfiles %}
+	<style type="text/css">/*font-family*/
+		@font-face {/*nanum*/
+		   font-family: 'nanum';
+		   src: url('{% static "font/NanumGothic/NanumGothic.eot" %}'),
+		        url('{% static "font/NanumGothic/나눔고딕.ttf" %}'),
+		        url('{% static "font/NanumGothic/NanumGothic.otf" %}'),
+		        url('{% static "font/NanumGothic/NanumGothic.woff" %}');
+		}
+		@font-face {/*squareR*/
+		   font-family: 'squareR';
+		   src: url('{% static "font/SquareR/NanumSquareR.eot" %}'),
+		        url('{% static "font/SquareR/NanumSquareR.ttf" %}'),
+		        url('{% static "font/SquareR/NanumSquareR.otf" %}'),
+		        url('{% static "font/SquareR/NanumSquareR.woff" %}');
+		}
+		@font-face {/*squareB*/
+		   font-family: 'squareB';
+		   src: url('{% static "font/SquareB/NanumSquareB.eot" %}'),
+		        url('{% static "font/SquareB/NanumSquareB.ttf" %}'),
+		        url('{% static "font/SquareB/NanumSquareB.otf" %}'),
+		        url('{% static "font/SquareB/NanumSquareB.woff" %}');
+		}
+	</style>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<style type="text/css">li{list-style: none;}</style>
+	<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+</head>
+<body>
+<div class="wrapper">
+	<header>
+	    <div class="header-container">
+	        <div class="header-area header-sticky pt-30 pb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3">
+                            <div class="logo-area">
+                                <a href="{% url 'home' %}">
+                                    <img src="{% static 'logo/logo1.png' %}" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 text-lg-right">
+                            <div class="header-menu">
+                                <nav>
+                                    <ul class="main-menu">
+                                        <li><a href="{% url 'findPetsitter' %}">펫시터 고용</a></li>
+                                        <li><a href="#">펫시터 신청</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'educationIntro' %}">교육 소개</a></li>
+                                                <li><a href="{% url 'application1' %}">펫시터 신청</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">서비스</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'freeService' %}">무료 서비스</a></li>
+                                                <li><a href="{% url 'paidService' %}">유료 서비스</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">회사 소개</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'aboutUs' %}">회사 소개</a></li>
+                                                <li><a href="{% url 'aboutPetsitter' %}">펫시터 소개</a></li>
+                                                <li><a href="{% url 'caringPreview' %}">돌봄 미리보기</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{% url 'faq' %}">FAQ</a></li>
+                                        {% if user.is_superuser %}
+                                        <li class="menu-bottom-menu">
+											<a href="{% url 'admin:index' %}" class="db-title">Admin</a>
+										</li>
+										{% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="header-option">
+                                <div class="mini-cart-search">
+									<button type="button" id="sitemapBtn">
+										<i class="fa fa-sitemap"></i>
+									</button>
+									<div id="Mysitemap" class="sitemap">
+										<div class="sitemap-content">
+											<div class="sitemap-header">
+												<h1 class="sitemap-title">AolohaDog SiteMap</h1>
+												<h1 class="close" style="color:white;">&times;</h1>
+											</div>
+											<div class="sitemap-body">
+									    		<div class="sitemap-body-all">
+									          		<ul class="above" style="margin-left:20px;">
+									          			<h1 class="menu_title"><a href="/index.do">ALOHA DOG</a></h1>
+									          			<li class="menu_content"><a href="/loginForm.do">- 로그인</a></li>
+									          			<li class="menu_content"><a href="/signupForm.do">- 회원가입</a></li>
+									          		</ul>
+									          		<ul class="above">
+									          			<h1 class="menu_title"><a href="#">펫시터 고용</a></h1>
+									          			<li class="menu_content"><a href="/petsitterEmployment/findPetsitter.jsp">- 펫시터 찾기</a></li>
+									          		</ul>
+									          		<ul class="above">
+									          			<h1 class="menu_title"><a href="#">펫시터 신청</a></h1>
+									          			<li class="menu_content"><a href="/petsitterApplication/educationIntro.jsp">- 교육소개</a></li>
+									          			<li class="menu_content"><a href="/petsitterApplication/application1.jsp">- 펫시터 신청</a></li>
+									          		</ul>
+									          		<ul class="above">
+									          			<h1 class="menu_title"><a href="#">서비스</a></h1>
+									          			<li class="menu_content"><a href="/service/freeService.jsp">- 무료 서비스</a></li>
+									          			<li class="menu_content"><a href="/service/paidService.jsp">- 유료 서비스</a></li>
+									          		</ul>
+									          		<ul class="above above-b" style="margin-left:20px;">
+									          			<h1 class="menu_title"><a href="#">마이페이지</a></h1>
+									          			<li class="menu_content"><a href="/modify.do">- 개인정보</a></li>
+									          			<li class="menu_content"><a href="/mypage/petInfo.jsp">- 반려동물 정보</a></li>
+									          			<li class="menu_content"><a href="/petsitterInfo.do">- 펫시터 정보 등록</a></li>
+									          			<li class="menu_content"><a href="/mypage/interestedPetsitter.jsp">- 관심펫시터</a></li>
+									          			<li class="menu_content"><a href="/reservationDetail.do">- 예약 내역</a></li>
+									          			<li class="menu_content"><a href="/mypage/paymentHistory.jsp">- 결제 내역</a></li>
+									          			<li class="menu_content"><a href="/main/main-board.jsp">- 1:1문의 내역</a></li>
+									          			<li class="menu_content"><a href="/mypage/reviewHistory.jsp">- 리뷰 내역</a></li>
+									          			<li class="menu_content"><a href="/member/deleteForm.jsp">- 회원탈퇴</a></li>
+									          		</ul>
+									          		<ul class="above above-b">
+									          			<h1 class="menu_title"><a href="#">회사소개</a></h1>
+									          			<li class="menu_content"><a href="/aboutUs/aboutUs.jsp">- 회사소개</a></li>
+									          			<li class="menu_content"><a href="/aboutUs/aboutPetsitter.jsp">- 펫시터 소개</a></li>
+									          			<li class="menu_content"><a href="/aboutUs/caringPreview.jsp">- 돌봄 미리보기</a></li>
+									          		</ul>
+									          		<ul class="above above-b">
+									          			<h1 class="menu_title"><a href="#">고객센터</a></h1>
+									          			<li class="menu_content"><a href="/faq/faq.jsp">- FAQ</a></li>
+									          		</ul>
+									          		<ul class="above above-b">
+									          		</ul>
+									      		</div>
+									        </div>
+
+										</div>
+									</div>
+                                    <div class="header-search">
+                                        <div class="search-box">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <div class="search-dropdown">
+                                                <form action="#">
+                                                    <input name="search" id="search" placeholder="" value="Search product..." onblur="if(this.value==''){this.value='Search product...'}" onfocus="if(this.value=='Search product...'){this.value=''}" type="text">
+                                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="currency">
+                                        <div class="currency-box">
+                                            <a href="#"><i class="fa fa-user"></i></a>
+                                            <div class="currency-dropdown">
+                                                <ul class="menu-top-menu">
+                                                	<div class="nav-header">
+													{% if user.is_active %}
+													   	<p class="memberGrade" >등급: {{memberGrade}}</p>
+													   	<a href="{% url 'logout' %}" id="uLogout">로그아웃</a>
+													   	<br/>
+													   	<br/>
+													   	<h2 class="memberName" >
+													   	{% firstof user.get_short_name user.get_username %}
+												       	</h2>
+												       	<span class="hello">님 안녕하세요!</span>
+													   	<br/>
+													{% else %}
+														<a class="a1" href="{% url 'login' %}">로그인</a>
+														<a class="a2" href="{% url 'register' %}">회원가입</a>
+													{% endif %}
+													</div>
+                                                </ul>
+	    										{% if user.is_active %}
+                                                <ul class="menu-middle-menu">
+                                                    <li><a href="{% url 'confirm' %}" id="uUpdate">개인정보</a></li>
+                                                    <li><a href="{% url 'petInfoList' %}">반려동물 정보</a></li>
+                                                    <li><a href="{% url 'confirmPetsitter' %}">펫시터 정보</a></li>
+                                                    <li><a href="{% url 'paymentHistoryM' %}">예약내역</a></li>
+                                                    <li><a href="{% url 'reviewHistoryM' %}">결제내역</a></li>
+                                                    <li><a href="{% url 'interestedPetsitter' %}">관심 펫시터</a></li>
+                                                    <li><a href="{% url 'boardList' %}">1:1문의 내역</a></li>
+                                                    <li><a href="{% url 'reviewHistoryM' %}">리뷰 내역</a></li>
+                                                    <li><a href="{% url 'memberDelete' %}">회원탈퇴</a></li>
+                                                </ul>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+	                        <div class="col-12">
+	                            <div class="mobile-menu d-lg-none"></div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+		    </div>
+	</header>
+</div>
+<script src="{% static 'js/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/js/slick.min.js' %}"></script>
+<script src="{% static 'js/js/jquery.meanmenu.min.js' %}"></script>
+<script src="{% static 'js/js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'js/js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/alohadog.js' %}"></script>
+{% block content %}{% endblock %}
+
+{% block footer %}{% endblock %}
+</body>
+</html>

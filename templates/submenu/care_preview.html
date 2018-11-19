@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG!{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/submenu.css" %}{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+<!-- script -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+{% block content %}
+<!--Breadcrumb Tow Start-->
+<div class="breadcrumb-tow mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-title">
+                    <h1>돌봄 미리보기</h1>
+                </div>
+                <div class="breadcrumb-content breadcrumb-content-tow">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">회사소개</a></li>
+                        <li class="active">돌봄 미리보기</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--My Account Area Strat-->
+<div class="my-account white-bg mb-110">
+    <div class="container">
+        <div class="account-dashboard">
+            <!--Blog Area Start-->
+            <div class="blog-area white-bg pt-0 pb-0 mb-70">
+                <div class="container">
+                    <div class="row">
+                        <!--Blog Post Start-->
+                        <div class="col-lg-9">
+                            <div class="blog_area">
+                                <article class="blog_single">
+                                    <header class="entry-header">
+                                        <span class="post-category">
+                                            <a href="single-blog.html"> Fashion</a>,<a href="#">WordPress</a>
+                                        </span>
+                                        <h2 class="entry-title">
+                                        <a href="#">Post with Video</a>
+                                        </h2>
+                                        <span class="post-author">
+                                        <span class="post-by"> Posts by : </span> admin </span>
+                                        <span class="post-separator">|</span>
+                                        <span class="post-date"><i class="fas fa-calendar-alt"></i>On May 15, 2018 </span>
+                                    </header>
+                                    <div class="post-thumbnail">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/169507022?title=0&amp;byline=0&amp;portrait=0"></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="postinfo-wrapper">
+                                        <div class="post-info">
+                                            <div class="entry-summary">
+                                                <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue
+                                                    condimentum rhoncus. Praesent ornare tortor</p>
+                                                <a href="single-blog.html" class="form-button">Read More</a>
+                                                <div class="social-sharing">
+                                                    <div class="widget widget_socialsharing_widget">
+                                                        <h3 class="widget-title">Share this post</h3>
+                                                        <ul class="blog-social-icons">
+                                                            <li>
+                                                                <a target="_blank" title="Facebook" href="#" class="facebook social-icon">
+                                                                    <i class="fab fa-facebook"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a target="_blank" title="twitter" href="#" class="twitter social-icon">
+                                                                    <i class="fab fa-twitter"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a target="_blank" title="pinterest" href="#" class="pinterest social-icon">
+                                                                    <i class="fab fa-pinterest"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a target="_blank" title="linkedin" href="#" class="linkedin social-icon">
+                                                                    <i class="fab fa-linkedin"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--start comment in post page -->
+                                    <a class="comment" href="#">1 comments</a>
+                                    <!--start comment in post page -->
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer>
+    <div class="footer-container">
+        <!--Footer Bottom Area Start-->
+        <div class="footer-bottom-area pt-50 pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--Footer Payment Start-->
+                        <div class="footer-payments-image">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                            </div>
+                        </div>
+                        <!--Footer Payment End-->
+                        <!--Footer Menu Start-->
+                        <div class="footer-menu text-center">
+                            <nav>
+                                <ul>
+                                    <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                    <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                    <br/>
+                                    <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                    <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                    <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Footer Menu End-->
+                        <!--Footer Copyright Start-->
+                        <div class="footer-copyright">
+                            <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                            <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                            <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                        </div>
+                        <!--Footer Copyright End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer Bottom Area End-->
+    </div>
+</footer>
+{% endblock footer %}

@@ -1,0 +1,214 @@
+body{background: #fff;}
+
+.main{
+	width: 100%; height: 100%;
+}
+.main-body{
+    width: 100%; height: 1400px;
+    margin-bottom: 100px;
+}
+.main-body-form{
+    height: 750px;
+    /*background: white;*/
+}
+
+/*img*/
+.main-body-form-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin: -60px auto 40px;
+}
+.main-body-form-img img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+/*imgEND*/
+
+.inputLine{
+    border-bottom: 1px solid #ffd24d;
+}
+.all{
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    font-size: 15px;
+    overflow: hidden;
+    padding: 17px 0;
+}
+.allC{padding-left: 10px; font-size: 20px;}
+.allid{padding-right: 107px; border-right: 1px solid #ffd24d;}
+.allname{padding-right: 117px; border-right: 1px solid #ffd24d;}
+.allsex{padding-right: 117px; border-right: 1px solid #ffd24d;}
+label[for=pw]{padding-right: 92px; border-right: 1px solid #ffd24d;}
+label[for=pwRE]{padding-right: 69px; border-right: 1px solid #ffd24d;}
+label[for=phone1]{padding-right: 98px; border-right: 1px solid #ffd24d;}
+label[for=email]{padding-right: 105px; border-right: 1px solid #ffd24d;}
+label[for=yy]{padding-right: 96px; border-right: 1px solid #ffd24d;}
+.sex-title{padding-right: 115px; float: left; padding-top: 20px;}
+.addressT{padding-top: 17px; font-size: 20px;}
+label[for=postcode]{padding-right: 105px; border-right: 1px solid #ffd24d;}
+label[for=address]{padding-right: 124px; border-right: 1px solid #ffd24d;}
+label[for=address2]{padding-right: 106px; border-right: 1px solid #ffd24d;}
+
+input[id=email]{
+    display: inline-block;
+    width: 300px;
+    height: 50px;
+    margin: 0;
+    font-size: 15px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+input[id=pw], input[id=pwRE]{
+    display: inline-block;
+    width: 400px;
+    height: 50px;
+    margin: 0;
+    font-size: 15px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+input[id=phone1], input[id=phone2], input[id=phone3], input[id=yy], input[id=mm], input[id=dd]{
+    display: inline-block;
+    width: 85px;
+    height: 50px;
+    margin: 0;
+    font-size: 15px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+input[id=postcode]{
+    display: inline-block;
+    width: 250px;
+    height: 50px;
+    margin: 0;
+    font-size: 15px;
+    padding-left: 10px;
+    overflow: hidden;
+    border-bottom: 1px solid #ffd24d;
+}
+input[id=address], input[id=address2]{
+    display: inline-block;
+    width: 420px;
+    height: 50px;
+    margin: 0;
+    font-size: 15px;
+    padding-left: 10px;
+    overflow: hidden;
+    border-bottom: 1px solid #ffd24d;
+}
+button.inputbtn{
+    width: 100px;
+    height: 35px;
+    background: white;
+    border: 3px solid #4d4dff;
+    color: #4d4dff;
+    font-size: 15px;
+    cursor: pointer;
+}button.inputbtn:hover{color: #ffd24d; border: 3px solid #ffd24d;}
+button.phonebtn{margin-left: 20px;}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[id=email]:focus{
+    background-color: rgba(255, 210, 77, 0.1);
+    outline: none;
+}
+.sex{
+    display: inline-block;
+    width: 500px;
+    height: 40px;
+    margin: 0;
+    background: rgba(0,0,0,0.2);
+    font-size: 15px;
+    overflow: hidden;
+}
+.sex0{
+    display: inline-block;
+    width: 200px;
+    border-radius: 100px;
+}
+.sex0 input{
+    width: 100%;
+    display: none;
+    border-radius: 100px;
+}
+.sex0 input:checked+label{
+    color: #fff;
+    background: #ffd24d;
+    border-radius: 100px;
+}
+.sex0 label.on{
+    color: #fff;
+    background: #ffd24d;
+    border-radius: 100px;
+}
+.sex0 label{
+    margin-top: 3px;
+    overflow: hidden;
+    padding: 17px 0;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    background: rgba(0,0,0,0.1);
+    border-radius: 100px;
+}
+/*sexEND*/
+
+.address{
+    display: inline-block;
+    width: 100%;
+    /*height: 154px;*/
+    margin: 0;
+    font-size: 15px;
+    overflow: hidden;
+    border-top: none;
+}
+#postcode-search{
+    text-decoration: underline;
+    width: 150px;
+    height: 35px;
+    background: white;
+    border: 3px solid #4d4dff;
+    color: #4d4dff;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 25px;
+}
+#postcode-search:hover{color: #ffd24d; border: 3px solid #ffd24d;}
+/*addressEND*/
+
+.cancelbtn,  .modifybtn, .withdrawalbtn{
+    color: #4d4dff;
+    padding: 10px 16px;
+    margin: 50px 5px;
+    cursor: pointer;
+    width: 150px;
+    opacity: 0.9;
+    font-size: 20px;
+    background: white;
+    border: 5px solid #4d4dff;
+}
+.cancelbtn{background: #4d4dff; color:white;}
+.modifybtn:hover,  .cancelbtn:hover, .withdrawalbtn:hover{
+    color: #ffd24d;
+    border: 5px solid #ffd24d;
+}
+.cancelbtn, .modifybtn, .withdrawalbtn {
+  float: left;
+}
+.clearfix{margin: 0 50px; margin-top: 50px;}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+@media screen and (max-width: 300px) {
+    .cancelbtn, .modifybtn, .withdrawalbtn {
+       width: 100%;
+    }
+}

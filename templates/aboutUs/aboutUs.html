@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+	<div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>회사소개</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="active">회사소개</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="my-account white-bg mb-110">
+	    <div class="container">
+	        <div class="account-dashboard">
+	            <div class="row">
+					<div class="design-and-code-area">
+				        <div class="container-fulid p-0">
+				            <div class="row no-gutters">
+				                <div class="col-md-12 col-lg-6">
+				                    <div class="ideas-content design-code-content">
+				                        <h2>가족처럼, 알로하 도그.</h2>
+				                            <p> 
+								                            내가 없는 동안 내 반려동물에게 필요한 것은 사랑과 책임으로 보살펴줄 수 있는 누군가라는 것을 깨달을 수 있었습니다.
+								
+								                            그래서 저희는 주변의 검증된 믿고 맡길 수 있는 돌보미를 발굴하여 교육하고 등록하는 준비를 하였고 혼자 남겨진 반려견에게 평생 친구가 될 수 있는 돌보미를 소개하고 연결해주는 서비스를 시작하게 되었습니다.
+								
+								                            지속적으로 반려동물 키우는 사람들이 늘어갈 것으로 전망하는 이 시대에 모두가 행복할 수 있는 인프라를 만들기 위해 다양한 사업을 진행할 계획입니다.
+								                        저희 도그메이트 팀은 대부분이 반려동물을 기르고 있으며 다양한 스타트업에서의 경험을 바탕으로 서비스에 대한 진정성과 전문성을 가지고 사업을 구축하는데 최선을 다하고 있습니다.
+								
+								                        각자의 업무영역에 대한 존중을 위해 회사의 장기적인 마일스톤을 공유하고 이에 대한 세부 실행은 각자 스스로 스케쥴을 설정하여 실행하고 있습니다. 장기적인 계획에 대한 기한에 맞춰 제대로된 결과만 이뤄내면 과정을 어떻게 하던 아무도 신경쓰지 않습니다.
+								
+								                        매주 수요일 오후 4시마다 아이디어 미팅을 갖는데 이 때 일주일 동안 협업 툴에 의견을 제시한 아이디어들을 나열하여 한명당 하나의 아이디어를 선택하면 참여한 구성원 모두가 각자가 선택한 아이디어를 실행하기 위한 방법들을 고민하고 의견을 제시합니다. 정리된 내용들은 업무에 상관없이 회사에 도움이 되는 일이라면 모두 실행할 수 있도록 지원합니다!
+								
+								                        이렇듯 각자가 하고 있는 일에 대한 전문성을 존중하는 것과 동시에 회사의 비전을 위해 영역에 상관없이 하고 싶은 일들을 모두가 실행할 수 있도록 돕는 문화를 가지고 있습니다. 노는 것이어도 말이죠.
+								
+								                        일과 놀이의 구분없는 삶을 추구하고 있으며 아직은 모두가 정신없이 바쁜 일상이지만 스스로에 대한 성취와 발전을 중요하게 생각하고 있습니다.
+								
+								                        각자의 업무영역에 대한 존중을 위해 회사의 장기적인 마일스톤을 공유하고 이에 대한 세부 실행은 각자 스스로 스케쥴을 설정하여 실행하고 있습니다. 장기적인 계획에 대한 기한에 맞춰 제대로된 결과만 이뤄내면 과정을 어떻게 하던 아무도 신경쓰지 않습니다.
+								                        태어난지 얼마되지 않은 신생회사이기 때문에 꿈을 실현하기 위한 환경을 직접 만들면서 성과를 이뤄나가는 가치를 느끼면서 일을 하고 있습니다. </p>
+								     </div>
+				                </div>
+				                <div class="col-md-12 col-lg-6">
+				                    <div class="idea-img img-full">
+				                        <img src="{% static 'img/회사소개2.png' %}" alt="">
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+	   </div>
+	</div>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

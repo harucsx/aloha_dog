@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}
+	<div class="wrapper">
+		<div class="main">
+
+			<div class="main-body" id="fullpage">
+
+				<div class="section" id="section0">
+					<div class="slideshow-content">
+
+						<div class="Slides fade">
+							<div class="slidesImg" style="background-image: url({% static 'img/mainphoto/main3.png' %});">
+								<div class="slider-btn">
+									<a href="#">펫시터 예약하기 <i class="fa fa-chevron-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="Slides fade">
+						  	<div class="slidesImg" style="background-image: url({% static 'img/mainphoto/main2.png' %})">
+							</div>
+						</div>
+
+						<div class="Slides fade">
+						  	<div class="slidesImg" style="background-image: url({% static 'img/mainphoto/main1.png' %})">
+							</div>
+						</div>
+
+						<a class="prev" id="shopMainPrev" onclick="plusSlides(-1)">&#10094;</a>
+		  				<a class="next" id="shopMainNext" onclick="plusSlides(1)">&#10095;</a>
+
+						<div class="dots" style="text-align:center">
+						  	<span class="dot" onclick="currentSlide(1)"></span> 
+						  	<span class="dot" onclick="currentSlide(2)"></span> 
+						  	<span class="dot" onclick="currentSlide(3)"></span>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="section" id="section1">
+					<div class="contact-address-area pt-120 pb-80">
+			            <div class="container">
+			                <div class="row">
+			                    <div class="col-12">
+			                        <div class="section-title2 bl-color mb-70">
+			                          <h3>FOR PETSITTER</h3>
+			                          <p>알로하도그 펫시터 교육을 모두 이수한 시터들에게 기본으로 제공되는 것들입니다.</p>
+			                      	</div>
+			                    </div>
+			                </div>
+			                <div class="row">
+			                    <div class="col-md-6 col-lg-3">
+			                        <div class="single-contact-address text-center mb-35">
+			                        	<i class="far fa-address-card" style="font-size: 120px"></i>
+			                            <div class="contact-info">
+			                                <p style='font-weight: bold';>알로하도그 펫시터 명함</p>
+			                                <p>알로하도그 로그와 펫시터의 정보가<br>들어간 명함을 제작해드립니다.</p>
+			                            </div>
+			                        </div>
+			                    </div>
+								<div class="col-md-6 col-lg-3">
+			                        <div class="single-contact-address text-center mb-35">
+										<i class="fas fa-desktop" style="font-size: 110px"></i>
+			                            <div class="contact-info">
+			                                <p style='font-weight: bold';> <br>알로하도그 홈페이지 등록</p>
+			                                <p>알로하도그 펫시터 소개에 무료로 <br> 시터의 정보를 등록해드립니다.</p>
+			                             </div>
+			                        </div>
+			                    </div>
+								<div class="col-md-6 col-lg-3">
+									<div class="single-contact-address text-center mb-35">
+										<i class="fas fa-briefcase-medical" style="font-size: 110px"></i>
+										<div class="contact-info">
+			                                <p style='font-weight: bold';>    <br>응급키트 제공</p>
+			                                <p>동물들이 응급상황일 경우 <br>사용가능한 키트를 제공해드립니다.</p>
+			                             </div>
+			                        </div>
+			                    </div>
+								<div class="col-md-6 col-lg-3">
+			                        <div class="single-contact-address text-center mb-35">
+										<i class="fas fa-paw" style="font-size: 110px"></i>
+			                            <div class="contact-info">
+			                            	<p style='font-weight: bold';>   <br>산책용품 제공</p>
+			                             	<p>산책용품을 제공해드립니다. <br>강아지들과 산책할때 사용합니다.</p>
+			                             </div>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+				</div>
+
+				<div class="section" id="section2">
+					<div class="slider-area">
+		              	<div class="single-slider slider-style-3" style="background-image: url({static 'img/mainphoto/main22.png' %})">   
+		                	<div class="slider-progress"></div>
+		            		<div class="container">
+		                      	<div class="hero-slider-content hero-slider-content-3">
+		                        	<h3 style='font-weight: bold';>알로하도그 펫시터 지원하기</h3>
+		                  			<p style="position:center";>외국에서는 이미 고소득 직업중 하나인 펫시터! 동물을 사랑하는 당신, 바로 지원해 보세요.</p>
+		                          	<div class="slider-btn">
+		                              	<a href="#">지원하기 <i class="fa fa-chevron-right"></i></a>
+		                          	</div>
+		                      	</div>
+		                  	</div>
+		              	</div>
+					</div>
+				</div>
+
+			</div>
+
+			<script>
+				// mySlides
+				var slideIndex = 1;
+				showSlides(slideIndex);
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+				function showSlides(n) {
+				  var i;
+				  var slides = document.getElementsByClassName("Slides");
+				  var dots = document.getElementsByClassName("dot");
+				  if (n > slides.length) {slideIndex = 1}    
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+				      slides[i].style.display = "none";  
+				  }
+				  for (i = 0; i < dots.length; i++) {
+				      dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";  
+				  dots[slideIndex-1].className += " active";
+				}
+			</script>
+
+		</div>
+	</div>
+{% endblock content %}
+
+{% block footer %}	
+	<footer>
+	    <div class="footer-container">
+	        <div class="footer-bottom-area pt-50 pb-50">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <div class="footer-payments-image">
+	                            <div class="footer-logo">
+	                                <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+	                            </div>
+	                        </div>
+	                        <div class="footer-menu text-center">
+	                            <nav>
+	                                <ul>
+	                                    <li><b>사업자등록번호:</b> 000-00-00000</li>
+	                                    <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+	                                    <br/>
+	                                    <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+	                                    <li><b>전화번호:</b> 010-3083-8683, </li> 
+	                                    <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+	                                </ul>
+	                            </nav>
+	                        </div>
+	                        <div class="footer-copyright">
+	                            <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+	                            <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+	                            <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</footer>
+{% endblock footer %}

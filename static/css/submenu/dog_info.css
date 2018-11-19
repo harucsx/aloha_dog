@@ -1,0 +1,149 @@
+
+/*--------------mainCSS*/
+
+body{background: #fff;}
+
+.main{
+	width: 1100px; 
+    height: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    /*background: lightblue;*/
+}
+.submenuPath{
+    position: relative;
+    top: 100px;
+    width: 100%;
+    padding: 10px;
+    background: #f1e6ff;
+    border-left: 5px solid #c999ff;
+    /*border-bottom: 5px dashed #c999ff;*/
+    /*font-size: 20px;*/
+}
+.main-body{
+    position: relative;
+    top: 150px;
+    width: 1100px;
+    /*height: 700px;*/
+    /*background: lightgreen;*/
+}
+.main-body:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.main-body-title{
+    position: relative;
+    top: 0px;
+    left: 5px;
+    font-size: 50px;
+    color: #000;
+}
+.main-body-title a{color: #c999ff;}
+.main-body-path{
+    position: absolute; top: 35px; right: 5px;
+}
+.main-body-path, .main-body-path a{
+    font-family: sans-serif;
+    font-size: 12px;
+}
+.main-body-path a:hover{color: #c999ff;}
+.main-body-form{
+    position: relative;
+    top: 0px;
+    padding: 50px 50px;  /*가로변경시 width도 같이 변경*/
+    width: 89%;
+    height: 270px;
+    margin: 0 auto;
+    border: 7px solid #c999ff;
+    /*background: white;*/
+    text-align: center;
+    font-size: 30px;
+}
+.dogs{
+    width: 120px;
+    height: 210px;
+    background: #f2f2f2;
+    text-align: left;
+    float: left;;
+}
+.dog1{margin-right: 50px;}
+.dogs img{
+    height: 100px; 
+    width: 100px; 
+    border-radius: 100px;
+    margin: 10px;
+}
+.dogs .dogName{
+    margin: 0 auto;
+    width: 100px;
+    height: 70px;
+    border: 2px dotted #c999ff;
+}
+.dogs .dogName li{
+    font-size: 12px;
+    font-family: sans-serif;
+    letter-spacing: -1px;
+    padding: 2px 2px;
+}
+.dog-add{
+    position: relative;
+    top: 0px;
+    left: 949px;
+    width: 148px;
+    /*background: green;*/
+}
+.dog-add:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.pagination {
+    /*background: grey;*/
+    width: 113px;
+    height: 32px;
+    margin: 0 auto;
+    margin-top: 270px;
+}
+.pagination a {
+    font-size: 12px;
+    color: black;
+    float: left;
+    padding: 8px 10px;
+    text-decoration: none;
+    transition: color .3s;
+}
+.pagination a.active {
+    color: #c999ff;
+}
+.pagination a:hover:not(.active) {color: #f2f2f2;}
+
+
+.modify, .add{
+    color: #c999ff;
+    padding: 10px 20px;
+    margin: 20px 5px 20px 0;
+    cursor: pointer;
+    font-size: 20px;
+    background: white;
+    border: 5px solid #c999ff;
+    text-align: center;
+}
+.add{
+    background: #c999ff; 
+    color:white;
+    margin: 20px 0;
+}
+.modify:hover,  .add:hover{
+    color: #f2f2f2;
+    border: 5px solid #f2f2f2;
+}
+.modify, .add {
+  float: left;
+}
+@media screen and (max-width: 300px) {
+    .modify, .add {
+       width: 100%;
+    }
+}

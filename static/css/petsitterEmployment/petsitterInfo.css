@@ -1,0 +1,196 @@
+.animalintroduction_11{
+    font-weight: bold;
+    color: #b69bc9;
+    font-size: 20px;
+}
+
+img.animalintroduction_img{
+    position: relative;
+    top: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 90px;
+    border: 4px solid #e6e6e6;
+}
+
+img.animalintroduction_img:hover{
+    opacity: 0.5;
+    transition: .5s ease;
+}
+
+.animalintroduction_text{
+    position: relative;
+    top: 40px;
+    font-family: "fontawesome";
+    font-size: 14px;
+    line-height: 28px;
+    color: #666;
+}
+
+.introduction_22{
+    position: relative;
+    font-weight: bold;
+    color: #b69bc9;
+    font-size: 20px;
+    top: 120px;
+}
+
+.introduction_text{
+    position: relative;
+    font-size: 14px;
+    line-height: 28px;
+    color: #666;
+    top: 150px;
+}
+
+.nnn:hover{
+    color: #c999ff;
+}
+
+.greetings{
+    width: 100px;
+}
+
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.month {
+    padding: 20px 25px;
+    width: 30%;
+    background: #1abc9c;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+    width: 30%;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 11.5%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+    width: 30%;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 11.5%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+.free-service,
+.paid-service{
+    position: absolute;
+    border: 2px solid #4d4dff;
+    padding: 0 0 0 15px;
+    width: 60px;
+    height: 30px;
+    font-size: 13px;
+    font-family: nanum;
+    font-weight: bold;
+    border-radius: 20px;
+    top: 620px;
+    
+}
+
+.free-service{
+   left: 20px; 
+}
+
+.paid-service{
+    left: 200px;
+}
+
+.select-tag-all{
+    position: absolute;
+    top: 570px;
+    left: 520px;
+    width: 947px;
+    height: 200px;
+}
+
+.select-tag-ok{
+    position: absolute;
+    font-family: nanum;
+    color: #4d4dff;
+    font-weight: bold;
+    font-size: 17px;
+    top: 20px;
+    left: 10px;
+}
+
+.apateu, .madang, .old-age-dog-care,
+.dd-dog-care{
+    position: absolute;
+    border: 2px solid #4d4dff;
+    padding: 10px;
+    height: 50px;
+    font-size: 15px;
+    font-family: nanum;
+    font-weight: bold;
+    border-radius: 20px;
+    top: 45px;
+}
+
+.apateu{
+    width: 70px;
+    left: 10px;
+}
+
+.madang{
+    width: 70px;
+    left: 110px;
+}
+
+.old-age-dog-care{
+    width: 100px;
+    left: 210px;
+}
+
+.dd-dog-care{
+    width: 100px;
+    left: 340px;
+}

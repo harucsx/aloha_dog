@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/board.css" %}{% endblock %}
+
+{% block content %}
+	<script>
+	var wStatus = true;
+	
+	$(document).ready(function(){
+	    
+	    //글삭제폼의 [삭제]버튼을 클릭하면 자동실행
+	    $("#b_delete").click(function(){
+	        formCheckIt();
+	        if(wStatus){
+	          //[삭제]버튼의 값으로 지정된 현재페이지 번호를 얻어냄
+	          var pageNum = $("#b_delete").val();
+	          //글번호와 글삭제폼에 입력된 값을 얻어내서 query에 저장
+	          var query = {passwd:$("#passwd").val(),
+	                       num:$("#num").val()};
+	          
+	          //query값을 갖고 deletePro.jsp실행
+	          $.ajax({
+	             type: "POST",
+	             url: "../board/deletePro.jsp",
+	             data: query,
+	             success: function(data) {
+	            	 data = data.trim();
+	                 if(data == "true") { //글삭제 처리에 성공한 경우
+	                    alert("글이 삭제되었습니다.");
+	                    var query = "../board/list.jsp?pageNum=" + pageNum;
+	                    $("#main_board").load(query);
+	                 } else { //글삭제 처리에 실패한 경우
+	                    alert("비밀번호 틀림.");
+	                    $("#passwd").val("");
+	                    $("#passwd").focus();
+	                 }
+	             }
+	          });
+	        }
+	    });
+	    
+	    //글삭제폼의 [삭제]버튼을 클릭하면 자동실행
+	    //글목록보기 list.jsp페이지를 표시
+	    $("#b_cancle").click(function(){
+	        var pageNum = $("#b_cancle").val();
+	        var query = "../board/list.jsp?pageNum=" + pageNum;
+	        $("#main_board").load(query);
+	    });
+	
+	});
+	
+	//글삭제 폼의 비밀번호 입력 유무 확인
+	function formCheckIt(){
+	    wStatus = true;
+	    if(!$.trim($("#passwd").val())){
+	        alert("비밀번호를 입력하세요.");
+	        $("#passwd").focus();
+	        wStatus = false;
+	        return false;
+	    }
+	}
+	</script>
+<!-- 	<%
+	  request.setCharacterEncoding("utf-8");
+	
+	  //삭제할 글의 번호와 삭제할 글이 위치한 페이지 번호를 얻어냄
+	  int num = Integer.parseInt(request.getParameter("num"));
+	  String pageNum = request.getParameter("pageNum");
+	%> -->
+	<div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>게시글삭제</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="active">게시글삭제</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="blog-area white-bg pt-0 pb-0 mb-70">
+		<div class="container">
+	    	<div class="row">
+	        	<div class="col-lg-9 ml-auto mr-auto">
+	            	<div class="blog_area">
+	            		<div id="deleteForm">
+						   <ul>
+						      <li><label for="passwd">비밀번호</label>
+						          <input id="passwd" name="passwd" type="password" size="20" placeholder="6~16자 숫자/문자" maxlength="16">
+						          <input type="hidden" id="num" value="<%= num %>">
+						      </li>
+						      <li class="label2">
+						          <button id="b_delete" value="<%= pageNum %>">삭제</button>
+						          <button id="b_cancle" value="<%= pageNum %>">취소</button>
+						      </li>
+						   </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="mt-70">
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

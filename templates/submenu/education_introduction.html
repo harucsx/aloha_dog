@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG!{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/submenu.css" %}{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+<!-- script -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+{% block content %}
+<!--Breadcrumb Tow Start-->
+<div class="breadcrumb-tow mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-title">
+                    <h1>펫시터지원</h1>
+                </div>
+                <div class="breadcrumb-content breadcrumb-content-tow">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">교육소개</li>
+                        <li><a href="{% url 'petsiiter_application1' %}">펫시터지원</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--My Account Area Strat-->
+<div class="my-account white-bg mb-110">
+    <div class="container">
+        <div class="account-dashboard">
+            <div class="row">
+                <div class="col-md-12 col-lg-2">
+                    <!-- Nav tabs -->
+                    <ul class="nav flex-column dashboard-list" role="tablist">
+                        <li><a class="nav-link active" href="{% url 'education_introduction' %}">교육소개</a></li>
+                        <li> <a class="nav-link" href="{% url 'petsiiter_application1' %}">펫시터지원</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-10">
+                    <div class="tab-content dashboard-content">
+                        <div id="dashboard" class="tab-pane fade show active">
+                            <h3>교육소개</h3>
+                        
+                               <div class="bu">
+                                   <button class="button1">온라인지원서</button>
+                                   <i class="fas fa-arrow-right"></i>
+                                   <button class="button1">온라인교육</button>
+                                   <i class="fas fa-arrow-right"></i>
+                                   <button class="button1">오프라인교육</button>
+                                   <i class="fas fa-arrow-right"></i>
+                                   <button class="button1">펫시터수료식</button>
+                                   <i class="fas fa-arrow-right"></i>
+                                   <button class="button1">펫시터등록</button>
+                               </div>
+
+
+
+                            <br>
+                               <i class="fas fa-check-circle"></i> 온라인 교육 4시간
+                               <br>
+                               <h6>            &nbsp;<br> - 반려견 첫만남 시 주의사항 및 친화방법
+                                               &nbsp;<br> - 체중, 나이에 알맞은 배식방법
+                                               &nbsp;<br> - 카밍시그널, 반려견의 몸짓 제대로 알기
+                                               &nbsp;<br> - 질병과 예방접종 (예방접종 및 중성화 시기 및 유의사항, 전염질병 등)
+                                               &nbsp;<br> - 기본 그루밍 (눈물정리, 발톱/발바닥털 정리, 귀청소, 항문낭, 빗질 등)
+                                               &nbsp;<br> - 응급처치법 (CPR 및 찰과상, 화상, 타박상 대처법 등)
+                                </h6>
+                                <br>
+
+                               <i class="fas fa-check-circle"></i> 오프라인 교육 5시간
+                               <br>
+                               <h6>             &nbsp;<br> - 반려견 문제행동 (마킹, 짖음, 공격성, 식분증, 물어뜯기)증세와 행동관찰
+                                                &nbsp;<br>- 문제행동에 대한 대처방법 및 2마리 이상 돌봄 시 주의사항
+                                                &nbsp;<br>- 스트레스 해소에 좋은 반려견 놀이법
+                                                &nbsp;<br> - 안전하고 편안한 산책 방법 그리고 펫티켓
+                               </h6>
+
+
+                               <br>
+                               <i class="fas fa-check-circle"></i> 알로하도그 펫시터에게 드리는 혜택
+                               
+                               <br><br>
+
+                               <i class="fas fa-laptop" style="font-size: 100px; margin-left: 100px;"></i>
+                               <!-- 홈페이지 등록 무료 -->
+                               <i class="far fa-address-card" style="font-size: 100px; margin-left: 80px;"></i>
+                               <!-- 전문펫시터 명함 제작 -->
+                               <i class="fas fa-futbol" style="font-size: 100px; margin-left: 80px;"></i>
+                               <!-- 강아지용품 무료 제공 -->
+                              <i class="fas fa-briefcase-medical" style="font-size: 100px; margin-left: 80px;"></i>
+                               <!-- 비사용 응급용품 무료 제공 -->
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer>
+    <div class="footer-container">
+        <!--Footer Bottom Area Start-->
+        <div class="footer-bottom-area pt-50 pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--Footer Payment Start-->
+                        <div class="footer-payments-image">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                            </div>
+                        </div>
+                        <!--Footer Payment End-->
+                        <!--Footer Menu Start-->
+                        <div class="footer-menu text-center">
+                            <nav>
+                                <ul>
+                                    <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                    <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                    <br/>
+                                    <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                    <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                    <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Footer Menu End-->
+                        <!--Footer Copyright Start-->
+                        <div class="footer-copyright">
+                            <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                            <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                            <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                        </div>
+                        <!--Footer Copyright End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer Bottom Area End-->
+    </div>
+</footer>
+{% endblock footer %}

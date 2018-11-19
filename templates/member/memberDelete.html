@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/member/memberDelete.css" %}{% endblock %}
+<script>
+//다입력됐는징
+function checkValue(){
+   var form = document.deleteForm;
+   
+  if(form.pw.value != form.re_pw.value){
+     alert("비밀번호를 동일하게 입력하세요.");
+      form.pw.value.focus();
+     return false;
+  }
+   
+   if(!form.delete_agree:checked){
+      alert("탈퇴동의를 체크해주세요.");
+      return false;
+   }
+}
+</script>
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>회원탈퇴</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="active">회원탈퇴</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+                       <form method="post" action="." class="formA">{% csrf_token %}
+                          {% if form.errors %}
+                          <p class="errornote">빈칸을 전부 입력해주세요.</p>
+                          {% endif %}
+                          <fieldset class="aligned">
+                             <div class="form-row">
+                                <span class="id_">ID</span>
+                               <input name="inputContent" type="text" class="inputContent" id="id" value="{{user.username}}" readonly>
+                             </div>
+
+                             <div class="form-row">
+                                <span class="pw_1">비밀번호</span> 
+                                <input type="password" name="pw" id="pw" placeholder="8자리이상 20자리이하 영문,숫자,특수문자중 2가지를 혼합 입력해주세요." minlength="8" maxlength="20" required>
+                             </div>
+
+                             <div class="form-row">
+                                <span class="pw_1_2">비밀번호 재확인</span>
+                                <input type="password" name="re_pw" id="re_pw" maxlength="20" onkeydown="CheckPw()"  required>
+                             </div>
+
+                              <script type="text/javascript">
+                                //비밀번호유효성검사
+                                function CheckPw(){ 
+                                    var pw = $("#pw").val();
+                                    var id = $("#id").val();
+                                    var num = pw.search(/[0-9]/g);
+                                    var eng = pw.search(/[a-z]/ig);
+                                    var leng = pw.search(/[A-Z]/ig);
+                                    var spe = pw.search(/[`~!@#$%^&*\,./?:;]/gi);
+                                    
+                                    if(pw.search(id) != -1){
+                                        alert("비밀번호와 아이디를 동일하게 입력하지 마세요.");
+                                        return false;
+                                    }
+                                    if(pw.length < 8 || pw.length > 20){
+                                          alert("8자리 ~ 20자리 이내로 입력해주세요.");
+                                          return false;
+                                    }
+                                    if(pw.search(/₩s/) != -1){
+                                        alert("비밀번호는 공백없이 입력해주세요.");
+                                        return false;
+                                    }
+                                    if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
+                                        alert("영문 대소문자, 숫자, 특수문자(`~!@#$%^&*\,./?:;) 중 2가지 이상을 혼합해서 입력해주세요.");
+                                        return false;
+                                    }
+                                    return true;
+                                }
+                              </script>
+                             
+                             <div class="form-row">
+                                       <label class="delete_account_agree">탈퇴약관에 동의하시겠습니까?
+                                          <input type="checkbox" name="delete_agree">
+                                          <span class="delete_account_agreemark"></span>
+                                       </label>
+                                    </div>
+                                    
+                            <div class="delete_account_notice">
+                              계정을 삭제하시면 다시 복구할 수 없습니다.<br/>
+                              탈퇴하시겠습니까?
+                            </div>
+                          </fieldset>
+
+                          <div class="clearfix">
+                                <button class="deleteXbtn" onclick="window.location.href='<%= CTX %>/index.do';">취소</button>
+                                <a href="{% url 'deleteDone' %}" class="deletebtn" id="deletebtn">회원탈퇴</a>
+                           </div>
+                         
+                       </form>
+                       <script> //비밀번호일치
+                           $(function(){
+                             $("input[type=password]").keyup(function(){
+                                var pw1 = $("#pw").val();
+                                var pw2 = $("#re_pw").val();
+                                if(pw1 != pw2){
+                                   $("#pw").css("background", "rgba(204, 0, 0,0.25)");
+                                   $("#re_pw").css("background", "rgba(204, 0, 0,0.25)");
+                                   $("#signUp").removeAttr("disabled");
+                                }else{
+                                   $("#pw").css("background", "rgba(204,204,204,0.25)");
+                                   $("#re_pw").css("background", "rgba(204,204,204,0.25)");
+                                   $("#signUp").attr("disabled", "disabled");
+                                }
+                             });
+                             $("input[name=id]").keyup(function(){
+                                document.getElementById("checkId").value="중복확인";
+                             });
+                             $("input[name=phone1],input[name=phone2],input[name=phone3]").keyup(function(){
+                                document.getElementById("checkPhoneN").value="중복확인";
+                             });
+                             $("input[name=email1],input[name=email2]").keyup(function(){
+                                document.getElementById("checkEmail").value="중복확인";
+                             });
+                          });
+                          </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

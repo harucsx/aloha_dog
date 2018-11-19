@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/petsitterApplication/educationIntro.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>교육 소개</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li><a href="#">펫시터 신청</a></li>
+                            <li class="active">교육 소개</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="education_info">
+    	<div class="about-us-area">
+                <div class="container-fluid p-0">
+                    <div class="row no-gutters">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="about-us-img img-full">
+                                <img src="{% static 'img/about1.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="about-us-content">
+                               <br><br><br> <h2><strong>펫시터가 되려면</strong> <br><strong>어떻게 해야 하나요?</strong></h2>
+                                <p>알로하도그 펫시터가 되려면, 총 4단계의 교육 프로그램을 이수하셔야 합니다.
+                                   교육은 온라인 교육, 오프라인 교육, 실습 교육, 소비자 만족도 평가로 이루어지며, 각 테스트에서 일정 수준에 미달시 불합격 됩니다. 자세한 사항은 교육 과정 페이지를 참고하여 주시기 바랍니다.</p>
+                                <a href="{% url 'educationDetail' %}" class="about-btn-login">교육 과정 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-area mb-0">
+                <div class="container-fluid p-0">
+                    <div class="row no-gutters">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="skrill-here">
+                                <div class="ht-single-about">
+                                    <div class="skill-bar">
+                                        <div class="skill-bar-item">
+                                            <span>온라인 교육</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" data-progress="80%" style="width: 80%;">
+                                                    <span class="text-top"><p>01</p></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar-item">
+                                            <span>오프라인 교육</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" data-progress="90%" style="width: 90%;">
+                                                    <span class="text-top"><p>02</p></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar-item">
+                                            <span>실습 교육</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" data-progress="70%" style="width: 70%;">
+                                                    <span class="text-top"><p>03</p></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar-item">
+                                            <span>고객 만족도 평가</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" data-progress="95%" style="width: 95%;">
+                                                    <span class="text-top"><p>04</p></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="skill-img img-full">
+                                <img src="{% static 'img/about2.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

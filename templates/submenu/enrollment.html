@@ -1,0 +1,411 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG!{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/submenu.css" %}{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+<!-- script -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+{% block content %}
+<!--Breadcrumb Tow Start-->
+<div class="breadcrumb-tow mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-title">
+                    <h1>펫시터 등록</h1>
+                </div>
+                <div class="breadcrumb-content breadcrumb-content-tow">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{% url 'hire' %}">펫시터 고용_Home</a></li>
+                        <li><a href="{% url 'enrollment' %}">펫시터 등록</a></li>
+                        <li class="active">내 상세페이지 작성</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--My Account Area Strat-->
+<div class="my-account white-bg mb-110">
+    <div class="container">
+        <div class="account-dashboard">
+            <div class="row">
+        <!--Single Product Area Start-->
+        <div class="single-product-area mb-115">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5">
+                        <div class="product-details-img-tab">
+                            <!--Product Tab Content Start-->
+                            <div class="tab-content single-product-img">
+                              <div class="tab-pane fade show active" id="product1">
+                                  <div class="product-large-thumb img-full">
+                                     <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/single-product/large/single-product1.jpg' %}">
+                                            <img src="{% static 'img/single-product/large/single-product1.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/single-product/large/single-product1.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product2">
+                                  <div class="product-large-thumb img-full">
+                                     <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/single-product/large/single-product2.jpg' %}">
+                                          <img src="{% static 'img/single-product/large/single-product2.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/single-product/large/single-product2.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product3">
+                                  <div class="product-large-thumb img-full">
+                                     <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/single-product/large/single-product3.jpg' %}">
+                                          <img src="{% static 'img/single-product/large/single-product3.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/single-product/large/single-product3.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product4">
+                                  <div class="product-large-thumb img-full">
+                                     <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/single-product/large/single-product4.jpg' %}">
+                                          <img src="{% static 'img/single-product/large/single-product4.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/single-product/large/single-product4.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product5">
+                                  <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/single-product/large/single-product5.jpg' %}">
+                                          <img src="{% static 'img/single-product/large/single-product5.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/single-product/large/single-product5.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product6">
+                                  <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/single-product/large/single-product6.jpg' %}">
+                                          <img src="{% static 'img/single-product/large/single-product6.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/single-product/large/single-product6.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="nnn"><a href="#">+사진추가</a></div>
+                            <!--Product Tab Content End-->
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-7">
+                        <!--Product Details Content Start-->
+                        <div class="product-details-content">
+                            <!--Product Nav Start-->
+                            <div class="product-nav">
+                                <a href="#"><i class="fa fa-angle-left"></i></a>
+                                <a href="#"><i class="fa fa-angle-right"></i></a>
+                            </div>
+                            <!--Product Nav End-->
+                            <h2>박기나 시터님</h2>
+                            <div class="single-product-reviews">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <a class="review-link" href="#">(내 등급: 우수)</a>
+                              <div class="col-md-6">
+                                <div class="contact-form-style mb-20">
+                                  <input name="인사말" placeholder="인사말" type="text" 
+                                  style="
+                                  position: relative;
+                                  width: 400px;
+                                  height: 45px;
+                                  left: -15px;
+                                  ">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="contact-form-style mb-20">
+                                  <input name="주소" placeholder="주소" type="text" 
+                                  style="
+                                  position: relative;
+                                  width: 400px;
+                                  height: 45px;
+                                  left: -15px;
+                                  ">
+                                </div>
+                              </div>
+                            </div>
+                            <p class="stock in-stock">기본단가는 시간당 ?원, 하루케어는 ?원입니다.</p>
+                            <div class="product-meta">
+                                <span class="posted-in">
+                                        가능한 서비스: 
+                                        <a href="#">산책하기</a>,
+                                        <a href="#">수제간식</a>
+                                        <br>
+                                        <a href="#">+서비스추가하기</a>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="wishlist-compare-btn">
+                                <a href="#" class="wishlist-btn">게시하기</a>
+                                <a href="#" class="add-compare">취소하기</a>
+                            </div>
+                            <div class="add-to-link">
+                              <button class="product-btn" data-text="add to cart">저장하기</button>
+                            </div>
+                        </div>
+                        <!--Product Details Content End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Single Product Area End-->
+        <!--Product Description Review Area Start-->
+        <div class="product-description-review-area mb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-review-tab">
+                            <!--Review And Description Tab Menu Start-->
+                            <ul class="nav dec-and-review-menu">
+                              <li>
+                                <a class="active" data-toggle="tab" href="#description">돌봄정보작성</a>
+                              </li>
+                              <li>
+                                <a data-toggle="tab" href="#description22">시터소개작성</a>
+                              </li>
+                              <li>
+                                <a data-toggle="tab" href="#reviews">후기 (1)</a>
+                              </li>
+                            </ul>
+                            <!--Review And Description Tab Menu End-->
+                            <!--Review And Description Tab Content Start-->
+                            <div class="tab-content product-review-content-tab" id="myTabContent-4">
+
+                              <div class="tab-pane fade active show" id="description">
+                                  <div class="single-product-description">
+                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
+                                     <p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget.</p>
+                                  </div>
+                              </div>
+
+                              <div class="tab-pane fade" id="description22">
+                                  <div class="single-product-description">
+                                    <div class="animalintroduction_11">박기나 시터님의 반려견을 소개합니다~!</div>
+                                    <img class="animalintroduction_img" src="{% static 'img/sitterhire//sitterfind1.jpg' %}">
+                                    <div class="animalintroduction_text">
+                                      이름: 복순이<br>
+                                      (말티즈,온순한 성격,여아,12살)<br><br>
+                                      <div class="nnn"><a href="#">+반려견 추가하기</a></div>
+                                    </div>
+
+                                    <div class="introduction_22">박기나 시터님을 소개합니다~!</div>
+                                    <div class="introduction_text">
+                                      <div class="contact-form-style mb-20">
+                                        <input name="인사말" placeholder="인사말" type="text" 
+                                        style="
+                                          position: relative;
+                                          width: 400px;
+                                          height: 45px;
+                                          left: 0px;
+                                          top: -20px;
+                                          ">
+                                      </div>
+                                      <br>
+                                      Q. 왜 도그메이트 펫시터를 하게 되었나요?<br>
+                                      A.<br>
+                                      <div class="col-md-6">
+                                        <div class="contact-form-style mb-20">
+                                          <input name="답변" placeholder="답변" type="text" 
+                                          style="
+                                            position: relative;
+                                            width: 600px;
+                                            height: 300px;
+                                            left: -15px;
+                                            ">
+                                        </div>
+                                      </div>
+                                      ----------------------------------------------------------------------------------------<br>
+
+                                      Q. 반려견을 키운 경험에 대해 알려주세요. 현재 반려견을 키우고 계시다면 자세히 소개해주세요!<br>
+                                      A.<br>
+                                      <div class="col-md-6">
+                                        <div class="contact-form-style mb-20">
+                                          <input name="답변" placeholder="답변" type="text" 
+                                          style="
+                                            position: relative;
+                                            width: 600px;
+                                            height: 300px;
+                                            left: -15px;
+                                            ">
+                                        </div>
+                                      </div>
+
+                                      ----------------------------------------------------------------------------------------<br>
+
+                                      Q. 애견호텔이 아닌 저에게 맡겨주시면 아래와 같은 내용을 약속드립니다.<br>
+                                      A.<br>
+                                      <div class="col-md-6">
+                                        <div class="contact-form-style mb-20">
+                                          <input name="답변" placeholder="답변" type="text" 
+                                          style="
+                                            position: relative;
+                                            width: 600px;
+                                            height: 300px;
+                                            left: -15px;
+                                            ">
+                                        </div>
+                                      </div>
+
+
+                                      ----------------------------------------------------------------------------------------<br>
+
+                                      ※ 아래 유형의 아이들은 돌봄이 어려울 수 있습니다.
+                                      <br><br>
+                                      <div class="nnn"><a href="#">+내용 추가하기</a></div>
+
+                                      ----------------------------------------------------------------------------------------
+                                    </div>
+                                  </div>
+                              </div>
+
+
+                              <div class="tab-pane fade" id="reviews">
+                                  <div class="review-page-comment">
+                                    <h2>총 1개의 후기가 있습니다.</h2>
+                                    <ul>
+                                        <li>
+                                            <div class="product-comment">
+                                                <img src="img/icon/author.png" alt="">
+                                                <div class="product-comment-content">
+                                                    <div class="product-reviews">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <p class="meta">
+                                                        <strong>admin</strong> - <span>November 22, 2016</span>
+                                                    <div class="description">
+                                                        <p>Good Product</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="review-form-wrapper">
+                                        <div class="review-form">
+                                            <span class="comment-reply-title">Add a review </span>
+                                            <form action="#">
+                                                <p class="comment-notes">
+                                                    <span id="email-notes">Your email address will not be published.</span>
+                                                     Required fields are marked
+                                                     <span class="required">*</span>
+                                                </p>
+                                                <div class="comment-form-rating">
+                                                    <label>Your rating</label>
+                                                    <div class="rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="input-element">
+                                                    <div class="comment-form-comment">
+                                                        <label>Comment</label>
+                                                        <textarea name="message" cols="40" rows="8"></textarea>
+                                                    </div>
+                                                    <div class="review-comment-form-author">
+                                                        <label>Name </label>
+                                                        <input required="required" type="text">
+                                                    </div>
+                                                    <div class="review-comment-form-email">
+                                                        <label>Email </label>
+                                                        <input required="required" type="text">
+                                                    </div>
+                                                    <div class="comment-submit">
+                                                        <button type="submit" class="form-button">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <!--Review And Description Tab Content End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div><!--row end-->
+        </div><!--account-dashboard end-->
+    </div><!--container end-->
+</div><!--my-account white-bg mb-110 end-->
+{% endblock %}
+
+{% block footer %}
+<footer>
+    <div class="footer-container">
+        <!--Footer Bottom Area Start-->
+        <div class="footer-bottom-area pt-50 pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--Footer Payment Start-->
+                        <div class="footer-payments-image">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                            </div>
+                        </div>
+                        <!--Footer Payment End-->
+                        <!--Footer Menu Start-->
+                        <div class="footer-menu text-center">
+                            <nav>
+                                <ul>
+                                	<li><b>사업자등록번호:</b> 000-00-00000</li>
+                                	<span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                	<br/>
+                                    <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                    <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                    <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Footer Menu End-->
+                        <!--Footer Copyright Start-->
+                        <div class="footer-copyright">
+                            <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                            <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+							<p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                        </div>
+                        <!--Footer Copyright End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer Bottom Area End-->
+    </div>
+</footer>
+{% endblock footer %}

@@ -1,0 +1,210 @@
+/*sub*/
+.main-body:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column {
+    float: left;
+}
+.main-body-right{ 
+    width: 20%; 
+    height: 100%;
+    /*background: lightpink;*/
+    overflow: hidden;
+}
+.main-body-left{ 
+	float: left;
+    width: 80%; 
+    height: 100%;
+    /*background: lightblue;*/
+}
+@media screen and (max-width: 600px) {
+    .column.main-body-right, .column.main-body-left {
+        width: 100%;
+    }
+}
+.main-body-title{
+    font-size: 50px;
+    color: #000;
+    margin: 0;
+    margin-left: 100px;
+    position: absolute;
+    top: 190px;
+}
+.main-body-title a{color: #c999ff;}
+.main-body-path{position: absolute; top: -25px; right: 0;}
+.main-body-path, .main-body-path a{
+    font-family: sans-serif;
+    font-size: 12px;
+}
+.main-body-path a:hover{color: #c999ff;}
+
+.main-body-form{
+    position: absolute;
+    top: 240px;
+    padding: 100px;
+    margin-left: 100px;
+    width: 600px;
+    border-top: 7px solid #c999ff;
+    /*background: white;*/
+}
+/*--------------mainCSS*/
+
+.submenu-title{
+	position: absolute;
+	top: 190px;
+	/*margin-top: 200px;*/
+	font-size: 40px;
+}
+.submenu-title a:hover{color: #c999ff;}
+.submenu-line{
+	position: absolute;
+	top: 240px;
+	width: 200px;
+	height: 7px;
+	background: #000;
+	float: left;
+}
+.fa-chevron-right {
+	position: absolute;
+	top: 224px;
+	left: 180px;
+	font-size: 40px;
+	color: #000;
+}
+.submenu-content{
+	position: absolute;
+	top: 255px;
+	width: 200px;
+	height: 200px;
+	/*background: pink;*/
+}
+.submenu-content ul li{
+	padding: 10px;
+}
+.submenu-content ul li a{
+	font-size: 25px;
+}
+.submenu-content ul li a:hover{color: #c999ff;}
+.ONclick{color: #c999ff;}
+/*-----------------------------------*/
+
+body{background: #fff;}
+
+.main{
+   width: 100%; height: 100%;
+}
+.main-body{
+    width: 100%; height: 1000px;
+    margin-bottom: 100px;
+}
+.main-body-form{
+    height: 300px;
+    /*background: white;*/
+}
+
+h1.onetoonecontact-top{
+	font-size: 30px;
+	text-align: center;
+	color: #000;
+	font-family: 'nanum';
+}
+
+/*-----------------------------------------앨범리스트 버튼---------------------------*/
+.button {
+    background-color: #c999ff;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+div.button1 {
+    padding-left: 600px;
+    position: absolute;
+    margin-top: 30px;
+}
+/*------------------------------onetoonecontact_list.html TABLE의 css----------------------------*/
+a.ee:link, a.ee:visited{
+	color: #000;
+	text-decoration: none;
+	font-family: 'nanum';
+}
+
+a.ee:hover{
+	text-decoration: underline;
+	color: #c999ff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 133.5%;
+    margin-left: -100px;
+    line-height: 43px;
+    margin-top: -100px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-family: 'nanum';
+    font-size: 13px;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+/*------------------------------1:1문의 관리 TABLE의 css----------------------------*/
+table.change-list, table.change-list th, table.change-list td{
+	border: 1px solid #ccc;
+}
+
+/*-----------------------------1:1문의 추가 TABLE의 css----------------------------*/
+/*Form Error*/
+fieldset{
+	margin: -70px 50px 0 0px;
+    border: 1px solid #eee;
+    background-color: #eee;
+    font-size: 20px;
+}
+
+p.yy{
+	font-size: 30px;
+	margin-top: -50px;
+	margin-left: -80px;
+}
+
+input.jjj{
+	background-color: #c999ff;
+    border: none;
+    color: #000;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input.uuu{
+    background-color: #c999ff;
+    border: none;
+    color: #000;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: -80px;
+}

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+<!-- {% load staticfiles %}
+{% block extrastyle %}{% static "css/aboutUs/aboutUs.css" %}{% endblock %} -->
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>유료 서비스</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li><a href="#">서비스</a></li>
+                            <li class="active">유료 서비스</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="service-item-area mb-120">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4">
+                     <div class="single-service-item">
+                         <div class="service-img img-full mb-35">
+                             <img src="{% static 'img/service/5.jpg' %}">
+                         </div>
+                         <div class="service-content">
+                             <div class="service-title">
+                                 <h4>GPS</h4>
+                             </div>
+                             <p>내 반려견은 지금 어디있을까 <br/>당신의 반려견의 위치를 실시간으로 알려드리겠습니다.</p>
+                         </div>
+                     </div> 
+                  </div>
+                  <div class="col-md-4">
+                     <div class="single-service-item">
+                         <div class="service-img img-full mb-35">
+                             <img src="{% static 'img/service/6.jpg' %}">
+                         </div>
+                         <div class="service-content">
+                             <div class="service-title">
+                                 <h4>반려견 캠</h4>
+                             </div>
+                             <p>너는 지금 뭘 하고 있니?<br/>반려견이 무엇을 보는지, 하는지 함께 나눠요.</p>
+                         </div>
+                     </div> 
+                  </div>
+                  <div class="col-md-4">
+                     <div class="single-service-item">
+                         <div class="service-img img-full mb-35">
+                             <img src="{% static 'img/service/8.jpg' %}">
+                         </div>
+                         <div class="service-content">
+                             <div class="service-title">
+                                 <h4>목소리 녹음</h4>
+                             </div>
+                             <p>혹시 당신의 목소리를 들으면 더 행복해하지 않을까요? <br/>당신의 목소리를 녹음해보세요.</p>
+                         </div>
+                     </div> 
+                  </div>
+                </div>
+          </div>
+      </div>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

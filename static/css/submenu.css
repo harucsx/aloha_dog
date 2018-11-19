@@ -1,0 +1,769 @@
+/*-------
+confirmPassword.jsp
+--------*/
+.confirmbtn, .confirmXbtn{
+    color: #666;
+    padding: 14px 0;
+    margin: 40px 10px;
+    cursor: pointer;
+    width: 150px;
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    float: left;
+    font-size: 15px;
+}
+.confirmXbtn:hover, .confirmbtn:hover{color: #fff; background: #c999ff; border-color: #c999ff;}
+@media screen and (max-width: 300px) {
+    .confirmbtn, a.confirmXbtn {
+       width: 100%;
+    }
+}
+
+
+/*----------
+changePassword.jsp
+-------------*/
+.form-row span.pw0{padding: 15px 80px 15px 100px;} /* password_change */
+.form-row span.pw1{padding: 15px 110px 15px 100px;} /* password_change */
+.form-row span.pw2{padding: 15px 80px 15px 100px;} /* password_change */
+.changebtn, .changeXbtn{
+    color: #666;
+    padding: 14px 0;
+    margin: 40px 10px;
+    cursor: pointer;
+    width: 150px;
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    float: left;
+    font-size: 15px;
+}
+.changeXbtn:hover, .changebtn:hover{color: #fff; background: #c999ff; border-color: #c999ff;}
+@media screen and (max-width: 300px) {
+    .changebtn, .changeXbtn {
+       width: 100%;
+    }
+}
+
+/*---------
+editPetInfo.jsp
+-------------*/
+.dogimgBox{text-align: center;}
+.dogimgBox img{
+    border-radius: 100px; 
+    margin-bottom: 50px;
+    width: 150px; 
+    height: 150px;
+    transition: 0.3s;
+    cursor: pointer;
+}.dogimgBox img:hover {opacity: 0.7;}
+.dogimgBox img:nth-child(1), .dogimgBox img:nth-child(3){
+    width: 100px; 
+    height: 100px;
+    -webkit-filter: grayscale(80%);
+    filter: grayscale(80%);
+}
+.di-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+img.di-modal-content {
+    margin: auto;
+    display: block;
+    width: 70%;
+    height: 90%;
+    border-radius: 0;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+.di-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.di-close:hover,
+.di-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+@media only screen and (max-width: 700px){
+    .di-modal-content {
+        width: 100%;
+    }
+}
+.modifyClearfix{width: 410px;}
+.modifybtn,  .modifyXbtn, .modifyDeletebtn{
+    color: #666;
+    padding: 14px 0;
+    margin: 50px 10px;
+    cursor: pointer;
+    width: 100px;
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    float: left;
+    font-size: 15px;
+}.modifybtn{width: 150px;}
+.modifyXbtn:hover, .modifybtn:hover, .modifyDeletebtn:hover{
+    color: #fff; 
+    background: #c999ff; 
+    border-color: #c999ff;
+}
+@media screen and (max-width: 300px) {
+    .modifybtn, .modifyXbtn, .modifyDeletebtn {
+       width: 100%;
+    }
+}
+
+/*------------
+logged_out.html
+--------------*/
+.clearfix-logout{width: 150px;}
+.clearfix-logout .loginbtn{margin: 0;}
+
+/*--------------
+petsitterInfo.jsp
+-----------------*/
+.petsitter{
+    margin-top: 50px;
+    /*background-color: red;*/
+}
+.petsitters{
+    width: 200px;
+    display: inline-block;
+    /*background: #ccc;*/
+    text-align: left;
+    margin-bottom: 50px;
+}
+.petsitter a{margin-right: 30px;}
+.petsitters .petsitterTitle{ margin: 5px 10px; }
+.petsitters .petsitterContent b{letter-spacing: 1px;}
+.petsitters .petsitterContent{
+    margin: 0 auto;
+    width: 180px;
+    height: 100px;
+    border-radius: 3px;
+    border: 2px solid #e5e5e5;
+    padding: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.petsitter a:hover .petsitterContent{
+    color: white; 
+    background: #c999ff; 
+    border: 2px solid #c999ff;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+.petsitters .petsitterContent li{
+    font-size: 12px;
+    font-family: sans-serif;
+    letter-spacing: -1px;
+    padding: 2px;
+}
+.PR{text-align: right;}
+.petsitterRegistration{
+    color: #666;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+}
+.petsitterRegistration:hover{color: #fff; background: #c999ff; border-color: #c999ff;}
+@media screen and (max-width: 300px) {
+    .petsitterRegistration {
+       width: 100%;
+    }
+}
+
+/*--------------
+p_registration.html
+--------------------*/
+.form-row span.petsitter_id{padding: 15px 150px 15px 80px;}
+.form-row span.petsitter_name{padding: 15px 138px 15px 80px;}
+.form-row span.petsitter_profilePhoto{padding: 15px 102px 15px 80px;}
+.form-row span.petsitter_housephoto{padding: 15px 70px 15px 80px;}
+.form-row span.petsitter_address1{padding: 15px 138px 15px 80px;}
+.form-row span.petsitter_free_service{padding: 15px 65px 15px 80px;}
+.form-row span.petsitter_paid_service{padding: 15px 65px 15px 80px;}
+.form-row span.petsitter_caringWeight{padding: 15px 19px 15px 80px;}
+.form-row span.petsitter_ageAvailable{padding: 15px 19px 15px 80px;}
+.form-row span.petsitter_checkTime{padding: 15px 22px 15px 80px;}
+.form-row h4.petsitter_careEnvironment{padding: 15px 100px 15px 80px; margin-right:300px; font-weight: bold; color: grey;}
+.form-row span.petsitter_careEnvironment_space{padding: 15px 116px 15px 80px;}
+.form-row span.petsitter_careEnvironment_nearbySubway{padding: 15px 88px 15px 80px;}
+.form-row span.petsitter_careEnvironment_yard{padding: 15px 116px 15px 80px;}
+.form-row span.petsitter_careEnvironment_under14{padding: 15px 43px 15px 80px;}
+.form-row span.petsitter_careEnvironment_family{padding: 15px 88px 15px 80px;}
+.form-row span.petsitter_careEnvironment_other{padding: 15px 51px 15px 80px;}
+.form-row h4.petsitter_dogInfo{padding: 15px 100px 15px 80px; margin-right:300px; font-weight: bold; color: grey;}
+.form-row span.petsitter_intro{padding: 15px 100px 15px 80px;}
+.form-row span.petsitter_qna{padding: 15px 200px 15px 80px;}
+
+.free_service_all, .paid_service_all, .caringWeight_all, 
+.ageAvailable_all, .checkTime_all, .careEnvironment_space_all, 
+.petsitter_radio_all, .dogInfo_A{
+	width: 335px; 
+	height: 100%;
+/* 	background: blue; */
+}
+.ageAvailable_all{width: 230px;}
+.checkTime_all{width: 300px;}
+.petsitter_radio_all{width: 230px;}
+.dogInfo_A{width: 200px; height: 80px; margin-left: 80px; margin-bottom: 10px;}
+.checkTime_all label span{color: grey; margin-right: 24px;}
+.free_service, .paid_service, .caringWeight, 
+.ageAvailable, .checkTime, .careEnvironment_space,
+.petsitter_radio{
+	float: left; margin: 10px;
+}
+.checkTime_select,input[name=profilePhoto],input[name=housephoto], input[name=checkInTime], input[name=checkOutTime]{
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0;
+    display: inline-block;
+    background: rgba(204,204,204,0.25);
+    border: none;
+    font-size: 15px;
+}.checkTime{width: 400px;}
+input[name=profilePhoto],input[name=housephoto]{width: 300px; padding: 7px}
+input[name=careEnvironment_nearbySubway]{
+    width: 200px;
+    height: 45px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0;
+    display: inline-block;
+    background: rgba(204,204,204,0.25);
+    border: none;
+    font-size: 20px;
+}
+img.dogInfo_photo{float: left; width: 80px; height: 80px; border-radius: 100px; margin-right: 5px;}
+textarea[name=petsitter_intro],textarea[name=petsitter_qna]{
+    width: 500px;
+    padding: 10px;
+    margin: 0 5px 5px 80px;
+    display: inline-block;
+    background: rgba(204,204,204,0.25);
+    border: none;
+    font-size: 15px;
+}textarea[name=petsitter_intro]:hover,textarea[name=petsitter_qna]:hover{
+    background-color: rgba(241,230,255);
+    outline: none;
+    border: none;
+    color: white;
+}
+textarea[name=petsitter_intro]:focus,textarea[name=petsitter_qna]:focus{
+    background-color: #c999ff;
+    outline: none;
+    border: none;
+    color: white;
+}
+/*--------------
+withdrawal.jsp
+--------------------*/
+.form-row span.id_d{padding: 15px 85px 15px 100px;}
+.form-row span.pw_d{padding: 15px 69px 15px 100px;}
+.agreement{border-bottom: none;}
+.delete_account_textarea{
+    background: white;
+    outline-style: none;
+    user-select: none;
+}
+
+.reasons_for_withdrawalS{font-size: 14px; letter-spacing: -1px; margin: 20px 0; text-decoration: underline;}
+.reasons_for_withdrawal {height: 350px; width: 100%; display: inline-block; margin: 0 auto;}
+.reasons_for_withdrawalC{width: 300px;}
+.reasons_for_withdrawalR{margin-bottom: 50px;}
+.delete_account_notice{
+    margin-top: 50px; 
+    text-align: center; 
+    letter-spacing: -2px; 
+    color: #c999ff;
+    user-select: none;
+}
+.delete_accountXbtn,  .delete_accountbtn{
+    color: #666;
+    padding: 14px 0;
+    margin: 40px 10px;
+    cursor: pointer;
+    width: 150px;
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    float: left;
+    font-size: 15px;
+}
+.delete_accountXbtn:hover,  .delete_accountbtn:hover{
+    color: #fff; 
+    background: #c999ff; 
+    border-color: #c999ff;
+}
+@media screen and (max-width: 300px) {
+    .delete_accountXbtn, .delete_accountbtn {
+       width: 100%;
+    }
+}
+
+/*--------------
+delete_account_done.html
+--------------------*/
+
+/*----------------------------seatbyeol---
+----------------------------------------*/
+/*-----------------
+hire
+--------------*/
+.sitterfind_all{
+  position: relative;
+  left: 50px;
+}
+
+.sitterfind_all,
+.sitterenrollment_all {
+  float: left;
+  position: relative;
+  width: 500px;
+  height: 400px;
+  background: black;
+}
+
+.sitterfind_image,
+.sitterenrollment_image {
+  opacity:0.8;
+  display: block;
+  width: 500px;
+  height: 400px;
+  transition: .3s ease;
+  color: #ffffff;
+}
+
+.sitterfind_middle,
+.sitterenrollment_middle {
+  position: absolute;
+  border:3px solid;
+  width: 400px;
+  height: 300px;
+  color: #ffffff;
+  transition: .5s ease;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.sitterfind_all:hover .sitterfind_image,
+.sitterenrollment_all:hover .sitterenrollment_image {
+    opacity: 0.5;
+}
+
+.sitterfind_all:hover .sitterfind_middle,
+.sitterenrollment_all:hover .sitterenrollment_middle {
+    opacity: 1;
+}
+
+.sitterfind_text,
+.sitterenrollment_text {
+  position: absolute;
+  text-align: center;
+  font-family: 'nanumPen';
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.sitterfind_text{
+  position: absolute;
+  top: 45%;
+  left: 35%;
+}
+
+.sitterenrollment_all {
+  position: relative;
+  left: 150px;
+}
+
+.sitterenrollment_text {
+  position: absolute;
+  top: 45%;
+  left: 38%;
+}
+
+.tttt{
+  position: relative;
+  border: 1.5px solid #ebebeb;
+  height: 300px;
+  top: 70px;
+  left: -400px;
+}
+
+p.yyyy:hover{
+  color: #b69bc9;
+  transition: .5s ease;
+}
+
+p.yyyy{
+    font-size: 25px;
+}
+
+/*----------------------hire끝-------------------------*/
+
+.animalintroduction_11{
+    font-weight: bold;
+    color: #b69bc9;
+    font-size: 20px;
+}
+
+img.animalintroduction_img{
+    position: relative;
+    top: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 90px;
+    border: 4px solid #e6e6e6;
+}
+
+img.animalintroduction_img:hover{
+    opacity: 0.5;
+    transition: .5s ease;
+}
+
+.animalintroduction_text{
+    position: relative;
+    top: 40px;
+    font-family: "fontawesome";
+    font-size: 14px;
+    line-height: 28px;
+    color: #666;
+}
+
+.introduction_22{
+    position: relative;
+    font-weight: bold;
+    color: #b69bc9;
+    font-size: 20px;
+    top: 120px;
+}
+
+.introduction_text{
+    position: relative;
+    font-size: 14px;
+    line-height: 28px;
+    color: #666;
+    top: 150px;
+}
+
+.nnn:hover{
+    color: #c999ff;
+}
+
+.greetings{
+    width: 100px;
+}
+
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.month {
+    padding: 20px 25px;
+    width: 30%;
+    background: #1abc9c;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+    width: 30%;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 11.5%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+    width: 30%;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 11.5%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+.free-service,
+.paid-service{
+    position: absolute;
+    border: 2px solid #4d4dff;
+    padding: 0 0 0 15px;
+    width: 60px;
+    height: 30px;
+    font-size: 13px;
+    font-family: nanum;
+    font-weight: bold;
+    border-radius: 20px;
+    top: 620px;
+    
+}
+
+.free-service{
+   left: 20px; 
+}
+
+.paid-service{
+    left: 200px;
+}
+
+.select-tag-all{
+    position: absolute;
+    top: 570px;
+    left: 520px;
+    width: 947px;
+    height: 200px;
+}
+
+.select-tag-ok{
+    position: absolute;
+    font-family: nanum;
+    color: #4d4dff;
+    font-weight: bold;
+    font-size: 17px;
+    top: 20px;
+    left: 10px;
+}
+
+.apateu, .madang, .old-age-dog-care,
+.dd-dog-care{
+    position: absolute;
+    border: 2px solid #4d4dff;
+    padding: 10px;
+    height: 50px;
+    font-size: 15px;
+    font-family: nanum;
+    font-weight: bold;
+    border-radius: 20px;
+    top: 45px;
+}
+
+.apateu{
+    width: 70px;
+    left: 10px;
+}
+
+.madang{
+    width: 70px;
+    left: 110px;
+}
+
+.old-age-dog-care{
+    width: 100px;
+    left: 210px;
+}
+
+.dd-dog-care{
+    width: 100px;
+    left: 340px;
+}
+
+/*-----------------
+freeservice, chargeservice
+--------------*/
+
+div.gallery {
+    margin: 20px;
+    /*position: relative;*/
+    float: left;
+    width: 260px;
+    padding-left: 10px;
+    padding-bottom: 40px;
+}
+
+
+div.gallery img {
+    width: 210px;
+    height: auto;
+    /*position: relative;*/
+
+
+}
+
+div.desc {
+    /*padding: 10px;*/
+    text-align: center;
+    /*position: relative;*/
+    font-size: 15px;
+}
+
+div.desc2 {
+    /*padding: -5px;*/
+    text-align: center;
+    /*position: relative;*/
+    font-size: 5px;
+}
+
+/*-----------------
+education_introduction
+--------------*/
+div.bu {
+    margin-left: 15px;
+    }
+
+.button1 {
+    background-color: #f1e6ff;
+    border: none;
+    color: gray;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+div.bu1 {
+    font-size: 100px;
+    float: left;
+    margin-left: 100px;
+
+}
+
+/*-----------------
+attentionsitter
+--------------*/
+div.desc000 {
+    padding: 15px;
+    text-align: center;
+    color: #c999ff;
+}
+
+div.desc0000 {
+    padding: 15px;
+    text-align: center;
+    color: black;
+}
+
+div.cover {
+  width: 100%;
+}
+
+div.cover div.col-lg-9 {
+  margin-left: 130px;
+}
+
+/*------------------------
+reservationHistory
+--------------------------*/
+/* .reservationForm{margin:50px 0;} */
+.reservaionNum{float:left;color:#c999ff;}.reservaionDate{float:right;color:#c999ff;}
+.titleRB{font-weight: bold;}
+.reservationForm .form-row{margin: 0; border:none;}
+.reservaionTable{margin: 0 auto; width: 100%;}
+.reservaionTable th, .reservaionTable td{
+	border-bottom: 1px solid #e5e5e5;
+    border-collapse: collapse;
+    text-align:center;
+}
+.reservaionTable th{
+	border-right: 1px solid #e5e5e5;
+	background: #f2f2f2;
+    padding: 15px;
+}
+.reservaionTable td{
+    padding: 15px;
+}
+.reservationHistoryBtn{
+    color: #666;
+    padding: 14px 0;
+    margin: 40px 0;
+    cursor: pointer;
+    width: 150px;
+    background: white;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    float: left;
+    font-size: 15px;
+}
+.reservationHistoryBtn:hover{
+    color: #fff; 
+    background: #c999ff; 
+    border-color: #c999ff;
+}
+@media screen and (max-width: 300px) {
+    .reservationHistoryBtn{
+       width: 100%;
+    }
+}

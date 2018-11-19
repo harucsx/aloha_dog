@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+	<div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>펫시터소개</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li><a href="#">회사소개</a></li>
+                            <li class="active">펫시터소개</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="my-account white-bg mb-110">
+	    <div class="container">
+	        <div class="account-dashboard">
+	        	<div class="row">
+				 <div class="our-history-area mt-85">
+				        <div class="container">
+				            <div class="row">
+				                <div class="col-12">
+				                    <div class="section-title text-center mb-35">
+				                        <h2>Petsitter</h2>
+				                        <span>알로하도그의 펫시터 이야기</span>
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="row">
+				                <div class="col-lg-8 ml-auto mr-auto">
+				                    <div class="history-area-content text-center">
+				                        <p><strong>철저한 시험을 통해 선발된 알로하도그 펫시터에게 맡기세요.</strong></p>
+				                        <p>알로하도그의 로고는 귀여운 반려동물의 모습으로 형상화해서 태어났습니다.
+				                               	이것은 우리가 반려동물을 대하는 기본적인 자세여야 한다고 생각합니다.  
+				                            	보호자님이 잠시 집을 떠나있을 때 반려동물 곁에 머물며 보호자님의 빈자리를 채워주고 ,
+				                           		 따뜻한 마음을 가진 또 다른 친구가 되기 위하여 열심히 공부하고 ,  
+				                            	보다 좋은 환경을 위해 노력합니다.
+				                            	단지 동물이 귀엽고 예뻐서가 아닌 한 생명체로서 존중을 밑바탕으로  
+				                            	마음가짐을 가지며 내 집에서 편안하게 지낼 권리를 주고 싶습니다.
+				                            	편의에 의해서 반려동물을 기르는 것이 아니라 그들과 함께 인생을 반려하며 살아가고
+				                            	가족으로서 그들의 마지막까지 행복한 시간을 보내시길 바랍니다.  
+				                          </p>
+				                    </div>
+				                    <br><br>
+				                </div>
+				            </div>
+				        </div>
+				   </div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

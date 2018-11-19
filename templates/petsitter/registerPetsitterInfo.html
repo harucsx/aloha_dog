@@ -1,0 +1,323 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/petsitter/registerPetsitterInfo.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>펫시터 정보 등록</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="active">펫시터 정보 등록</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+                    	<form method="post" action="<%= CTX %>/petsitterInfoRegisterPro.do" class="formA" name="petsitterInfoRegisterForm">
+
+    						<fieldset class="aligned">
+
+    							<div class="form-row">
+    								<span class="petsitter_id">ID</span>
+    								<input name="inputContent" type="text" class="inputContent" id="id" value="${id}" readonly>
+    							</div>
+
+    							<div class="form-row">
+    								<span class="petsitter_name">이름</span>
+    								<input name="inputContent" type="text" class="inputContent" id="name" value="${m.name}" readonly>
+    							</div>
+
+    							<div class="form-row">
+    								<span class="petsitter_profilePhoto">프로필사진</span>
+    								<input name="profilePhoto" type="file" class="profilePhoto petsitterPhoto" id="profilePhoto">
+    							</div>
+
+    							<div class="form-row">
+    								<span class="petsitter_housephoto">집과 집주변사진</span>
+    								<input name="housephoto" type="file" class="housephoto petsitterPhoto" id="housephoto">
+    							</div>
+
+    							<div class="form-row">
+    								<span class="petsitter_address1">주소</span>
+    								<input style="width: 400px;" name="inputContent" type="text" class="inputContent" id="address" value="${m.address1}" readonly>
+    							</div>
+    							
+								<div class="form-row">
+									<span class="petsitter_time_price">일당</span> 
+									<input type="number" name="time_price" id="time_price" min="0" max="10000000" value="<%= p.getTime_price() %>"/><span style="margin: 15px 0">원</span>
+								</div>
+	
+								<div class="form-row">
+									<span class="petsitter_free_service">무료 서비스 선택</span> 
+									<div class="free_service_all">
+										<label class="radioC free_service" style="margin-left: 0;">노령견케어
+											<input type="checkbox" name="free_service1" value="노령견케어"/>
+										  	<span class="checkmark">노령견케어</span>
+										</label>
+										<label class="radioC free_service">환자견케어
+											<input type="checkbox" name="free_service2" value="환자견케어"/>
+											<span class="checkmark">환자견케어</span>
+										</label>
+										<label class="radioC free_service">자격증보유
+											<input type="checkbox" name="free_service3" value="자격증보유"/>
+											<span class="checkmark">자격증보유</span>
+										</label>
+										<br>
+										<label class="radioC free_service" style="margin: 0 10px 10px 0;">실외배변
+											<input type="checkbox" name="free_service4" value="실외배변"/>
+											<span class="checkmark">실외배변</span>
+										</label>
+										<label class="radioC free_service" style="margin: 0 10px 10px 25px;">응급처치
+											<input type="checkbox" name="free_service5" value="응급처치"/>
+											<span class="checkmark">응급처치</span>
+										</label>
+										<label class="radioC free_service" style="margin: 0 10px 10px 25px;">투약가능
+											<input type="checkbox" name="free_service6" value="투약가능"/>
+											<span class="checkmark">투약가능</span>
+										</label>
+									</div>
+								</div>
+	
+								<div class="form-row">
+									<span class="petsitter_paid_service">유료 서비스 선택</span>
+									<div class="paid_service_all">
+										<label class="radioC paid_service" style="margin-left: 0; margin-right: 25px;">목욕가기
+											<input type="checkbox" name="paid_service1" value="목욕가기"/>
+											<span class="checkmark">목욕가기</span>
+										</label>
+										<label class="radioC paid_service" style="margin-right: 25px;">병원가기
+											<input type="checkbox" name="paid_service2" value="병원가기"/>
+											<span class="checkmark">병원가기</span>
+										</label>
+										<label class="radioC paid_service">픽업가능
+											<input type="checkbox" name="paid_service3" value="픽업가능"/>
+											<span class="checkmark">픽업가능</span>
+										</label>
+										<br/>
+										<label class="radioC paid_service" style="margin: 0 10px 10px 9px;margin-left: 0;">수제간식
+											<input type="checkbox" name="paid_service4" value="수제간식"/>
+											<span class="checkmark">수제간식</span>
+										</label>
+										<label class="radioC paid_service" style="margin: 0 10px 10px 25px;">미용가기
+											<input type="checkbox" name="paid_service5" value="미용가기"/>
+											<span class="checkmark">미용가기</span>
+										</label>
+									</div>
+								</div>
+	
+								<div class="form-row">
+									<span class="petsitter_caringWeight">돌봄 가능한 반려견 크기</span> 
+									<div class="caringWeight_all">
+										<label class="radioC caringWeight" style="margin-right: 27px;margin-left: 0;">5kg미만
+											<input type="radio" name="caringWeight" value="5kg미만"/>
+										  	<span class="checkmark">5kg미만</span>
+										</label>
+										<label class="radioC caringWeight" style="margin-right: 17px;">20kg미만
+											<input type="radio" name="caringWeight" value="20kg미만"/>
+											<span class="checkmark">20kg미만</span>
+										</label>
+										<label class="radioC caringWeight">40kg미만
+											<input type="radio" name="caringWeight" value="40kg미만"/>
+											<span class="checkmark">40kg미만</span>
+										</label>
+									</div>
+								</div>
+	
+								<div class="form-row">
+									<span class="petsitter_ageAvailable">돌봄 가능한 반려견 나이</span> 
+									<div class="ageAvailable_all">
+										<label class="radioC ageAvailable" style="margin-right: 29px;margin-left: 0;">1살미만
+											<input type="radio" name="ageAvailable" value="1살미만"/>
+										  	<span class="checkmark">1살미만</span>
+										</label>
+										<label class="radioC ageAvailable">6살미만
+											<input type="radio" name="ageAvailable" value="6살미만"/>
+										  	<span class="checkmark">6살미만</span>
+										</label>
+										<br/>
+										<label class="radioC ageAvailable" style="margin: 0 30px 10px 0px;">12살미만
+											<input type="radio" name="ageAvailable" value="12살미만"/>
+										  	<span class="checkmark">12살미만</span>
+										</label>
+										<label class="radioC ageAvailable" style="margin: 0 10px 10px 0px;">20살미만
+											<input type="radio" name="ageAvailable" value="20살미만"/>
+										  	<span class="checkmark">20살미만</span>
+										</label>
+									</div>
+								</div>
+	
+								<div class="form-row">
+									<span class="petsitter_checkTime">체크인 & 체크아웃 시간</span> 
+									<div class="checkTime_all">
+										<label class="checkTime">
+											<span>체크인</span>
+											<select class="checkTime_select" name="checkInTime_select">
+												<option value="오전">오전</option>
+												<option value="오후">오후</option>
+											</select><input type="number" name="checkInTime" min="0" max="12"/><span style="margin: 5px 0">시</span>
+										</label>
+										<label class="checkTime" style="margin-top: 0;">
+											<span style="margin-right: 11px;">체크아웃</span>
+											<select class="checkTime_select" name="checkOutTime_select">
+												<option value="오전">오전</option>
+												<option value="오후">오후</option>
+											</select><input type="number" name="checkOutTime" min="0" max="12"/><span style="margin: 5px 0">시</span>
+										</label>
+									</div>
+								</div>
+	
+								<div class="form-row">
+									<h4 class="petsitter_careEnvironment">돌봄환경</h4> 
+									<span class="petsitter_careEnvironment_space">돌봄공간</span>
+									<div class="careEnvironment_space_all">
+										<label class="radioC careEnvironment_space" style="margin-right: 39px;margin-left: 0;">아파트
+											<input type="radio" name="careEnvironment_space" value="아파트"/>
+										  	<span class="checkmark">아파트</span>
+										</label>
+										<label class="radioC careEnvironment_space" style="margin-right: 53px;">주택
+											<input type="radio" name="careEnvironment_space" value="주택"/>
+											<span class="checkmark">주택</span>
+										</label>
+										<label class="radioC careEnvironment_space">빌라
+											<input type="radio" name="careEnvironment_space" value="빌라"/>
+											<span class="checkmark">빌라</span>
+										</label>
+									</div>
+									<span class="petsitter_careEnvironment_nearbySubway">인근지하철역</span>
+                                    <input type="text" name="careEnvironment_nearbySubway" required/>
+									<span class="petsitter_careEnvironment_yard">마당유무</span>
+									<div class="petsitter_radio_all">
+										<label class="radioC petsitter_radio" style="margin-left: 0; margin-right: 72px;">Y
+											<input type="radio" name="careEnvironment_yard" value="Y"/>
+										  	<span class="checkmark">Yes</span>
+										</label>
+										<label class="radioC petsitter_radio">N
+											<input type="radio" name="careEnvironment_yard" value="N"/>
+											<span class="checkmark">No</span>
+										</label>
+									</div>
+									<span class="petsitter_careEnvironment_under14">14세 미만 아동 유무</span>
+									<div class="petsitter_radio_all">
+										<label class="radioC petsitter_radio" style="margin-left: 0; margin-right: 72px;">Y
+											<input type="radio" name="petsitter_under14" class="petsitter_under14" value="Y"/>
+										  	<span class="checkmark">Yes</span>
+										</label>
+										<label class="radioC petsitter_radio">N
+											<input type="radio" name="petsitter_under14" class="petsitter_under14" value="N"/>
+											<span class="checkmark">No</span>
+										</label>
+									</div>
+									<span class="petsitter_careEnvironment_family">가족동거유무</span>
+									<div class="petsitter_radio_all">
+										<label class="radioC petsitter_radio" style="margin-left: 0; margin-right: 72px;">Y
+											<input type="radio" name="petsitter_family" value="Y"/>
+										  	<span class="checkmark">Yes</span>
+										</label>
+										<label class="radioC petsitter_radio">N
+											<input type="radio" name="petsitter_family" value="N"/>
+											<span class="checkmark">No</span>
+										</label>
+									</div>
+									<span class="petsitter_careEnvironment_other">다른 반려동물 유무</span>
+									<div class="petsitter_radio_all">
+										<label class="radioC petsitter_radio" style="margin-left: 0; margin-right: 72px;">Y
+											<input type="radio" name="careEnvironment_other" value="Y"/>
+										  	<span class="checkmark">Yes</span>
+										</label>
+										<label class="radioC petsitter_radio">N
+											<input type="radio" name="careEnvironment_other" value="N"/>
+											<span class="checkmark">No</span>
+										</label>
+									</div>
+								</div>
+                                
+                                <div class="form-row">
+                                    <span class="petsitter_intro">한줄소개</span>
+                                    <textarea rows="1" cols="50" name="petsitter_intro" id="petsitter_intro" maxlength="100"></textarea>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <span class="petsitter_qna">Q & A</span>
+                                    <textarea rows="15" cols="50" name="petsitter_qna" id="petsitter_qna" maxlength="1000">
+Q. 왜 알로하도그 펫시터를 하게 되었나요?
+A. 
+              	
+Q. 반려견을 키운 경험에 대해 알려주세요. 현재 반려견을 키우고 계시다면 자세히 소개해주세요!
+A. 
+              	
+Q. 강아지와 함께할 산책로를 소개해주세요.
+A. 
+              	
+Q. 애견호텔이 아닌 저에게 맡겨주시면 아래와 같은 내용을 약속드립니다.
+A.
+              	
+※ 아래 유형의 아이들은 돌봄이 어려울 수 있습니다.
+-
+                                    </textarea>
+                                </div>
+                                
+    						</fieldset>
+
+    						<div class="clearfix">
+    					      	<a href="<%=CTX %>/index.do" class="registerXtn" id="cancle">취소</a>
+    					      	<button class="registerBtn" id="register">펫시터 정보 등록</button>
+    					    </div>
+    					</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="mt-70">
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

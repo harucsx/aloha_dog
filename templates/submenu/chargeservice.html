@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG!{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/submenu.css" %}{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+<!-- script -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+{% block content %}
+<!--Breadcrumb Tow Start-->
+<div class="breadcrumb-tow mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-title">
+                    <h1>서비스</h1>
+                </div>
+                <div class="breadcrumb-content breadcrumb-content-tow">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{% url 'freeservice' %}">무료서비스</a></li>
+                         <li class="active">유료서비스</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--My Account Area Strat-->
+<div class="my-account white-bg mb-110">
+    <div class="container">
+        <div class="account-dashboard">
+            <div class="row">
+                <div class="col-md-12 col-lg-2">
+                    <!-- Nav tabs -->
+                    <ul class="nav flex-column dashboard-list" role="tablist">
+                             <li> <a class="nav-link" href="{% url 'freeservice' %}">무료서비스</a></li>
+                        <li><a class="nav-link active" href="{% url 'chargeservice' %}">유료서비스</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-10">
+                    <div class="tab-content dashboard-content">
+                        <div id="dashboard" class="tab-pane fade show active">
+                            <h3>유료서비스</h3>
+                                                 
+                                <div class="gallery1">          
+                                             <div class="gallery">
+
+                                                      <img src="/static/img/.1.png">
+                                                      <div class="desc">유료서비스1</div>  
+                                                      <div class="desc2">서비스에 관한 설명 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절</div> 
+                                            </div>
+
+
+                                            <div class="gallery">
+                                                      <img src="/static/img/.2.png">
+                                                      <div class="desc">유료서비스2</div>  
+                                                      <div class="desc2">서비스에 관한 설명 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절</div> 
+                                            </div>
+
+                                            <div class="gallery">
+                                                      <img src="/static/img/.3.png">
+                                                      <div class="desc">유료서비스3</div>
+                                                      <div class="desc2">서비스에 관한 설명 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절</div>  
+                                            </div>
+
+                                            <div class="gallery">
+                                                      <img src="/static/img/.4.png">
+                                                      <div class="desc">유료서비스4</div>  
+                                                      <div class="desc2">서비스에 관한 설명 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절</div> 
+                                            </div>
+
+                                            <div class="gallery">
+                                                      <img src="/static/img/.5.png">
+                                                      <div class="desc">유료서비스5</div> 
+                                                      <div class="desc2">서비스에 관한 설명 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절</div>   
+                                            </div>
+
+                                            <div class="gallery">
+                                                      <img src="/static/img/.6.png">
+                                                      <div class="desc">유료서비스6</div>  
+                                                      <div class="desc2">서비스에 관한 설명 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절 주절주절</div>
+                                            </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer>
+    <div class="footer-container">
+        <!--Footer Bottom Area Start-->
+        <div class="footer-bottom-area pt-50 pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--Footer Payment Start-->
+                        <div class="footer-payments-image">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                            </div>
+                        </div>
+                        <!--Footer Payment End-->
+                        <!--Footer Menu Start-->
+                        <div class="footer-menu text-center">
+                            <nav>
+                                <ul>
+                                    <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                    <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                    <br/>
+                                    <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                    <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                    <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Footer Menu End-->
+                        <!--Footer Copyright Start-->
+                        <div class="footer-copyright">
+                            <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                            <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                            <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                        </div>
+                        <!--Footer Copyright End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer Bottom Area End-->
+    </div>
+</footer>
+{% endblock footer %}

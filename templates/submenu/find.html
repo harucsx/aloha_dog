@@ -1,0 +1,526 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG!{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/submenu.css" %}{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+<!-- script -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+{% block content %}
+<!--Breadcrumb Tow Start-->
+<div class="breadcrumb-tow mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-title">
+                    <h1>펫시터 찾기</h1>
+                </div>
+                <div class="breadcrumb-content breadcrumb-content-tow">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{% url 'hire' %}">펫시터 고용_Home</a></li>
+                        <li class="active">펫시터 찾기</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--My Account Area Strat-->
+<div class="my-account white-bg mb-110">
+    <div class="container">
+        <div class="account-dashboard">
+            <!--Shop Area Start-->
+            <div class="shop-area mb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 order-2 order-lg-1">
+                            <!--Product Category Widget Start-->
+                            <div class="shop-sidebar">
+                                <h4>원하는태그</h4>
+                                <div class="categori-checkbox">
+                                    <form action="#">
+                                        <ul>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">아파트</a><span class="count">(14)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">마당</a><span class="count">(14)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">노령견케어</a><span class="count">(14)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">환자견케어</a><span class="count">(14)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">자격증보유</a><span class="count">(11)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">실외배변</a><span class="count">(13)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">픽업가능</a><span class="count">(7)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">수제간식</a><span class="count">(24)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">반려견 없는 곳</a><span class="count">(9)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">응급처치</a><span class="count">(13)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">투약가능</a><span class="count">(7)</span></li>
+                                            <li><input name="product-categori" type="checkbox"><a href="#">대형견</a><span class="count">(24)</span></li>
+                                        </ul>
+                                    </form>
+                                </div>
+                            </div>
+                        <!--Product Category Widget End-->
+                        <!--Color Category Widget Start-->
+                        <div class="shop-sidebar">
+                            <h4>반려견나이</h4>
+                            <div class="categori-checkbox">
+                                <form action="#">
+                                    <ul>
+                                        <li><input name="product-categori" type="checkbox"><a href="#">강아지(1살 이하)</a><span class="count">(1)</span></li>
+                                        <li><input name="product-categori" type="checkbox"><a href="#">성견(2~6살)</a><span class="count">(4)</span></li>
+                                        <li><input name="product-categori" type="checkbox"><a href="#">노령견(7살 이상)</a><span class="count">(5)</span></li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                        <!--Color Category Widget End-->
+                        <!--Price Filter Widget Start-->
+                        <div class="shop-sidebar">
+                            <h4>시터검색</h4>
+                            <div class="price-filter">
+                                <div id="slider-range"></div>
+                                <div class="price-slider-amount">
+                                    <div class="label-input">
+                                        <label>name:</label>
+                                        <input type="text" id="amount" name="name"  placeholder="Add Your Name" style="width: 250px; height: 40px"/>
+                                    </div>
+                                    <button class="uuu">Filter</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Price Filter Widget End-->
+                        <!--Recent Product Widget Start-->
+                        <div class="shop-sidebar">
+                            <h4>Best시터</h4>
+                            <div class="rc-product">
+                                <ul>
+                                    <li>
+                                        <div class="rc-product-thumb img-full">
+                                            <a href="single-product.html"><img src="{% static 'img/product/product13.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="rc-product-content">
+                                            <h6><a href="single-product.html">박기나 시터님</a></h6>
+                                            <div class="rc-product-review">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="rc-product-price">
+                                                <span class="price">Top1</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rc-product-thumb img-full">
+                                            <a href="single-product.html"><img src="{% static 'img/product/product12.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="rc-product-content">
+                                            <h6><a href="single-product.html">이미진 시터님</a></h6>
+                                            <div class="rc-product-review">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="rc-product-price">
+                                                <span class="price">Top2</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rc-product-thumb img-full">
+                                            <a href="single-product.html"><img src="{% static 'img/product/product12.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="rc-product-content">
+                                            <h6><a href="single-product.html">박선영 시터님</a></h6>
+                                            <div class="rc-product-review">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="rc-product-price">
+                                                <span class="price">Top3</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Recent Product Widget End-->
+                        <!--Product Tags Widget Start-->
+                        <div class="shop-sidebar">
+                            <h4>Product Tags</h4>
+                            <div class="product-tag">
+                                <ul>
+                                    <li><a href="#">blouse</a></li>
+                                    <li><a href="#">clothes</a></li>
+                                    <li><a href="#">fashion</a></li>
+                                    <li><a href="#">handbag</a></li>
+                                    <li><a href="#">laptop</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Product Tags Widget End-->
+                    </div>
+                    <div class="col-lg-9 order-1 order-lg-2">
+                        <div class="shop-layout">
+                           <!--Breadcrumb One Start-->
+                           <!--Breadcrumb One End-->
+                            <!--Grid & List View Start-->
+                            <div class="shop-topbar-wrapper d-md-flex justify-content-md-between align-items-center">
+                                <div class="grid-list-option">
+                                     <ul class="nav">
+                                      <li>
+                                        <a class="active" data-toggle="tab" href="#list"><i class="fa fa-th-large"></i></a>
+                                      </li>
+                                      <li>
+                                        <a data-toggle="tab" href="#list"><i class="fa fa-th-list"></i></a>
+                                      </li>
+                                    </ul>
+                                 </div>
+                                 <!--Toolbar Short Area Start-->
+                                 <div class="toolbar-short-area d-md-flex align-items-center">
+                                     <div class="toolbar-shorter ">
+                                        <label>돌봄지역:</label>
+                                         <select class="wide">
+                                             <option data-display="Select">전체</option>
+                                             <option value="서울">서울</option>
+                                             <option value="경기">경기</option>
+                                             <option value="인천">인천</option>
+                                         </select>
+                                     </div>
+                                     <p class="show-product">5명의 검증된 펫시터가 검색되었습니다!</p>
+                                 </div>
+                                 <!--Toolbar Short Area End-->
+                            </div>
+                            <!--Grid & List View End-->
+                            <!--Shop Product Start-->
+                            <div class="shop-product">
+                                    <div id="list" class="tab-pane fade">
+                                        <div class="product-list-view">
+                                            <div class="product-list-item mb-40">
+                                                <div class="row">
+                                                    <!--Single List Product Start-->
+                                                    <div class="col-md-4">
+                                                        <div class="single-product">
+                                                            <div class="product-img img-full">
+                                                                <a href="single-product.html">
+                                                                    <img src="{% static 'img/product/product9.jpg' %}" alt="">
+                                                                </a>
+                                                                <span class="onsale">우수!</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="product-content shop-list">
+                                                            <h2><a href="single-product.html">박기나 시터님</a></h2>
+                                                            <div class="product-reviews">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </div>
+                                                            <div class="product-description">
+                                                                <p>[김포 운양동] 편안하고 안락한 시간을 약속드려요 :)</p>
+                                                                <p>장소: 인천 서구 검암동</p>
+                                                                <p>가능한서비스: 아파트, 마당, 수제간식</p><br>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="price-box">
+                                                                    <span class="price">day care / 20,000원 </span>
+                                                                    <span class="regular-price">1박 / 30,000원</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-list-action">
+                                                               <div class="add-btn">
+                                                                    <a href="{% url 'particular' %}">상세보기★</a>
+                                                                </div>
+                                                                <ul>
+                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
+                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--Single List Product End-->
+                                                </div>
+                                            </div>
+
+                                            <div class="product-list-item mb-40">
+                                                <div class="row">
+                                                    <!--Single List Product Start-->
+                                                    <div class="col-md-4">
+                                                        <div class="single-product">
+                                                            <div class="product-img img-full">
+                                                                <a href="single-product.html">
+                                                                    <img src="{% static 'img/product/product14.jpg' %}" alt="">
+                                                                </a>
+                                                                <span class="onsale">우수!</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="product-content shop-list">
+                                                            <h2><a href="single-product.html">박선영 시터님</a></h2>
+                                                            <div class="product-reviews">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </div>
+                                                            <div class="product-description">
+                                                                <p>깨끗한 집,푸른 센트럴파크가 바로앞 맘편히 맡기세요:)</p>
+                                                                <p>장소: 경기 고양시 일산동구 정발산동</p>
+                                                                <p>가능한서비스: 노령견케어, 마당, 수제간식, 아파트</p><br>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="price-box">
+                                                                    <span class="price">day care / 20,000원 </span>
+                                                                    <span class="regular-price">1박 / 30,000원</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-list-action">
+                                                               <div class="add-btn">
+                                                                    <a href="#">상세보기★</a>
+                                                                </div>
+                                                                <ul>
+                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
+                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--Single List Product End-->
+                                                </div>
+                                            </div>
+                                            <div class="product-list-item mb-40">
+                                                <div class="row">
+                                                    <!--Single List Product Start-->
+                                                    <div class="col-md-4">
+                                                        <div class="single-product">
+                                                            <div class="product-img img-full">
+                                                                <a href="single-product.html">
+                                                                    <img src="{% static 'img/product/product15.jpg' %}" alt="">
+                                                                </a>
+                                                                <span class="onsale">일반!</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="product-content shop-list">
+                                                            <h2><a href="single-product.html">최수정 시터님</a></h2>
+                                                            <div class="product-reviews">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </div>
+                                                            <div class="product-description">
+                                                                <p>❤️후츄❤️자식처럼 돌봐 드려요</p>
+                                                                <p>장소: 서울 일산동구 학래동</p>
+                                                                <p>가능한서비스: 실외배변, 대형견, 수제간식, 아파트, 산책</p><br>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="price-box">
+                                                                    <span class="price">day care / 20,000원 </span>
+                                                                    <span class="regular-price">1박 / 30,000원</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-list-action">
+                                                               <div class="add-btn">
+                                                                    <a href="#">상세보기★</a>
+                                                                </div>
+                                                                <ul>
+                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
+                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--Single List Product End-->
+                                                </div>
+                                            </div>
+                                            <div class="product-list-item mb-40">
+                                                <div class="row">
+                                                    <!--Single List Product Start-->
+                                                    <div class="col-md-4">
+                                                        <div class="single-product">
+                                                            <div class="product-img img-full">
+                                                                <a href="single-product.html">
+                                                                    <img src="{% static 'img/product/product10.jpg' %}" alt="">
+                                                                </a>
+                                                                <span class="onsale">신규!</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="product-content shop-list">
+                                                            <h2><a href="single-product.html">이환민 시터님</a></h2>
+                                                            <div class="product-reviews">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </div>
+                                                            <div class="product-description">
+                                                                <p>자연 속에서 편안한 환경에서 사랑하며 지내요~</p>
+                                                                <p>장소: 경기 고양시 덕양구 내유동</p>
+                                                                <p>가능한서비스: 수제간식, 대형견, 아파트, 산책</p><br>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="price-box">
+                                                                    <span class="price">day care / 20,000원 </span>
+                                                                    <span class="regular-price">1박 / 30,000원</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-list-action">
+                                                               <div class="add-btn">
+                                                                    <a href="#">상세보기★</a>
+                                                                </div>
+                                                                <ul>
+                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
+                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--Single List Product End-->
+                                                </div>
+                                            </div>
+                                            <div class="product-list-item mb-40">
+                                                <div class="row">
+                                                    <!--Single List Product Start-->
+                                                    <div class="col-md-4">
+                                                        <div class="single-product">
+                                                            <div class="product-img img-full">
+                                                                <a href="single-product.html">
+                                                                    <img src="{% static 'img/product/product16.jpg' %}" alt="">
+                                                                </a>
+                                                                <span class="onsale">일반!</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="product-content shop-list">
+                                                            <h2><a href="single-product.html">김민수 시터님</a></h2>
+                                                            <div class="product-reviews">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </div>
+                                                            <div class="product-description">
+                                                                <p>아가!! 편히 쉬러오렴!♡♡♡</p>
+                                                                <p>장소: 경기 고양시 일산동구 정발산동</p>
+                                                                <p>가능한서비스: 수제간식, 대형견, 산책, 마당, 노령견케어</p><br>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="price-box">
+                                                                    <span class="price">day care / 20,000원 </span>
+                                                                    <span class="regular-price">1박 / 30,000원</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-list-action">
+                                                               <div class="add-btn">
+                                                                    <a href="#">상세보기★</a>
+                                                                </div>
+                                                                <ul>
+                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
+                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--Single List Product End-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Pagination Start-->
+                                    <div class="product-pagination">
+                                        <ul>
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!--Pagination End-->
+                                </div>
+                            </div>
+                            <!--Shop Product End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Shop Area End-->
+            </div><!-- row end-->
+        </div>
+{% endblock %}
+
+{% block footer %}
+<footer>
+    <div class="footer-container">
+        <!--Footer Bottom Area Start-->
+        <div class="footer-bottom-area pt-50 pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--Footer Payment Start-->
+                        <div class="footer-payments-image">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                            </div>
+                        </div>
+                        <!--Footer Payment End-->
+                        <!--Footer Menu Start-->
+                        <div class="footer-menu text-center">
+                            <nav>
+                                <ul>
+                                	<li><b>사업자등록번호:</b> 000-00-00000</li>
+                                	<span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                	<br/>
+                                    <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                    <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                    <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Footer Menu End-->
+                        <!--Footer Copyright Start-->
+                        <div class="footer-copyright">
+                            <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                            <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+							<p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                        </div>
+                        <!--Footer Copyright End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer Bottom Area End-->
+    </div>
+</footer>
+{% endblock footer %}
