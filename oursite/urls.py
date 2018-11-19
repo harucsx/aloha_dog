@@ -146,10 +146,6 @@ urlpatterns = [
     url(r'^service/paidService', PaidServiceView.as_view(), name='paidService'),
     # serviceDONE
 
-
-
-
-    
     # # Class-based views
     # url(r'^bookmark/$', ListView.as_view(model=Bookmark), name='index'),
     # url(r'^bookmark/(?P<pk>\d+)/$', DetailView.as_view(model=Bookmark), name='detail'),
