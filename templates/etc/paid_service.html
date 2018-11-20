@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+<!-- {% load staticfiles %}
+{% block extrastyle %}{% static "css/aboutUs/aboutUs.css" %}{% endblock %} -->
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>유료 서비스</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'free-service' %}">무료 서비스</a></li>
+                            <li class="active"><a href="{% url 'paid-service' %}">유료 서비스</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="service-item-area mb-120">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4">
+                     <div class="single-service-item">
+                         <div class="service-img img-full mb-35">
+                             <img src="{% static 'img/service/5.jpg' %}">
+                         </div>
+                         <div class="service-content">
+                             <div class="service-title">
+                                 <h4>GPS</h4>
+                             </div>
+                             <p>내 반려견은 지금 어디있을까 <br/>당신의 반려견의 위치를 실시간으로 알려드리겠습니다.</p>
+                         </div>
+                     </div> 
+                  </div>
+                  <div class="col-md-4">
+                     <div class="single-service-item">
+                         <div class="service-img img-full mb-35">
+                             <img src="{% static 'img/service/6.jpg' %}">
+                         </div>
+                         <div class="service-content">
+                             <div class="service-title">
+                                 <h4>반려견 캠</h4>
+                             </div>
+                             <p>너는 지금 뭘 하고 있니?<br/>반려견이 무엇을 보는지, 하는지 함께 나눠요.</p>
+                         </div>
+                     </div> 
+                  </div>
+                  <div class="col-md-4">
+                     <div class="single-service-item">
+                         <div class="service-img img-full mb-35">
+                             <img src="{% static 'img/service/8.jpg' %}">
+                         </div>
+                         <div class="service-content">
+                             <div class="service-title">
+                                 <h4>목소리 녹음</h4>
+                             </div>
+                             <p>혹시 당신의 목소리를 들으면 더 행복해하지 않을까요? <br/>당신의 목소리를 녹음해보세요.</p>
+                         </div>
+                     </div> 
+                  </div>
+                </div>
+          </div>
+      </div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/member/login.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>로그인</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+                        <script>
+                            $(document).ready(function () {
+
+                                $("#login").click(function () {
+                                    var query = {
+                                        id: $("#id").val(),
+                                        pw: $("#pw").val(),
+                                    };
+
+                                    $.ajax({
+                                        type: "post",
+                                        url: "/login",
+                                        data: query,
+                                        success: function (data) {
+                                            window.location.href = "/";
+                                        },
+                                        error: () => {
+                                            alert('아이디 및 비밀번호를 정확하게 입력해주세요.');
+                                        }
+                                    });
+                                });
+
+                                $("#x").click(function () {
+                                    document.location = '/';
+                                });
+                            });
+                        </script>
+                        <form class="formA">{% csrf_token %}
+                            {% if form.errors %}
+                                <p class="errornote">아이디나 비밀번호가 맞지 않습니다.</p>
+                            {% endif %}
+                            <div class="Login-container">
+
+                                <div class="form-row">
+                                    <span class="id">ID</span> <input type="text" id="id" name="id">
+                                </div>
+                                <div class="form-row">
+                                    <span class="pw">PW</span> <input type="password" id="pw" name="pw">
+                                </div>
+                            </div>
+                            <script type="text/javascript">document.getElementById('id_username').focus()</script>
+                            <div class="clearfix">
+                                <a id="x" href="{% url 'index' %}">
+                                    <button class="loginXbtn" id="cancel">취소</button>
+                                </a>
+                                <a href="#" id="login">
+                                    <span id="logisn" class="loginbtn">로그인</span>
+                                </a>
+{#                                <input type="hidden" name="next" value="/"/>#}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

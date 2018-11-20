@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/board.css" %}{% endblock %}
+
+{% block content %}
+    <script>
+        var wStatus = true;
+
+        $(document).ready(function () {
+            //글수정폼의 [수정]버튼을 클릭하면 자동실행
+            $("#b_update").click(function () {
+                formCheckIt();//글수정 폼의 입력 여부 체크
+                if (wStatus) {
+                    var query = {
+                        subject: $("#subject").val(),
+                        content: $("#content").val(),
+                    };
+                    //query값을 갖고 updatePro.jsp실행
+                    $.ajax({
+                        type: "POST",
+                        {% if article %}
+                            url: "{% url 'board_edit' board_type article.id %}",
+                        {% else %}
+                            url: "{% url 'board_write' board_type %}",
+                        {% endif %}
+                        data: query,
+                        success: function (data) {
+                            document.location = '{% url 'board_list' board_type %}';
+                        }
+                    });
+                }
+            });
+
+            $("#b_cancle").click(function () {
+                window.history.back();
+            });
+        });
+
+        //글수정 폼의 입력값 유무 확인
+        function formCheckIt() {
+            wStatus = true;
+            if (!$.trim($("#subject").val())) {
+                alert("제목을 입력하세요.");
+                $("#subject").focus();
+                wStatus = false;
+                return false;
+            }
+
+            if (!$.trim($("#content").val())) {
+                alert("내용을 입력하세요.");
+                $("#content").focus();
+                wStatus = false;
+                return false;
+            }
+        }
+    </script>
+    <!-- 	<%
+          request.setCharacterEncoding("utf-8");
+          //수정할 글의 번호와 수정할 글이 위치한 페이지 번호를 얻어냄
+          int num = Integer.parseInt(request.getParameter("num"));
+          String pageNum = request.getParameter("pageNum");
+
+          //주어진 글번호에 해당하는 수정할 글을 가져옴
+          BoardDBBean dbPro = BoardDBBean.getInstance();
+          BoardDataBean article = dbPro.updateGetArticle(num);
+        %>
+        <%--수정할 글의 원래 저장내용을 글 수정폼에 표시 --%> -->
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>게시글 작성</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+                        <div id="editForm" class="box">
+                            <ul>
+                                <li><label for="subject">제목</label>
+                                    <input id="subject" name="subject" type="text" maxlength="50" {% if article %} value="{{ article.title }}"{% endif %}>
+                                </li>
+                                <li><label for="content" id="contentLabel">내용</label>
+                                    <textarea id="content" rows="13" cols="50">{% if article %}{{ article.contents }}{% endif %}</textarea>
+                                </li>
+                                <li class="label2">
+                                    <button id="b_cancle" value="<%= pageNum %>">취소</button>
+                                    <button id="b_update" value="<%= pageNum %>">작성</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

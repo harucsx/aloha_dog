@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+제목 : {{ article.title }}<br/>
+내용 : {{ article.contents }}<br/>
+<a href="{% url 'board_list' board_type %}">목록으로</a>
+<a href="{% url 'board_edit' board_type article.id %}">수정하기</a>
+</body>
+</html>
