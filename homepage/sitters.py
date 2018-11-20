@@ -29,9 +29,4 @@ def sitter_join(request):
         return render(request, 'sitter/sitter_join.html')
 
 
-# <QueryDict: {'csrfmiddlewaretoken':
-# ['6TRYwYGh7wtoZGLV7HrgS7UoSGtrc3SFqiiXyQwatBEsGUQdULnaiDgjcDKdotzU'],
-# 'inputContent': ['${id}', '${m.name}', '${m.address1}'],
-#  'profilePhoto': [''], 'accountnumber': ['신한은행', ''],
-# 'time_price': [''], 'petsitter_intro': [''],
-#  'petsitter_qna': ['Q. 왜 알로하도그 펫시터를 하게 되었나요?\.\r\n-']}>
+

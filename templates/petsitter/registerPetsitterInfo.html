@@ -18,7 +18,7 @@
                     </div>
                     <div class="location-content location-content-tow">
                         <ul>
-                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li><a href="{% url 'home' %}">홈</a></li>
                             <li class="active">펫시터 정보 등록</li>
                         </ul>
                     </div>
@@ -47,101 +47,101 @@
 
     							<div class="form-row">
     								<span class="petsitter_profilePhoto">프로필사진</span>
-    								<input name="profilePhoto" type="file" class="profilePhoto petsitterPhoto" id="profilePhoto">
+    								<input name="profile" type="file" class="profilePhoto petsitterPhoto" id="profilePhoto">
     							</div>
 
     							<div class="form-row">
     								<span class="petsitter_address1">주소</span>
-    								<input style="width: 400px;" name="inputContent" type="text" class="inputContent" id="address" value="${m.address1}" readonly>
+    								<input name="address" style="width: 400px;" name="inputContent" type="text" class="inputContent" id="address" value="${m.address1}" readonly>
     							</div>
 
                                 <div class="form-row">
                                     <span class="petsitter_accountnumber">계좌번호</span>
-                                    <select name="accountnumber" id="accountnumber" style="width: 150px; margin: 5px 40px;">
+                                    <select name="bank_name" id="accountnumber" style="width: 150px; margin: 5px 40px;">
                                         <option value="신한은행" selected>신한은행</option>
                                         <option value="국민은행">국민은행</option>
                                         <option value="하나은행">하나은행</option>
                                     </select>
-                                    <input style="width: 200px; margin: 5px -20px;" type="text" name="accountnumber" id="accountnumber" value=""/>
+                                    <input style="width: 200px; margin: 5px -20px;" type="text" name="account_number" id="accountnumber" value=""/>
                                 </div>
 
 								<div class="form-row">
 									<span class="petsitter_time_price">일당</span>
-									<input type="number" name="time_price" id="time_price" min="0" max="10000000" value="<%= p.getTime_price() %>"/><span style="margin: 15px 0">원</span>
+									<input type="number" name="day_price" id="time_price" min="0" max="10000000" value="<%= p.getTime_price() %>"/><span style="margin: 15px 0">원</span>
 								</div>
 
 								<div class="form-row">
 									<span class="petsitter_free_service">무료 서비스 선택</span>
 									<div class="free_service_all">
 										<label class="radioC free_service" style="margin-left: 0;">노령견케어
-											<input type="checkbox" name="free_service1" value="노령견케어"/>
+											<input type="checkbox" name="free_service" value="노령견케어"/>
 										  	<span class="checkmark">노령견케어</span>
 										</label>
 										<label class="radioC free_service">환자견케어
-											<input type="checkbox" name="free_service2" value="환자견케어"/>
+											<input type="checkbox" name="free_service" value="환자견케어"/>
 											<span class="checkmark">환자견케어</span>
 										</label>
 										<label class="radioC free_service">자격증보유
-											<input type="checkbox" name="free_service3" value="자격증보유"/>
+											<input type="checkbox" name="free_service" value="자격증보유"/>
 											<span class="checkmark">자격증보유</span>
 										</label>
 										<br>
 										<label class="radioC free_service" style="margin: 0 10px 10px 0;">실외배변
-											<input type="checkbox" name="free_service4" value="실외배변"/>
+											<input type="checkbox" name="free_service" value="실외배변"/>
 											<span class="checkmark">실외배변</span>
 										</label>
 										<label class="radioC free_service" style="margin: 0 10px 10px 25px;">응급처치
-											<input type="checkbox" name="free_service5" value="응급처치"/>
+											<input type="checkbox" name="free_service" value="응급처치"/>
 											<span class="checkmark">응급처치</span>
 										</label>
 										<label class="radioC free_service" style="margin: 0 10px 10px 25px;">투약가능
-											<input type="checkbox" name="free_service6" value="투약가능"/>
+											<input type="checkbox" name="free_service" value="투약가능"/>
 											<span class="checkmark">투약가능</span>
 										</label>
 									</div>
 								</div>
-	
+
 								<div class="form-row">
 									<span class="petsitter_paid_service">유료 서비스 선택</span>
 									<div class="paid_service_all">
 										<label class="radioC paid_service" style="margin-left: 0; margin-right: 25px;">목욕가기
-											<input type="checkbox" name="paid_service1" value="목욕가기"/>
+											<input type="checkbox" name="paid_service" value="목욕가기"/>
 											<span class="checkmark">목욕가기</span>
 										</label>
 										<label class="radioC paid_service" style="margin-right: 25px;">병원가기
-											<input type="checkbox" name="paid_service2" value="병원가기"/>
+											<input type="checkbox" name="paid_service" value="병원가기"/>
 											<span class="checkmark">병원가기</span>
 										</label>
 										<label class="radioC paid_service">픽업가능
-											<input type="checkbox" name="paid_service3" value="픽업가능"/>
+											<input type="checkbox" name="paid_service" value="픽업가능"/>
 											<span class="checkmark">픽업가능</span>
 										</label>
 										<br/>
 										<label class="radioC paid_service" style="margin: 0 10px 10px 9px;margin-left: 0;">수제간식
-											<input type="checkbox" name="paid_service4" value="수제간식"/>
+											<input type="checkbox" name="paid_service" value="수제간식"/>
 											<span class="checkmark">수제간식</span>
 										</label>
 										<label class="radioC paid_service" style="margin: 0 10px 10px 25px;">미용가기
-											<input type="checkbox" name="paid_service5" value="미용가기"/>
+											<input type="checkbox" name="paid_service" value="미용가기"/>
 											<span class="checkmark">미용가기</span>
 										</label>
 									</div>
 								</div>
-	
+
 								<div class="form-row">
 									<h4 class="petsitter_careEnvironment">돌봄환경</h4>
 									<span class="petsitter_careEnvironment_space">돌봄공간</span>
 									<div class="careEnvironment_space_all">
 										<label class="radioC careEnvironment_space" style="margin-right: 39px;margin-left: 0;">아파트
-											<input type="radio" name="careEnvironment_space" value="아파트"/>
+											<input name="care_zone" type="radio" name="careEnvironment_space" value="아파트"/>
 										  	<span class="checkmark">아파트</span>
 										</label>
 										<label class="radioC careEnvironment_space" style="margin-right: 53px;">주택
-											<input type="radio" name="careEnvironment_space" value="주택"/>
+											<input name="care_zone" type="radio" name="careEnvironment_space" value="주택"/>
 											<span class="checkmark">주택</span>
 										</label>
 										<label class="radioC careEnvironment_space">빌라
-											<input type="radio" name="careEnvironment_space" value="빌라"/>
+											<input name="care_zone" type="radio" name="careEnvironment_space" value="빌라"/>
 											<span class="checkmark">빌라</span>
 										</label>
 									</div>
@@ -149,56 +149,55 @@
 									<span class="petsitter_careEnvironment_family">가족동거유무</span>
 									<div class="petsitter_radio_all">
 										<label class="radioC petsitter_radio" style="margin-left: 0; margin-right: 72px;">Y
-											<input type="radio" name="petsitter_family" value="Y"/>
+											<input type="radio" name="housemate_situation" value="Y"/>
 										  	<span class="checkmark">Yes</span>
 										</label>
 										<label class="radioC petsitter_radio">N
-											<input type="radio" name="petsitter_family" value="N"/>
+											<input type="radio" name="housemate_situation" value="N"/>
 											<span class="checkmark">No</span>
 										</label>
 									</div>
 									<span class="petsitter_careEnvironment_other">다른 반려동물 유무</span>
 									<div class="petsitter_radio_all">
 										<label class="radioC petsitter_radio" style="margin-left: 0; margin-right: 72px;">Y
-											<input type="radio" name="careEnvironment_other" value="Y"/>
+											<input type="radio" name="pet_situation" value="Y"/>
 										  	<span class="checkmark">Yes</span>
 										</label>
 										<label class="radioC petsitter_radio">N
-											<input type="radio" name="careEnvironment_other" value="N"/>
+											<input type="radio" name="pet_situation" value="N"/>
 											<span class="checkmark">No</span>
 										</label>
 									</div>
 								</div>
-                                
+
                                 <div class="form-row">
                                     <span class="petsitter_intro">한줄소개</span>
-                                    <textarea rows="1" cols="50" name="petsitter_intro" id="petsitter_intro" maxlength="100"></textarea>
+                                    <textarea rows="1" cols="50" name="intro" id="petsitter_intro" maxlength="100"></textarea>
                                 </div>
-                                
+
                                 <div class="form-row">
                                     <span class="petsitter_qna">Q & A</span>
-                                    <textarea rows="15" cols="50" name="petsitter_qna" id="petsitter_qna" maxlength="1000">
+                                    <textarea rows="15" cols="50" name="qna" id="petsitter_qna" maxlength="1000">
 Q. 왜 알로하도그 펫시터를 하게 되었나요?
-A. 
-              	
+A.
+
 Q. 반려견을 키운 경험에 대해 알려주세요. 현재 반려견을 키우고 계시다면 자세히 소개해주세요!
-A. 
-              	
+A.
+
 Q. 강아지와 함께할 산책로를 소개해주세요.
-A. 
-              	
+A.
+
 Q. 애견호텔이 아닌 저에게 맡겨주시면 아래와 같은 내용을 약속드립니다.
 A.
-              	
+
 ※ 아래 유형의 아이들은 돌봄이 어려울 수 있습니다.
 -
                                     </textarea>
                                 </div>
-                                
     						</fieldset>
 
     						<div class="clearfix">
-    					      	<a href="<%=CTX %>/index.do" class="registerXtn" id="cancle">취소</a>
+    					      	<a href="#" onclick="window.history.back()" class="registerXtn" id="cancle">취소</a>
     					      	<button class="registerBtn" id="register">펫시터 정보 등록</button>
     					    </div>
     					</form>
