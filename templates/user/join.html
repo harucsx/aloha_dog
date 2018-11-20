@@ -45,8 +45,8 @@
             });
 
             $("#join").click(function () {//[가입하기]버튼 클릭
-                if (!checkValue())
-                    return false;
+                {#if (!checkValue())#}
+                {#    return false;#}
 
                 var query = {
                     id: $("#id").val(),

@@ -1,13 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-제목 : {{ article.title }}<br/>
-내용 : {{ article.contents }}<br/>
-<a href="{% url 'board_list' board_type %}">목록으로</a>
-<a href="{% url 'board_edit' board_type article.id %}">수정하기</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/board.css" %}{% endblock %}
+
+{% block content %}
+	<div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>게시글</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'index' %}">home</a></li>
+                            <li class="active">게시글</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="blog-area white-bg pt-0 pb-0 mb-70">
+		<div class="container">
+	    	<div class="row">
+	        	<div class="col-lg-9 ml-auto mr-auto">
+	            	<div class="blog_area">
+                        <div id="list_head-view" class="box2">
+                           <h3 class="inline-view">작성일자<font style="color:lightgrey;">{{ article.created_date }}</font></h3>
+                        </div>
+	            		<div id="viewForm" class="box">
+						   <ul>
+						      <li><label for="subject">제목</label>
+						          <input id="subject" name="inputContent" type="text" value="{{ article.title }}" style="padding-left: 0; width: 720px;" readonly>
+						          <input type="hidden" id="num" value="<%= num %>">
+						      </li>
+						      <li><label for="content" id="contentLabel">내용</label>
+						          <textarea id="content" rows="13" cols="50" readonly>{{ article.contents }}</textarea>
+						      </li>
+						      <li class="label2 label2-edit">
+						          <a href="{% url 'board_list' board_type %}" id="b_cancle">목록</a>
+                                  <a href="{% url 'board_edit' board_type article.id %}" id="b_update">수정</a>
+						          <a href="{% url 'board_edit' board_type article.id %}" id="b_delete">삭제</a>
+						      </li>
+						   </ul>
+						</div>
+	            	</div>
+	            </div>
+	       	</div>
+	   	</div>
+	</div>
+{% endblock %}

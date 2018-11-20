@@ -3,6 +3,7 @@
 {% block title %}ALOHA DOG{% endblock %}
 
 {% load staticfiles %}
+{% block extrastyle %}{% static "css/petsitterApplication/educationIntro.css" %}{% endblock %}
 
 {% block content %}
     <div class="location-tow mb-0">
@@ -10,51 +11,90 @@
             <div class="row">
                 <div class="col-12">
                     <div class="location-title">
-                        <h1>교육 안내</h1>
+                        <h1>교육 소개</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'index' %}">홈</a></li>
+                            <li><a href="#">펫시터 신청</a></li>
+                            <li class="active">교육 소개</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="my-account white-bg mb-110">
-        <div class="container">
-            <div class="account-dashboard">
-                <div class="row">
-                    <div class="hhh">
-                        <div class="our-history-area mt-85">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="section-title text-center mb-35">
-                                            <h2>Education Intro</h2>
-                                            <span>알로하도그 교육과정 소개</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8 ml-auto mr-auto">
-                                        <div class="history-area-content text-center">
-                                            <p><strong>알로하도그 오프라인 교육과정 소개입니다.</strong></p>
-                                            <p>
-                                                - 반려견 첫만남 시 주의사항 및 친화방법
-                                                - 체중, 나이에 알맞은 배식방법
-                                                - 카밍시그널, 반려견의 몸짓 제대로 알기
-                                                - 질병과 예방접종 (예방접종 및 중성화 시기 및 유의사항, 전염질병 등)
-                                                - 기본 그루밍 (눈물정리, 발톱/발바닥털 정리, 귀청소, 항문낭, 빗질 등)
-                                                - 응급처치법 (CPR 및 찰과상, 화상, 타박상 대처법 등)
-                                                - 반려견 문제행동 (마킹, 짖음, 공격성, 식분증, 물어뜯기)증세와 행동관찰
-                                                - 문제행동에 대한 대처방법 및 2마리 이상 돌봄 시 주의사항
-                                                - 스트레스 해소에 좋은 반려견 놀이법
-                                            </p>
-                                        </div>
-                                        <br><br>
-                                    </div>
-                                </div>
+    <div class="education_info">
+    	<div class="about-us-area">
+                <div class="container-fluid p-0">
+                    <div class="row no-gutters">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="about-us-img img-full">
+                                <img src="{% static 'img/about1.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="about-us-content">
+                               <br><br><br> <h2><strong>펫시터가 되려면</strong> <br><strong>어떻게 해야 하나요?</strong></h2>
+                                <p>알로하도그 펫시터가 되려면, 총 4단계의 교육 프로그램을 이수하셔야 합니다.
+                                   교육은 온라인 교육, 오프라인 교육, 실습 교육, 소비자 만족도 평가로 이루어지며, 각 테스트에서 일정 수준에 미달시 불합격 됩니다. 자세한 사항은 교육 과정 페이지를 참고하여 주시기 바랍니다.</p>
+                                <a href="{% url 'sitter_intro2' %}" class="about-btn-login">교육 과정 보기</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="skill-area mb-0">
+                <div class="container-fluid p-0">
+                    <div class="row no-gutters">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="skrill-here">
+                                <div class="ht-single-about">
+                                    <div class="skill-bar">
+                                        <div class="skill-bar-item">
+                                            <span>온라인 교육</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" data-progress="80%" style="width: 80%;">
+                                                    <span class="text-top"><p>01</p></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar-item">
+                                            <span>오프라인 교육</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" data-progress="90%" style="width: 90%;">
+                                                    <span class="text-top"><p>02</p></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar-item">
+                                            <span>실습 교육</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" data-progress="70%" style="width: 70%;">
+                                                    <span class="text-top"><p>03</p></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar-item">
+                                            <span>고객 만족도 평가</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" data-progress="95%" style="width: 95%;">
+                                                    <span class="text-top"><p>04</p></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="skill-img img-full">
+                                <img src="{% static 'img/about2.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 {% endblock %}

@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/pet/editPetInfo.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>반려견 정보수정</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="active">반려견 정보수정</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+                        <div class="tab-content dashboard-content">
+                            <div id="dashboard" class="tab-pane fade show active">
+
+                                <form method="post" action="" class="formA" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <fieldset class="aligned">
+
+                                        <div class="dogimgBox">
+                                            <img id="dogimg1" src="{% static 'img/section2-img1.jpg' %}">
+                                            <img id="dogimg2" src="/media/{{ pet.profile }}">
+                                            <img id="dogimg3" src="{% static 'img/section2-img3.jpg' %}">
+                                            <div id="di-modal" class="di-modal">
+                                                <span class="di-close">&times;</span>
+                                                <img class="di-modal-content" id="img01">
+                                            </div>
+                                            <script>
+                                                var modal = document.getElementById('di-modal');
+                                                var img1 = document.getElementById('dogimg1');
+                                                var img2 = document.getElementById('dogimg2');
+                                                var img3 = document.getElementById('dogimg3');
+                                                var modalImg = document.getElementById("img01");
+                                                img1.onclick = function () {
+                                                    modal.style.display = "block";
+                                                    modalImg.src = this.src;
+                                                }
+                                                img2.onclick = function () {
+                                                    modal.style.display = "block";
+                                                    modalImg.src = this.src;
+                                                }
+                                                img3.onclick = function () {
+                                                    modal.style.display = "block";
+                                                    modalImg.src = this.src;
+                                                }
+                                                var span = document.getElementsByClassName("di-close")[0];
+                                                span.onclick = function () {
+                                                    modal.style.display = "none";
+                                                }
+                                            </script>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <span class="name">이름</span> {{ pet.name }}
+                                        </div>
+
+                                        <div class="form-row">
+                                            <span class="age">나이</span> {{ pet.age }}살
+                                        </div>
+
+                                        <div class="form-row">
+                                            <span class="sex">성별</span> {{ pet.get_sex_display }}
+                                        </div>
+
+                                        <div class="form-row">
+                                            <span class="species">종</span>{{ pet.species }}
+                                        </div>
+
+                                        <div class="form-row">
+                                            <span class="weight">무게</span> <input type="number" step="any" name="weight"
+                                                                                  value="{{ pet.weight }}" required>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <span class="dogimg">사진</span> <input type="file" multiple="multiple"
+                                                                                  name="image" >
+                                        </div>
+
+                                        <div class="form-row neutralizationA">
+                                            <span class="neutralization">중성화여부</span>
+                                            <label class="radioC">y
+                                                <input type="radio" name="neutralization" id="y" value="Y"
+                                                       {% if pet.neutralization %}checked{% endif %}
+                                                />
+                                                <span class="checkmark">예</span>
+                                            </label>
+                                            <label class="radioC">n
+                                                <input type="radio" name="neutralization" id="n" value="N"
+                                                       {% if not pet.neutralization %}checked{% endif %}
+                                                />
+                                                <span class="checkmark">아니오</span>
+                                            </label>
+                                        </div>
+
+                                    </fieldset>
+
+                                    <div class="cuttingLine"></div>
+                                    <h1 class="checkList"><span style="color: red">*</span>체크리스트</h1>
+
+                                    <fieldset class="aligned">
+
+                                        <div class="form-row qA">
+                                            <span class="q1 question">예방접종을 완료하셨나요?</span>
+                                            <label class="radioC">y
+                                                <input type="radio" name="a1" id="y" value="Y"
+                                                       {% if pet.vaccination %}checked{% endif %}
+                                                />
+                                                <span class="checkmark">예</span>
+                                            </label>
+                                            <label class="radioC">n
+                                                <input type="radio" name="a1" id="n" value="N"
+                                                       {% if not pet.vaccination %}checked{% endif %}
+                                                />
+                                                <span class="checkmark">아니오</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-row qA">
+                                            <span class="pet_q1">다른 강아지들을 만났을 때의 반응을 알려주세요</span>
+                                            <select name="pet_q1" id="pet_q1">
+                                                <option value="무서워하며 경계해요" selected>무서워하며 경계해요</option>
+                                                <option value="짖거나 달려들어요">짖거나 달려들어요</option>
+                                                <option value="반가워하며 함께 놀아요">반가워하며 함께 놀아요</option>
+                                                <option value="별로 관심을 두지 않아요">별로 관심을 두지 않아요</option>
+                                                <option value="죽일 듯이 싸워요">죽일 듯이 싸워요</option>
+                                            </select>
+                                        </div>
+                            </div>
+
+                            <div class="form-row qA">
+                                <span class="pet_q2_span">다른 사람들을 만났을 때의 반응을 알려주세요</span>
+                                <select name="pet_q2" id="pet_q2">
+                                    <option value="무서워하며 경계해요" selected>무서워하며 경계해요</option>
+                                    <option value="짖거나 달려들어요">짖거나 달려들어요</option>
+                                    <option value="반가워하며 함께 놀아요">반가워하며 함께 놀아요</option>
+                                    <option value="별로 관심을 두지 않아요">별로 관심을 두지 않아요</option>
+                                    <option value="죽일 듯이 싸워요">죽일 듯이 싸워요</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row qA">
+                                <span class="pet_p3_span">다른 사람이나 강아지를 공격하여 상해를 입힌 적이 있나요?</span>
+                                <label class="radioC">
+                                    <input type="radio" id="pet_q3" name="pet_p3" class="pet_p3" value="Y"
+                                            {% if pet.pet_q3 %} checked{% endif %}
+                                    />
+                                    <span class="checkmark">네</span>
+                                </label>
+                                <label class="radioC">M
+                                    <input type="radio" id="pet_q3" name="pet_p3" class="pet_p3" value="N"
+                                            {% if not pet.pet_q3 %} checked{% endif %}
+                                    />
+                                    <span class="checkmark">아니오</span>
+                                </label>
+                            </div>
+
+                            </fieldset>
+
+                            <div class="clearfix modifyClearfix">
+                                <a href="javascript:window.history.back();">
+                                    <span class="modifyXbtn">취소</span>
+                                </a>
+                                <input type="submit" value="수정" class="modifybtn"/>
+                                <input type="submit" value="삭제" class="modifyDeletebtn"/>
+                            </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
