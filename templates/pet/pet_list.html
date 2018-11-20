@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/pet/petInfoList.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>반려견 정보</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="active">반려견 정보</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="blog-area white-bg pt-0 pb-0 mb-70">
+	    <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+	                    <div class="tab-content dashboard-content">
+	                        <div id="dashboard" class="tab-pane fade show active">
+	                        	<div class= "petinfo-all">
+		                            <div class="dogInfo_wrap">
+
+                                        {% for pet in pets %}
+										<a href="{% url 'pet_edit' pet.id %}">
+											<div class="dogs dog1">
+												<img src="/media/{{ pet.profile }}" alt="1">
+												<div class="dogName">
+													<li>{{ pet.name }}</li>
+													<li>{{ pet.age }}살</li>
+													<li>{{ pet.species }}</li>
+												</div>
+											</div>
+										</a>
+                                        {% endfor %}
+
+									</div>
+		                            <div class="DA">
+		                                <a href="{% url 'pet_add' %}" class="btnADD">
+		                                    <button class="add">추가</button>
+		                                </a>
+		                            </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+                </div>
+            </div>
+	    </div>
+	</div>
+{% endblock %}

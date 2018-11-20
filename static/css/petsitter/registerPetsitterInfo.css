@@ -11,6 +11,7 @@
     letter-spacing: -1px;
 }
 *{user-select:none;}
+li{list-style: none;}
 .form-row{
     border-bottom: 1px solid #c999ff;
     margin: 0 100px;
@@ -48,7 +49,7 @@ input[type=radio], input[type=checkbox]{
     margin: 0;
     padding: 0;
     display: inline-block;
-    background: grey;
+    background: rgba(204,204,204,0.25);
     color: white;
 }
 /*radio*/
@@ -63,7 +64,7 @@ input[type=radio], input[type=checkbox]{
     user-select: none;
     font-size: 15px;
     padding: 9px;
-    
+
 }
 .radioC input {
     position: absolute;
@@ -110,7 +111,7 @@ select{
     padding: 10px;
     margin: 5px 15px;
     display: inline-block;
-    background: grey;
+    background: rgba(204,204,204,0.25);
     border: none;
     font-size: 15px;
 }
@@ -123,16 +124,16 @@ option {
 }
 input[type=text]:hover, input[type=password]:hover,
 input[type=number]:hover, input[type=file]:hover,
-input[type=radio]:hover, input[type=email]:hover, 
+input[type=radio]:hover, input[type=email]:hover,
 input[type=time]:hover, select:hover, option:hover {
     background-color: rgba(241,230,255);
     outline: none;
     border: none;
     color: white;
 }
-input[type=text]:focus, input[type=password]:focus, 
+input[type=text]:focus, input[type=password]:focus,
 input[type=number]:focus, input[type=file]:focus,
-input[type=radio]:focus, input[type=email]:focus, 
+input[type=radio]:focus, input[type=email]:focus,
 input[type=time]:focus, select:focus, option:focus {
     background-color: #c999ff;
     outline: none;
@@ -159,111 +160,97 @@ input[type=time]:focus, select:focus, option:focus {
 /*----------------------------------------
 ------------------------------------------
 ----------------------------------------*/
-input[name=inputContent]{
-    width: 100px;
-    height: 45px;
-    padding: 10px;
-    margin: 5px;
-    margin-left: 0;
+
+
+/*-----
+petInfo.jsp
+-------*/
+.form-row span.name{padding: 15px 100px 15px 100px;} /* dog */
+.form-row span.age{padding: 15px 100px 15px 100px;} /* dog */
+.form-row span.sex{padding: 15px 100px 15px 100px;} /* dog */
+.form-row span.species{padding: 15px 98px 15px 100px;} /* dog */
+.form-row span.weight{padding: 15px 100px 15px 100px;} /* dog */
+.form-row span.dogimg{padding: 15px 100px 15px 100px;} /* dog */
+.form-row span.neutralization{padding: 15px 58px 15px 100px;} /* dog */
+input[name=name],input[name=age],input[name=weight]{width: 200px;}
+input[name=selectDirect]{width: 150px;}
+input[type=file]{width: 300px;}
+.dogInfo_wrap{
+    margin-top: 50px;
+    /*background-color: red;*/
+}
+.dogs{
+    width: 120px;
+    height: 210px;
     display: inline-block;
+    /*background: #ccc;*/
+    text-align: left;
+    margin-bottom: 50px;
+}
+.dogInfo_wrap a{margin-right: 30px;}
+.dogs img{
+    height: 100px;
+    width: 100px;
+    border-radius: 30px;
+    margin: 10px;
+}
+.dogs .dogName{
+    margin: 0 auto;
+    width: 100px;
+    /*height: 70px;*/
+    border-radius: 3px;
+    border: 2px solid #e5e5e5;
+    padding: 10px;
+}
+.dogInfo_wrap a:hover .dogName{
+    color: white;
+    background: #c999ff;
+    border: 2px solid #c999ff;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+.dogs .dogName li{
+    font-size: 12px;
+    font-family: sans-serif;
+    letter-spacing: -1px;
+    padding: 2px;
+}
+.DA{text-align: right;}
+.add{
+    color: #666;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
     background: white;
-    border: none;
-    font-size: 15px;
-    font-weight:bold;
-    color: #c999ff;
-}input[name=inputContent]:hover{
-    color: #c999ff; 
-    background: white; 
-}input[name=inputContent]:focus{
-    color: #c999ff; 
-    background: white; 
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+}
+.add:hover{color: #fff; background: #c999ff; border-color: #c999ff;}
+@media screen and (max-width: 300px) {
+    .add {
+       width: 100%;
+    }
+}/*-------
+addPetInfo.jsp
+--------*/
+.cuttingLine{
+    width: 100%;
+    margin: 70px 0 50px;
+    border-top: 2px dashed #c999ff;
+}
+.checkList{
+    font-weight: lighter;
+    text-align: center;
+    letter-spacing: -1px;
+    font-style: italic;
+    margin-bottom: 50px;
 }
 
-.form-row span.petsitter_id{padding: 15px 150px 15px 80px;}
-.form-row span.petsitter_name{padding: 15px 138px 15px 80px;}
-.form-row span.petsitter_profilePhoto{padding: 15px 102px 15px 80px;}
-.form-row span.petsitter_housephoto{padding: 15px 70px 15px 80px;}
-.form-row span.petsitter_address1{padding: 15px 138px 15px 80px;}
-.form-row span.petsitter_time_price{padding: 15px 144px 15px 80px;}
-.form-row span.petsitter_free_service{padding: 15px 65px 15px 80px;}
-.form-row span.petsitter_paid_service{padding: 15px 65px 15px 80px;}
-.form-row span.petsitter_caringWeight{padding: 15px 19px 15px 80px;}
-.form-row span.petsitter_ageAvailable{padding: 15px 19px 15px 80px;}
-.form-row span.petsitter_checkTime{padding: 15px 22px 15px 80px;}
-.form-row h4.petsitter_careEnvironment{padding: 15px 100px 15px 80px; margin-right:300px; font-weight: bold; color: grey;}
-.form-row span.petsitter_careEnvironment_space{padding: 15px 116px 15px 80px;}
-.form-row span.petsitter_careEnvironment_nearbySubway{padding: 15px 88px 15px 80px;}
-.form-row span.petsitter_careEnvironment_yard{padding: 15px 116px 15px 80px;}
-.form-row span.petsitter_careEnvironment_under14{padding: 15px 43px 15px 80px;}
-.form-row span.petsitter_careEnvironment_family{padding: 15px 88px 15px 80px;}
-.form-row span.petsitter_careEnvironment_other{padding: 15px 51px 15px 80px;}
-.form-row h4.petsitter_dogInfo{padding: 15px 100px 15px 80px; margin-right:300px; font-weight: bold; color: grey;}
-.form-row span.petsitter_intro{padding: 15px 100px 15px 80px;}
-.form-row span.petsitter_qna{padding: 15px 200px 15px 80px;}
-
-.free_service_all, .paid_service_all, .caringWeight_all, 
-.ageAvailable_all, .checkTime_all, .careEnvironment_space_all, 
-.petsitter_radio_all, .dogInfo_A{
-    width: 335px; 
-    height: 100%;
-/*  background: blue; */
-}
-.ageAvailable_all{width: 230px;}
-.checkTime_all{width: 300px;}
-.petsitter_radio_all{width: 230px;}
-.dogInfo_A{width: 200px; height: 80px; margin-left: 80px; margin-bottom: 10px;}
-.checkTime_all label span{color: grey; margin-right: 24px;}
-.free_service, .paid_service, .caringWeight, 
-.ageAvailable, .checkTime, .careEnvironment_space,
-.petsitter_radio{
-    float: left; margin: 10px;
-}
-.checkTime_select,input[name=profilePhoto],input[name=housephoto],
- input[name=checkInTime], input[name=checkOutTime],input[name=time_price]{
-    width: 100px;
-    height: 45px;
-    padding: 10px;
-    margin: 5px;
-    margin-left: 0;
-    display: inline-block;
-    background: rgba(204,204,204,0.25);
-    border: none;
-    font-size: 15px;
-}.checkTime{width: 400px;}
-input[name=profilePhoto],input[name=housephoto],input[name=time_price]{width: 300px; padding: 7px}
-input[name=careEnvironment_nearbySubway]{
-    width: 200px;
-    height: 45px;
-    padding: 10px;
-    margin: 5px;
-    margin-left: 0;
-    display: inline-block;
-    background: rgba(204,204,204,0.25);
-    border: none;
-}
-img.dogInfo_photo{float: left; width: 80px; height: 80px; border-radius: 100px; margin-right: 5px;}
-textarea[name=petsitter_intro],textarea[name=petsitter_qna]{
-    width: 500px;
-    padding: 10px;
-    margin: 0 5px 5px 80px;
-    display: inline-block;
-    background: rgba(204,204,204,0.25);
-    border: none;
-    font-size: 15px;
-}textarea[name=petsitter_intro]:hover,textarea[name=petsitter_qna]:hover{
-    background-color: rgba(241,230,255);
-    outline: none;
-    border: none;
-    color: white;
-}
-textarea[name=petsitter_intro]:focus,textarea[name=petsitter_qna]:focus{
-    background-color: #c999ff;
-    outline: none;
-    border: none;
-    color: white;
-}
-/* petsitterInfo_registeration */
-.registerBtn,  .registerXtn{
+/*.qA{padding: 15px 0;}*/
+.qA span{font-family: nanum; font-weight: bold; letter-spacing: -1px;}
+.form-row span.question{padding: 15px 50px 15px 10px;}
+select[name=a2], select[name=a3]{width: 300px; margin-top: 0;}
+.addbtn,  .addXbtn{
     color: #666;
     padding: 14px 0;
     margin: 40px 10px;
@@ -276,13 +263,9 @@ textarea[name=petsitter_intro]:focus,textarea[name=petsitter_qna]:focus{
     float: left;
     font-size: 15px;
 }
-.registerBtn:hover,  .registerXtn:hover{
-    color: #fff; 
-    background: #c999ff; 
-    border-color: #c999ff;
-}
+.addXbtn:hover, .addbtn:hover{color: #fff; background: #c999ff; border-color: #c999ff;}
 @media screen and (max-width: 300px) {
-    .registerBtn, .registerXtn {
+    .addbtn, .addXbtn {
        width: 100%;
     }
 }

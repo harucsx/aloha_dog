@@ -6,6 +6,7 @@
 {% block extrastyle %}{% static "css/pet/registerPetInfo.css" %}{% endblock %}
 
 {% block content %}
+
     <div class="location-tow mb-60">
         <div class="container">
             <div class="row">
@@ -30,7 +31,7 @@
                     <div class="blog_area">
 	                    <div class="tab-content dashboard-content">
 	                        <div id="dashboard" class="tab-pane fade show active">
-	                            <form method="post" action="." class="formA">
+	                            <form method="post" action="" enctype="multipart/form-data" class="formA">{% csrf_token %}
 									<fieldset class="aligned">
 	
 										<div class="form-row">
@@ -44,11 +45,11 @@
 										<div class="form-row sexA">
 											<span class="sex">*성별</span> 
 											<label class="radioC">f
-												<input type="radio" name="sex" id="f" checked />
+												<input type="radio" name="sex" id="f" value="F" checked />
 											  	<span class="checkmark">여자</span>
 											</label>
 											<label class="radioC">m
-												<input type="radio" name="sex" id="m" />
+												<input type="radio" name="sex" id="m" value="M"/>
 												<span class="checkmark">남자</span>
 											</label>
 										</div>
@@ -76,17 +77,17 @@
 										</div>
 	
 										<div class="form-row">
-											<span class="dogimg">*사진</span> <input type="file" multiple="multiple" name="dogimg[]" required>
+											<span class="dogimg">*사진</span> <input type="file" multiple="multiple" name="image" required>
 										</div>
 	
 										<div class="form-row neutralizationA">
 											<span class="neutralization">*중성화여부</span> 
 											<label class="radioC">y
-												<input type="radio" name="neutralization" id="y" checked />
+												<input type="radio" name="neutralization" id="y" value="Y" checked />
 												<span class="checkmark">예</span>
 											</label>
 											<label class="radioC">n
-												<input type="radio" name="neutralization" id="n" />
+												<input type="radio" name="neutralization" id="n" value="N" />
 												<span class="checkmark">아니오</span>
 											</label>
 										</div>
@@ -101,11 +102,11 @@
 										<div class="form-row qA">
 											<span class="q1 question">예방접종을 완료하셨나요?</span> 
 											<label class="radioC">y
-												<input type="radio" name="a1" id="y" />
+												<input type="radio" name="vaccination" id="y" value="Y"/>
 												<span class="checkmark">예</span>
 											</label>
 											<label class="radioC">n
-												<input type="radio" name="a1" id="n" checked />
+												<input type="radio" name="vaccination" id="n" value="N" checked />
 												<span class="checkmark">아니오</span>
 											</label>
 										</div>
@@ -113,11 +114,11 @@
 										<div class="form-row qA">
 		                                    <span class="pet_q1">다른 강아지들을 만났을 때의 반응을 알려주세요</span>
 		                                    <select name="pet_q1" id="pet_q1"> 
-		                                        <option value="1" selected>무서워하며 경계해요</option> 
-		                                        <option value="2">짖거나 달려들어요</option>
-		                                        <option value="3">반가워하며 함께 놀아요</option>
-		                                        <option value="4">별로 관심을 두지 않아요</option>
-		                                        <option value="5">죽일 듯이 싸워요</option>
+		                                        <option value="무서워하며 경계해요" selected>무서워하며 경계해요</option>
+		                                        <option value="짖거나 달려들어요">짖거나 달려들어요</option>
+		                                        <option value="반가워하며 함께 놀아요">반가워하며 함께 놀아요</option>
+		                                        <option value="별로 관심을 두지 않아요">별로 관심을 두지 않아요</option>
+		                                        <option value="죽일 듯이 싸워요">죽일 듯이 싸워요</option>
 		                                    </select>
 		                                    </div>
 										</div>
@@ -125,11 +126,11 @@
 										<div class="form-row qA">
 			                                <span class="pet_q2_span">다른 사람들을 만났을 때의 반응을 알려주세요</span>
 			                                <select name="pet_q2" id="pet_q2"> 
-		                                        <option value="1" selected>무서워하며 경계해요</option> 
-		                                        <option value="2">짖거나 달려들어요</option>
-		                                        <option value="3">반가워하며 함께 놀아요</option>
-		                                        <option value="4">별로 관심을 두지 않아요</option>
-		                                        <option value="5">죽일 듯이 싸워요</option>
+		                                        <option value="무서워하며 경계해요" selected>무서워하며 경계해요</option>
+		                                        <option value="짖거나 달려들어요">짖거나 달려들어요</option>
+		                                        <option value="반가워하며 함께 놀아요">반가워하며 함께 놀아요</option>
+		                                        <option value="별로 관심을 두지 않아요">별로 관심을 두지 않아요</option>
+		                                        <option value="죽일 듯이 싸워요">죽일 듯이 싸워요</option>
 		                                    </select>
 										</div>
 	
@@ -162,7 +163,7 @@
 									</script>
 	
 									<div class="clearfix">
-								      	<a href="{% url 'petInfoList' %}">
+								      	<a href="{% url 'pet_list' %}">
 								      		<button class="addXbtn">취소</button>
 								      	</a>
 								      	<input type="submit" value="추가"class="addbtn" />
@@ -176,40 +177,3 @@
 	    </div>
 	</div>
 {% endblock %}
-
-{% block footer %}
-    <footer>
-        <div class="footer-container">
-            <div class="footer-bottom-area pt-50 pb-50">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="footer-payments-image">
-                                <div class="footer-logo">
-                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
-                                </div>
-                            </div>
-                            <div class="footer-menu text-center">
-                                <nav>
-                                    <ul>
-                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
-                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
-                                        <br/>
-                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
-                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
-                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="footer-copyright">
-                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
-                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
-                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-{% endblock footer %}

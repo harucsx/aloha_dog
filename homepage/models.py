@@ -98,21 +98,30 @@ class Sitter(models.Model):
     introduction = models.CharField(max_length=200, verbose_name="시터소개")
     free_services = models.CharField(max_length=100, verbose_name='무료 서비스')
     paid_services = models.CharField(max_length=100, verbose_name='유료 서비스')
-    unit_price = models.IntegerField(default=0, verbose_name='시급')
+    day_price = models.IntegerField(default=0, verbose_name='일당')
+    care_zone = models.CharField(max_length=100, verbose_name='돌봄 공간')
+    housemate_situation = models.CharField(max_length=100, verbose_name='가족 동거 유무')
+    pet_situation = models.CharField(max_length=100, verbose_name='다른 반려동물 유무')
+    qna = models.TextField(max_length=1000, verbose_name="QnA")
 
     def __str__(self):
         return str(self.id)
 
 
 class Dog(models.Model):
+    owner = models.ForeignKey('UserProfile', on_delete=models.CASCADE, verbose_name="견주")
     name = models.CharField(max_length=50, verbose_name="펫 이름")
     species = models.CharField(max_length=50, verbose_name="견종")
-    birth_date = models.DateField(verbose_name="생일")
-    weight = models.IntegerField(default=10, verbose_name="몸무게")
+    birth_date = models.CharField(max_length=50, verbose_name="생일")
+    age = models.IntegerField(verbose_name="나이")
+    weight = models.FloatField( verbose_name="몸무게")
     sex = models.CharField(max_length=5, choices=SEX_CHOICES, verbose_name="성별")
-    neutralization = models.BooleanField(default=True, verbose_name="중성화유무")
-    profile = models.FileField(upload_to='uploads/', verbose_name="프로필사진")
+    neutralization = models.BooleanField(default=True, verbose_name="중성화 여부")
+    profile = models.ImageField(upload_to='dog_images/', verbose_name="프로필 사진")
     vaccination = models.BooleanField(verbose_name="예방접종유무")
+    pet_q1 = models.CharField(max_length=50, verbose_name="Q1. 다른 강아지에 대한 반응")
+    pet_q2 = models.CharField(max_length=50, verbose_name="Q2. 다른 사람에 대한 반응")
+    pet_q3 = models.BooleanField(verbose_name="Q3. 강아지의 공격성")
 
     def __str__(self):
         return str(self.id)

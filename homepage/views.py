@@ -19,7 +19,7 @@ def sitter_list(request):
     return render(request, 'sitter/sitter_list.html')
 
 
-def sitter_detail(request):
+def sitter_detail(request, id):
     return render(request, 'sitter/sitter_detail.html')
 
 
@@ -29,6 +29,10 @@ def sitter_apply(request):
 
 def sitter_intro(request):
     return render(request, 'sitter/sitter_intro.html')
+
+
+def sitter_intro2(request):
+    return render(request, 'sitter/sitter_intro2.html')
 
 
 def faq(request):
@@ -41,4 +45,3 @@ def free_service(request):
 
 def paid_service(request):
     return render(request, 'etc/paid_service.html')
-
