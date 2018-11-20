@@ -56,7 +56,7 @@ def pet_add(request):
             dog.owner = request.user.userprofile
             dog.name = data.get('name')
             dog.age = int(data.get('age'))
-            dog.sex = int(data.get('sex'))
+            dog.sex = data.get('sex')
 
             species = data.get('species')
 

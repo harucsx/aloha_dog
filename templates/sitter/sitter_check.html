@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/petsitter/confirmPetsitter.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>비밀번호 확인</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">홈</a></li>
+                            <li class="active">비밀번호 확인</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+                    	<form method="post" action="" class="formA">{% csrf_token %}
+                            {% if form.errors %}
+                            <p class="errornote">빈칸을 전부 입력해주세요.</p>
+                            {% endif %}
+
+    						<fieldset class="aligned">
+
+    							<div class="form-row">
+    								<span class="id_">ID</span>
+									<input name="inputContent" type="text" class="inputContent" id="id" value="{{user.username}}" readonly>
+    							</div>
+
+    							<div class="form-row">
+    								<span class="pw_1">비밀번호</span> 
+    								<input type="password" name="pw" id="pw" placeholder="8자리이상 20자리이하 영문,숫자,특수문자중 2가지를 혼합 입력해주세요." minlength="8" maxlength="20" required>
+    							</div>
+
+    						</fieldset>
+
+    						<script type="text/javascript">document.getElementById('id_username').focus()</script>
+
+    						<div class="clearfix modifyClearfix">
+    					      	<button class="modifyXbtn" onclick="window.history.back();">취소</button>
+    					      	<button type="submit" class="modifybtn">계속하기</button>
+    					    </div>
+    					  
+    					</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

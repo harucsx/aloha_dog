@@ -22,6 +22,7 @@ from homepage import views
 from homepage import users
 from homepage import boards
 from homepage import pets
+from homepage import sitters
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,6 +38,8 @@ urlpatterns = [
     path('pet/<int:id>', pets.pet_edit, name='pet_edit'),
 
     path('sitter', views.sitter_list, name='sitter_list'),
+    path('sitter/check', sitters.sitter_check, name='sitter_check'),
+    path('sitter/join', sitters.sitter_join, name='sitter_join'),
     path('sitter/apply', views.sitter_apply, name='sitter_apply'),
     path('sitter/intro', views.sitter_intro, name='sitter_intro'),
     path('sitter/intro2', views.sitter_intro2, name='sitter_intro2'),

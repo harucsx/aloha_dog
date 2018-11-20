@@ -15,7 +15,7 @@
                     </div>
                     <div class="location-content location-content-tow">
                         <ul>
-                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li><a href="{% url 'home' %}">홈</a></li>
                             <li class="active">펫시터 정보 등록</li>
                         </ul>
                     </div>
@@ -28,18 +28,18 @@
             <div class="row">
                 <div class="col-lg-9 ml-auto mr-auto">
                     <div class="blog_area">
-                    	<form method="post" action="<%= CTX %>/petsitterInfoRegisterPro.do" class="formA" name="petsitterInfoRegisterForm">
-
+                    	<form method="post" action="" class="formA" name="petsitterInfoRegisterForm">
+                            {% csrf_token %}
     						<fieldset class="aligned">
 
     							<div class="form-row">
     								<span class="petsitter_id">ID</span>
-    								<input name="id" type="text" class="inputContent" id="id" value="${id}" readonly>
+    								<input name="inputContent" type="text" class="inputContent" id="id" value="${id}" readonly>
     							</div>
 
     							<div class="form-row">
     								<span class="petsitter_name">이름</span>
-    								<input name="name" type="text" class="inputContent" id="name" value="${m.name}" readonly>
+    								<input name="inputContent" type="text" class="inputContent" id="name" value="${m.name}" readonly>
     							</div>
 
     							<div class="form-row">
@@ -66,9 +66,9 @@
 									<span class="petsitter_time_price">일당</span>
 									<input type="number" name="time_price" id="time_price" min="0" max="10000000" value="<%= p.getTime_price() %>"/><span style="margin: 15px 0">원</span>
 								</div>
-	
+
 								<div class="form-row">
-									<span class="petsitter_free_service">무료 서비스 선택</span> 
+									<span class="petsitter_free_service">무료 서비스 선택</span>
 									<div class="free_service_all">
 										<label class="radioC free_service" style="margin-left: 0;">노령견케어
 											<input type="checkbox" name="free_service1" value="노령견케어"/>
@@ -97,7 +97,7 @@
 										</label>
 									</div>
 								</div>
-	
+
 								<div class="form-row">
 									<span class="petsitter_paid_service">유료 서비스 선택</span>
 									<div class="paid_service_all">
@@ -124,7 +124,7 @@
 										</label>
 									</div>
 								</div>
-	
+
 								<div class="form-row">
 									<h4 class="petsitter_careEnvironment">돌봄환경</h4>
 									<span class="petsitter_careEnvironment_space">돌봄공간</span>
@@ -166,37 +166,37 @@
 										</label>
 									</div>
 								</div>
-                                
+
                                 <div class="form-row">
                                     <span class="petsitter_intro">한줄소개</span>
                                     <textarea rows="1" cols="50" name="petsitter_intro" id="petsitter_intro" maxlength="100"></textarea>
                                 </div>
-                                
+
                                 <div class="form-row">
                                     <span class="petsitter_qna">Q & A</span>
                                     <textarea rows="15" cols="50" name="petsitter_qna" id="petsitter_qna" maxlength="1000">
 Q. 왜 알로하도그 펫시터를 하게 되었나요?
-A. 
-              	
+A.
+
 Q. 반려견을 키운 경험에 대해 알려주세요. 현재 반려견을 키우고 계시다면 자세히 소개해주세요!
-A. 
-              	
+A.
+
 Q. 강아지와 함께할 산책로를 소개해주세요.
-A. 
-              	
+A.
+
 Q. 애견호텔이 아닌 저에게 맡겨주시면 아래와 같은 내용을 약속드립니다.
 A.
-              	
+
 ※ 아래 유형의 아이들은 돌봄이 어려울 수 있습니다.
 -
                                     </textarea>
                                 </div>
-                                
+
     						</fieldset>
 
     						<div class="clearfix">
-    					      	<a href="<%=CTX %>/index.do" class="registerXtn" id="cancle">취소</a>
-    					      	<button class="registerBtn" id="register">펫시터 정보 등록</button>
+    					      	<a href="#" onClick="window.history.back();" class="registerXtn" id="cancle">취소</a>
+    					      	<button type="submit" class="registerBtn" id="register">펫시터 정보 등록</button>
     					    </div>
     					</form>
                     </div>

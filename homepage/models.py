@@ -94,6 +94,7 @@ class SitterSchedule(models.Model):
 class Sitter(models.Model):
     userprofile = models.OneToOneField('UserProfile', on_delete=models.CASCADE, verbose_name="시터이름")
     account_number = models.CharField(max_length=100, verbose_name="계좌번호")
+    profile = models.ImageField(upload_to='profile/', verbose_name="프로필 사진")
     bank_name = models.CharField(max_length=10, choices=BANK_NAME_CHOICES, verbose_name="은행명")
     introduction = models.CharField(max_length=200, verbose_name="시터소개")
     free_services = models.CharField(max_length=100, verbose_name='무료 서비스')
