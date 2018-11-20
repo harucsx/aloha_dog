@@ -18,7 +18,7 @@ class User(models.Model):
     address2 = models.CharField(max_length=50, verbose_name='회원 주소2')
     address3 = models.CharField(max_length=50, verbose_name='회원 주소3')
     profile = models.FileField(upload_to='uploads/', verbose_name='회원 사진')
-    registeration_datetime = models.DateTimeField(auto_now=True, verbose_name='회원가입일')
+    registration_datetime = models.DateTimeField(auto_now=True, verbose_name='회원가입일')
     member_ship_level = models.CharField(max_length=10, verbose_name='회원 등급', choices=MEMBER_SHIP_LEVEL_CHOICES, default='member')
 
     def __str__(self):
