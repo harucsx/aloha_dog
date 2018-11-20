@@ -26,7 +26,7 @@ def save_userprofile(user_profile, data):
 
     user_profile.phone_number = data.get('phone1') + '-' + \
                                 data.get('phone2') + '-' + \
-                                data.get('phone3') + '-'
+                                data.get('phone3')
 
     user_profile.email = data.get('email1') + '@' + \
                          data.get('email2')

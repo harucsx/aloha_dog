@@ -68,7 +68,7 @@
                             <div class="header-menu">
                                 <nav>
                                     <ul class="main-menu">
-                                        <li><a href="{% url 'sitter_list' %}">펫시터 고용</a></li>
+                                        <li><a href="{% url 'sitter_list' %}">펫시터 예약</a></li>
                                         <li><a href="#">펫시터 신청</a>
                                             <ul class="dropdown">
                                                 <li><a href="{% url 'sitter_intro' %}">교육 소개</a></li>
@@ -91,7 +91,7 @@
                                         <li><a href="{% url 'faq' %}">FAQ</a></li>
                                         {% if user.is_superuser %}
                                             <li class="menu-bottom-menu">
-                                                <a href="{% url 'admin:index' %}" class="db-title">Admin</a>
+                                                <a href="{% url 'admin:index' %}" class="db-title">관리자</a>
                                             </li>
                                         {% endif %}
                                     </ul>
@@ -202,12 +202,13 @@
                                                     <div class="nav-header">
                                                         {% if user.is_active %}
                                                             <p class="memberGrade">
-                                                                등급: {{ user.user_profile.membership_level }}</p>
+                                                                등급: {{ user.userprofile.get_membership_level_display }}</p>
                                                             <a href="{% url 'logout' %}" id="uLogout">로그아웃</a>
                                                             <br/>
                                                             <br/>
                                                             <h2 class="memberName">
-                                                                {% firstof user.get_short_name user.get_username %}
+                                                                {# {% firstof user.get_short_name user.get_username %}#}
+                                                                {{ user.userprofile.name }}님
                                                             </h2>
                                                             <span class="hello">님 안녕하세요!</span>
                                                             <br/>
@@ -222,7 +223,7 @@
                                                         <li><a href="{% url 'profile' %}" id="uUpdate">개인정보</a></li>
                                                         <li><a href="{% url 'pet_list' %}">반려동물 정보</a></li>
                                                         <li><a href="{% url 'sitter_check' %}">펫시터 정보</a></li>
-                                                        <li><a href="#url">예약내역</a></li>
+                                                        <li><a href="{% url 'reservation_list' %}">예약내역</a></li>
                                                         <li><a href="#url">결제내역</a></li>
                                                         <li><a href="#url">관심 펫시터</a></li>
                                                         <li><a href="{% url 'board_list' 'qna' %}">1:1문의 내역</a></li>

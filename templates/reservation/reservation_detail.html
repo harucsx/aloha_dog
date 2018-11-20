@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/reservation/reservationInfo.css" %}{% endblock %}
+{% block extrahead %}
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+    <script>
+        $(document).ready(function () {
+            var IMP = window.IMP; // 생략가능
+            IMP.init('imp60784957');
+
+
+        });
+
+        function do_payment() {
+            IMP.request_pay({
+                pg: 'inicis',
+                pay_method: 'card',
+                merchant_uid: 'merchant_alohadog_{{ r.reservation_no }}',
+                name: '알로하 도그 ({{ r.sitter.userprofile.name }} 시터)',
+                amount: '{{ r.total_price }}',
+                buyer_email: '{{ user.userprofile.email }}',
+                buyer_name: '{{ user.userprofile.name }}',
+                buyer_tel: '{{ user.userprofile.phone_number }}',
+                buyer_addr: '{{ user.userprofile.address1 }}',
+                buyer_postcode: '00000',
+                m_redirect_url: ''
+            }, function (rsp) {
+                if (rsp.success) {
+                    var query = {
+                        id: {{ r.id }},
+                        rid: {{ r.reservation_no }},
+                        uid: rsp.imp_uid,
+                        mid: rsp.merchant_uid,
+                        amount: rsp.paid_amount,
+                        apply_num: rsp.apply_num,
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "{% url 'payment_complete' %}",
+                        data: query,
+                        success: function (data) {
+                            window.location.reload();
+                        }
+                    });
+
+                    var msg = '시팅 요금 결제가 완료되었습니다.';
+                    alert(msg);
+                } else {
+                    var msg = '시팅 요금 결제에 실패하였습니다.\n';
+                    msg += '에러내용 : ' + rsp.error_msg;
+                    alert(msg);
+                }
+            });
+        }
+    </script>
+{% endblock %}
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>예약정보</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <span class="reservaionNum"><span class='titleRB'>예약번호</span>{{ r.reservation_no }}</span>
+                    <span class="reservaionDate"><span class='titleRB'>예약날짜</span>{{ r.reservation_datetime }}</span>
+                    <div class="blog_area blog_area_rInfo" style="margin-top: 25px;">
+                        <div class="reservationForm">
+
+                            <fieldset class="aligned">
+
+                                <div class="form-row">
+                                    <table class="reservaionTable">
+                                        <tr>
+                                            <th>신청자 이름</th>
+                                            <td>{{ r.userprofile.name }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>신청자 전화번호</th>
+                                            <td>{{ r.userprofile.phone_number }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>신청자 이메일</th>
+                                            <td>{{ r.userprofile.email }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>시터 이름</th>
+                                            <td>{{ r.sitter.userprofile.name }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>시터 주소</th>
+                                            <td>{{ r.sitter.userprofile.address1 }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>시터 전화번호</th>
+                                            <td>{{ r.sitter.userprofile.phone_number }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>시터 이메일</th>
+                                            <td>{{ r.sitter.userprofile.email }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>반려견 이름</th>
+                                            <td>{{ r.dog.name }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>돌봄시작날짜</th>
+                                            <td>{{ r.start_date }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>돌봄종료날짜</th>
+                                            <td>{{ r.end_date }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>주의사항</th>
+                                            <td>{{ r.precautions }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>돌봄가격</th>
+                                            <td>{{ r.total_price }}원</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>진행사항</th>
+                                            <td>{{ r.progress }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="label2">
+                        <a href="#" class="reservationHistory" id="b_cancle" onclick="window.history.back()">예약내역</a>
+
+                        {% if user.userprofile.id == r.sitter.userprofile.id and r.progress == "예약신청" %}
+                            <a href="{% url 'reservation_progress' r.id %}?progress=예약승락"
+                               class="reservationHistory" id="b_cancle">예약 승락하기</a>
+                        {% endif %}
+
+                        {% if user.userprofile.id == r.userprofile.id and r.progress == "예약승락" %}
+                            <a href="#"
+                               onclick="do_payment()"
+                               class="reservationHistory" id="b_cancle">결제하기</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

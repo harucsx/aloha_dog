@@ -15,14 +15,6 @@ def index(request):
     return render(request, 'home.html')
 
 
-def sitter_list(request):
-    return render(request, 'sitter/sitter_list.html')
-
-
-def sitter_detail(request, id):
-    return render(request, 'sitter/sitter_detail.html')
-
-
 def sitter_apply(request):
     return render(request, 'sitter/sitter_apply.html')
 
