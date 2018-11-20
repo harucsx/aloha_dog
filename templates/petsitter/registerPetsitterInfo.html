@@ -48,17 +48,12 @@
     							</div>
 
     							<div class="form-row">
-    								<span class="petsitter_housephoto">집과 집주변사진</span>
-    								<input name="housephoto" type="file" class="housephoto petsitterPhoto" id="housephoto">
-    							</div>
-
-    							<div class="form-row">
     								<span class="petsitter_address1">주소</span>
     								<input style="width: 400px;" name="inputContent" type="text" class="inputContent" id="address" value="${m.address1}" readonly>
     							</div>
     							
 								<div class="form-row">
-									<span class="petsitter_time_price">일당</span> 
+									<span class="petsitter_time_price">일당</span>
 									<input type="number" name="time_price" id="time_price" min="0" max="10000000" value="<%= p.getTime_price() %>"/><span style="margin: 15px 0">원</span>
 								</div>
 	
@@ -121,67 +116,6 @@
 								</div>
 	
 								<div class="form-row">
-									<span class="petsitter_caringWeight">돌봄 가능한 반려견 크기</span> 
-									<div class="caringWeight_all">
-										<label class="radioC caringWeight" style="margin-right: 27px;margin-left: 0;">5kg미만
-											<input type="radio" name="caringWeight" value="5kg미만"/>
-										  	<span class="checkmark">5kg미만</span>
-										</label>
-										<label class="radioC caringWeight" style="margin-right: 17px;">20kg미만
-											<input type="radio" name="caringWeight" value="20kg미만"/>
-											<span class="checkmark">20kg미만</span>
-										</label>
-										<label class="radioC caringWeight">40kg미만
-											<input type="radio" name="caringWeight" value="40kg미만"/>
-											<span class="checkmark">40kg미만</span>
-										</label>
-									</div>
-								</div>
-	
-								<div class="form-row">
-									<span class="petsitter_ageAvailable">돌봄 가능한 반려견 나이</span> 
-									<div class="ageAvailable_all">
-										<label class="radioC ageAvailable" style="margin-right: 29px;margin-left: 0;">1살미만
-											<input type="radio" name="ageAvailable" value="1살미만"/>
-										  	<span class="checkmark">1살미만</span>
-										</label>
-										<label class="radioC ageAvailable">6살미만
-											<input type="radio" name="ageAvailable" value="6살미만"/>
-										  	<span class="checkmark">6살미만</span>
-										</label>
-										<br/>
-										<label class="radioC ageAvailable" style="margin: 0 30px 10px 0px;">12살미만
-											<input type="radio" name="ageAvailable" value="12살미만"/>
-										  	<span class="checkmark">12살미만</span>
-										</label>
-										<label class="radioC ageAvailable" style="margin: 0 10px 10px 0px;">20살미만
-											<input type="radio" name="ageAvailable" value="20살미만"/>
-										  	<span class="checkmark">20살미만</span>
-										</label>
-									</div>
-								</div>
-	
-								<div class="form-row">
-									<span class="petsitter_checkTime">체크인 & 체크아웃 시간</span> 
-									<div class="checkTime_all">
-										<label class="checkTime">
-											<span>체크인</span>
-											<select class="checkTime_select" name="checkInTime_select">
-												<option value="오전">오전</option>
-												<option value="오후">오후</option>
-											</select><input type="number" name="checkInTime" min="0" max="12"/><span style="margin: 5px 0">시</span>
-										</label>
-										<label class="checkTime" style="margin-top: 0;">
-											<span style="margin-right: 11px;">체크아웃</span>
-											<select class="checkTime_select" name="checkOutTime_select">
-												<option value="오전">오전</option>
-												<option value="오후">오후</option>
-											</select><input type="number" name="checkOutTime" min="0" max="12"/><span style="margin: 5px 0">시</span>
-										</label>
-									</div>
-								</div>
-	
-								<div class="form-row">
 									<h4 class="petsitter_careEnvironment">돌봄환경</h4> 
 									<span class="petsitter_careEnvironment_space">돌봄공간</span>
 									<div class="careEnvironment_space_all">
@@ -198,30 +132,7 @@
 											<span class="checkmark">빌라</span>
 										</label>
 									</div>
-									<span class="petsitter_careEnvironment_nearbySubway">인근지하철역</span>
-                                    <input type="text" name="careEnvironment_nearbySubway" required/>
-									<span class="petsitter_careEnvironment_yard">마당유무</span>
-									<div class="petsitter_radio_all">
-										<label class="radioC petsitter_radio" style="margin-left: 0; margin-right: 72px;">Y
-											<input type="radio" name="careEnvironment_yard" value="Y"/>
-										  	<span class="checkmark">Yes</span>
-										</label>
-										<label class="radioC petsitter_radio">N
-											<input type="radio" name="careEnvironment_yard" value="N"/>
-											<span class="checkmark">No</span>
-										</label>
-									</div>
-									<span class="petsitter_careEnvironment_under14">14세 미만 아동 유무</span>
-									<div class="petsitter_radio_all">
-										<label class="radioC petsitter_radio" style="margin-left: 0; margin-right: 72px;">Y
-											<input type="radio" name="petsitter_under14" class="petsitter_under14" value="Y"/>
-										  	<span class="checkmark">Yes</span>
-										</label>
-										<label class="radioC petsitter_radio">N
-											<input type="radio" name="petsitter_under14" class="petsitter_under14" value="N"/>
-											<span class="checkmark">No</span>
-										</label>
-									</div>
+
 									<span class="petsitter_careEnvironment_family">가족동거유무</span>
 									<div class="petsitter_radio_all">
 										<label class="radioC petsitter_radio" style="margin-left: 0; margin-right: 72px;">Y
