@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/board.css" %}{% endblock %}
+
+{% block content %}
+	<div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>게시글</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="active">게시글</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="blog-area white-bg pt-0 pb-0 mb-70">
+		<div class="container">
+	    	<div class="row">
+	        	<div class="col-lg-9 ml-auto mr-auto">
+	            	<div class="blog_area">
+                        <div id="list_head-view" class="box2">
+                           <h3 class="inline-view">작성일자<font style="color:lightgrey;">(2018-11-14 13:00)</font></h3>
+                        </div>
+	            		<div id="viewForm" class="box">
+						   <ul>
+						      <li><label for="subject">제목</label>
+						          <input id="subject" name="inputContent" type="text" value="안녕하세앤여냉ㄴㅇ" style="padding-left: 0; width: 720px;" readonly>
+						          <input type="hidden" id="num" value="<%= num %>">
+						      </li>
+						      <li><label for="content" id="contentLabel">내용</label>
+						          <textarea id="content" rows="13" cols="50" readonly>ㅓㅏㅣㅓㅏㅣㅓㅏㅣ치야러ㅑ어ㅐ애야래앙;래ㅑㅐ야랑ㄴ리;안리의ㅡ치파ㅐㄴ야래어라ㅣㅇ너ㅣㅇ;ㅏ패냥래여ㅓ라ㅣㅇㄹㅇㅇㄹㅇㄹㅇㄴㄹㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄹㄴㅇㄹㄴ</textarea>
+						      </li>
+						      <li class="label2 label2-edit">
+						          <a href="{% url 'boardList' %}" id="b_cancle">목록</a>
+                                  <a href="{% url 'editPost' %}" id="b_update">수정</a>
+						          <a href="{% url 'deletePost' %}" id="b_delete">삭제</a>
+						      </li>
+						   </ul>
+						</div>
+	            	</div>
+	            </div>
+	       	</div>
+	   	</div>
+	</div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="mt-70">
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

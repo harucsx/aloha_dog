@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/reservation/reservationInfo.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>예약정보</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="active">예약정보</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+   	 			<span class="reservaionNum"><span class='titleRB'>예약번호</span>201811181</span>
+   	 			<span class="reservaionDate"><span class='titleRB'>예약날짜</span> 2018-11-20 15:30</span>
+                    <div class="blog_area blog_area_rInfo" style="margin-top: 25px;">
+                    	<div class="reservationForm">
+
+    						<fieldset class="aligned" >
+								
+    							<div class="form-row">
+								<table class="reservaionTable">
+									<tr>
+									    <th>회원이름</th>
+									    <td>{{user.username}}</td>
+									</tr>
+									
+									<tr>
+									    <th>회원주소</th>
+									    <td><%= m.getAddress1() %></td>
+									</tr>
+									
+									<tr>
+									    <th>회원전화번호</th>
+									    <td><%= m.getPhone() %></td>
+									</tr>
+									
+									<tr>
+									    <th>회원이메일</th>
+									    <td><%= m.getEmail() %></td>
+									</tr>
+									
+									<tr>
+									    <th>반려견이름</th>
+									    <td><%= r.getPet() %></td>
+									</tr>
+									
+									<tr>
+									    <th>돌봄시작날짜</th>
+									    <td><%= r.getStartdate() %></td>
+									</tr>
+									
+									<tr>
+									    <th>돌봄종료날짜</th>
+									    <td><%= r.getEnddate() %></td>
+									</tr>
+									
+									<tr>
+									    <th rowspan="6">선택 무료서비스</th>
+									    <td><%= (p.getFree_service1() != null) ? "노령견케어" : "" %></td>
+									</tr>
+									
+									<tr>
+									    <td><%= (p.getFree_service2() != null) ? "환자견케어" : "" %></td>
+								    </tr>
+								    
+								    <tr>
+									    <td><%= (p.getFree_service3() != null) ? "자격증보유" : "" %></td>
+									</tr>
+									
+									<tr>
+										<td><%= (p.getFree_service4() != null) ? "실외배변" : "" %></td>
+									</tr>
+									
+									<tr>
+										<td><%= (p.getFree_service5() != null) ? "응급처치" : "" %></td>
+									</tr>
+									
+									<tr>
+										<td><%= (p.getFree_service6() != null) ? "투약가능" : "" %></td>
+									</tr>
+									
+									<tr>
+									    <th rowspan="5">선택 유료서비스</th>
+									    <td><%= (p.getPaid_service1() != null) ? "목욕가기" : "" %></td>
+									</tr>
+									
+									<tr>
+										<td><%= (p.getPaid_service2() != null) ? "병원가기" : "" %></td>
+									</tr>
+										
+									<tr>
+									    <td><%= (p.getPaid_service3() != null) ? "픽업가능" : "" %></td>
+									</tr>
+									    
+									<tr>
+									    <td><%= (p.getPaid_service4() != null) ? "수제간식" : "" %></td>
+									</tr>
+									    
+									<tr>
+									    <td><%= (p.getPaid_service5() != null) ? "미용가기" : "" %></td>
+									</tr>
+									
+									<tr>
+									    <th>주의사항</th>
+									    <td><%= r.getPrecautions() %></td>
+									</tr>
+									
+									<tr>
+									    <th>돌봄가격</th>
+									    <td><%= r.getPayment() + "원"%></td>
+									</tr>
+									
+									<tr>
+									    <th>진행사항</th>
+									    <td><%= r.getProgress() %></td>
+									</tr>
+									
+									<tr>
+									    <th>펫시터이름</th>
+									    <td><%= pm.getName() %></td>
+									</tr>
+									
+									<tr>
+									    <th style="border-bottom:none;">펫시터주소</th>
+									    <td style="border-bottom:none;">서울 성동구</td>
+									</tr>
+								</table>
+								</div>
+                                
+    						</fieldset>
+    					</div>
+                    </div>
+
+			      	<div class="label2">
+			          	<a href="{% url 'rHistoryM' %}" class="reservationHistory" id="b_cancle" value="<%= pageNum %>">예약내역</a>
+			          	<a href="{% url 'rDelete' %}" id="b_delete" value="<%= pageNum %>">삭제</a>
+			      	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="mt-70">
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}
