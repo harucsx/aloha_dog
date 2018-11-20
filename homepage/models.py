@@ -112,7 +112,7 @@ class Dog(models.Model):
     owner = models.ForeignKey('UserProfile', on_delete=models.CASCADE, verbose_name="견주")
     name = models.CharField(max_length=50, verbose_name="펫 이름")
     species = models.CharField(max_length=50, verbose_name="견종")
-    birth_date = models.DateField(verbose_name="생일", null=True)
+    birth_date = models.CharField(max_length=50, verbose_name="생일")
     age = models.IntegerField(verbose_name="나이")
     weight = models.FloatField( verbose_name="몸무게")
     sex = models.CharField(max_length=5, choices=SEX_CHOICES, verbose_name="성별")
