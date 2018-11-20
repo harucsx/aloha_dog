@@ -103,7 +103,6 @@ class Sitter(models.Model):
     care_zone = models.CharField(max_length=100, verbose_name='돌봄 공간')
     housemate_situation = models.CharField(max_length=100, verbose_name='가족 동거 유무')
     pet_situation = models.CharField(max_length=100, verbose_name='다른 반려동물 유무')
-    intro = models.CharField(max_length=200, verbose_name="한 줄 소개")
     qna = models.TextField(max_length=1000, verbose_name="QnA")
 
     def __str__(self):
