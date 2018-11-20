@@ -2011,6 +2011,7 @@ signUp.jsp
 .form-row span.registerPostcode{padding: 15px 74px 15px 100px;} /* register */
 .form-row span.registerAddress1{padding: 15px 102px 15px 100px;} /* register */
 .form-row span.registerAddress2{padding: 15px 74px 15px 100px;} /* register */
+.form-row span.petsitter_accountnumber{padding: 20px 75px} /* register */
 .form-row span.registerProfile{padding: 15px 57px 15px 100px;} /* register */
 .form-row .whether_to_join_agree{margin: 15px auto;} /* register */
 input[name=pw]::placeholder{font-size: 12px; letter-spacing: -1px; color: rgba(0, 0, 0, 0.2);}

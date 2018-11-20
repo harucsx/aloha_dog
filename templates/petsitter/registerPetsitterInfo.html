@@ -51,7 +51,17 @@
     								<span class="petsitter_address1">주소</span>
     								<input style="width: 400px;" name="inputContent" type="text" class="inputContent" id="address" value="${m.address1}" readonly>
     							</div>
-    							
+
+                                <div class="form-row">
+                                    <span class="petsitter_accountnumber">계좌번호</span>
+                                    <select name="accountnumber" id="accountnumber" style="width: 150px; margin: 5px 40px;">
+                                        <option value="신한은행" selected>신한은행</option>
+                                        <option value="국민은행">국민은행</option>
+                                        <option value="하나은행">하나은행</option>
+                                    </select>
+                                    <input style="width: 200px; margin: 5px -20px;" type="text" name="accountnumber" id="accountnumber" value=""/>
+                                </div>
+
 								<div class="form-row">
 									<span class="petsitter_time_price">일당</span>
 									<input type="number" name="time_price" id="time_price" min="0" max="10000000" value="<%= p.getTime_price() %>"/><span style="margin: 15px 0">원</span>
