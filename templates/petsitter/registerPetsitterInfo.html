@@ -3,7 +3,10 @@
 {% block title %}ALOHA DOG{% endblock %}
 
 {% load staticfiles %}
-{% block extrastyle %}{% static "css/petsitter/registerPetsitterInfo.css" %}{% endblock %}
+{% block extrastyle %}
+    {% static "css/petsitter/registerPetsitterInfo.css" %}
+    {% static "submenu.css" %}
+{% endblock %}
 
 {% block content %}
     <div class="location-tow mb-60">
