@@ -98,13 +98,13 @@
                                             <span class="neutralization">중성화여부</span>
                                             <label class="radioC">y
                                                 <input type="radio" name="neutralization" id="y" value="Y"
-                                                       {% if pet.neutralization %}checked{% endif %}
+                                                       {% if pet.neutralization %} checked{% endif %}
                                                 />
                                                 <span class="checkmark">예</span>
                                             </label>
                                             <label class="radioC">n
                                                 <input type="radio" name="neutralization" id="n" value="N"
-                                                       {% if not pet.neutralization %}checked{% endif %}
+                                                       {% if not pet.neutralization %} checked{% endif %}
                                                 />
                                                 <span class="checkmark">아니오</span>
                                             </label>
@@ -120,13 +120,13 @@
                                         <div class="form-row qA">
                                             <span class="q1 question">예방접종을 완료하셨나요?</span>
                                             <label class="radioC">y
-                                                <input type="radio" name="a1" id="y" value="Y"
+                                                <input type="radio" name="vaccination" id="y" value="Y"
                                                        {% if pet.vaccination %}checked{% endif %}
                                                 />
                                                 <span class="checkmark">예</span>
                                             </label>
                                             <label class="radioC">n
-                                                <input type="radio" name="a1" id="n" value="N"
+                                                <input type="radio" name="vaccination" id="n" value="N"
                                                        {% if not pet.vaccination %}checked{% endif %}
                                                 />
                                                 <span class="checkmark">아니오</span>

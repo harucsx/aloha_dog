@@ -207,7 +207,8 @@
                                                             <br/>
                                                             <br/>
                                                             <h2 class="memberName">
-                                                                {% firstof user.get_short_name user.get_username %}
+                                                                {# {% firstof user.get_short_name user.get_username %}#}
+                                                                {{ user.userprofile.name }}님
                                                             </h2>
                                                             <span class="hello">님 안녕하세요!</span>
                                                             <br/>

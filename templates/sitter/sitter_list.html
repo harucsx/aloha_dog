@@ -143,7 +143,7 @@
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="product-content shop-list interestedCI">
-                                                        <h2><a href="#">{{ sitter.userprofile.name }} 시터님</a></h2>
+                                                        <h2><a href="{% url 'sitter_detail' sitter.id %}">{{ sitter.userprofile.name }} 시터님</a></h2>
                                                         <div class="product-description">
                                                             <p>{{ sitter.introduction }}</p>
                                                         </div>
