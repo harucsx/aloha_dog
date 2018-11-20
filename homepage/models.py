@@ -38,17 +38,16 @@ class UserProfile(models.Model):
 
 # 예약
 class Reservation(models.Model):
+    reservation_no = models.CharField(max_length=8, verbose_name='예약번호')
     userprofile = models.ForeignKey('UserProfile', on_delete=models.CASCADE, verbose_name='예약을 신청한 회원')
     dog = models.ForeignKey('Dog', on_delete=models.CASCADE, verbose_name='예약이 신청된 동물')
     sitter = models.ForeignKey('Sitter', on_delete=models.CASCADE, verbose_name='예약을 신청받은 시터')
-    reservation_date = models.DateTimeField(auto_now=False, verbose_name='신청한 날짜')
-    start_datetime = models.DateTimeField(verbose_name='돌봄시작날짜')
-    end_datetime = models.DateTimeField(verbose_name='돌봄마침날짜')
-    free_services = models.CharField(max_length=100, verbose_name='무료 서비스')
-    paid_services = models.CharField(max_length=100, verbose_name='유료 서비스')
+    reservation_datetime = models.DateTimeField(auto_now_add=True, verbose_name='신청한 날짜')
+    start_date = models.DateField(verbose_name='돌봄시작날짜')
+    end_date = models.DateField(verbose_name='돌봄마침날짜')
     precautions = models.CharField(max_length=100, verbose_name='돌봄 주의사항')
     progress = models.CharField(max_length=100, verbose_name='진행상황')
-    total_price = models.IntegerField(default=0, verbose_name='총가격')
+    total_price = models.IntegerField(default=0, verbose_name='총 가격')
 
 
 # 시터 지원서
@@ -115,7 +114,7 @@ class Dog(models.Model):
     species = models.CharField(max_length=50, verbose_name="견종")
     # birth_date = models.CharField(max_length=50, verbose_name="생일")
     age = models.IntegerField(verbose_name="나이")
-    weight = models.FloatField( verbose_name="몸무게")
+    weight = models.FloatField(verbose_name="몸무게")
     sex = models.CharField(max_length=5, choices=SEX_CHOICES, verbose_name="성별")
     neutralization = models.BooleanField(default=True, verbose_name="중성화 여부")
     profile = models.ImageField(upload_to='dog_images/', verbose_name="프로필 사진")

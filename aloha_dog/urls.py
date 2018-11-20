@@ -37,13 +37,20 @@ urlpatterns = [
     path('pet/add', pets.pet_add, name='pet_add'),
     path('pet/<int:id>', pets.pet_edit, name='pet_edit'),
 
-    path('sitter', views.sitter_list, name='sitter_list'),
+    path('sitter', sitters.sitter_list, name='sitter_list'),
     path('sitter/check', sitters.sitter_check, name='sitter_check'),
     path('sitter/join', sitters.sitter_join, name='sitter_join'),
     path('sitter/apply', views.sitter_apply, name='sitter_apply'),
     path('sitter/intro', views.sitter_intro, name='sitter_intro'),
     path('sitter/intro2', views.sitter_intro2, name='sitter_intro2'),
-    path('sitter/<int:id>', views.sitter_detail, name='sitter_detail'),
+    path('sitter/<int:id>', sitters.sitter_detail, name='sitter_detail'),
+
+    path('payment_complete', sitters.payment_complete, name='payment_complete'),
+
+    path('reservation', sitters.reservation_list, name='reservation_list'),
+    path('reservation/<int:id>', sitters.reservation_detail, name='reservation_detail'),
+    path('reservation/<int:id>/progress', sitters.reservation_progress, name='reservation_progress'),
+    path('reservation/new/<int:sitter_id>', sitters.reservation, name='reservation'),
 
     path('board/<str:board_type>', boards.board_list, name='board_list'),
     path('board/<str:board_type>/<int:id>', boards.board_detail, name='board_detail'),
