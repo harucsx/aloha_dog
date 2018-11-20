@@ -100,7 +100,7 @@ class Sitter(models.Model):
     paid_services = models.CharField(max_length=100, verbose_name='유료 서비스')
     day_price = models.IntegerField(default=0, verbose_name='일당')
     care_zone = models.CharField(max_length=100, verbose_name='돌봄 공간')
-    roommate_situation = models.CharField(max_length=100, verbose_name='가족 동거 유무')
+    housemate_situation = models.CharField(max_length=100, verbose_name='가족 동거 유무')
     pet_situation = models.CharField(max_length=100, verbose_name='다른 반려동물 유무')
     qna = models.TextField(max_length=1000, verbose_name="QnA")
 
