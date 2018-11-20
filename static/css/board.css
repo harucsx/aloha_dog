@@ -51,7 +51,7 @@ input[type=radio], input[type=checkbox]{
     background: grey;
     color: white;
 }
-radio
+/*radio*/
 .radioC {
     display: block;
     position: relative;
@@ -143,7 +143,7 @@ input[type=time]:focus, select:focus, option:focus {
     position: relative;
     top: -10px;
     width: 350px;
-background: green;
+/*background: green;*/
     margin: 0 auto;
 }
 .clearfix:after {
@@ -155,30 +155,31 @@ background: green;
     border: 1px solid #ebebeb;
     padding: 20px;
 }
-
+.blog_area_board{border: none;padding: 0;}
+input[name=inputContent]{
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0;
+    display: inline-block;
+    background: white;
+    border: none;
+    font-size: 15px;
+    font-weight:bold;
+    color: #c999ff;
+}input[name=inputContent]:hover{
+    color: #c999ff; 
+    background: white; 
+}input[name=inputContent]:focus{
+    color: #c999ff; 
+    background: white; 
+}
 
 
 /*----------------------------------------
 ------------------------------------------
 ----------------------------------------*/
-
-/* list */
-#list_head{width: 100%; height: 27px; margin: 0; /* background: green; */}
-.inline{
-    float: left;
-    font-size: 15px;
-    color: #666;
-    margin-top: 5px;
-}
-#b_new{
-    float: right;
-    color: #666;
-    cursor: pointer;
-    background: white;
-    text-align: center;
-    font-size: 15px;
-    border: none;
-}#b_new:hover{color: #c999ff;}
 .table-content table {
     background: #fff none repeat scroll 0 0;
     text-align: center;
@@ -199,37 +200,18 @@ thead {
     vertical-align: middle;
     white-space: nowrap;
 }
-.date{padding:0; margin:0;}
 .table-content table td {
     padding: 10px;
     vertical-align: middle;
     font-size: 15px;
 }
-.table-content table th,
-.table-content table td {border-bottom: 1px solid #c999ff;}
-#jump{text-align: center; margin-top: 50px;}
-#jump button{
-    border: none;
-    background: none;
-    color: #666;
-    cursor: pointer;
+.table-content table th{
+    border-bottom: 1px solid #c999ff;
+    border-top: 1px solid #c999ff;
 }
-.listTableTitle_button{
-    color: #666;
-    padding: 5px 15px;
-    cursor: pointer;
-    background: white;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
-    text-align: center;
-    font-size: 15px;
-}.listTableTitle_button:hover{color: #fff; background: #c999ff; border-color: #c999ff;}
-
-/* writerForm */
-li{list-style:none;}
-#writeForm ul li label{padding: 15px 50px 15px 10px;}
+.table-content table td {border-bottom: 1px solid #ebebeb;}
 input[name=subject], input[name=passwd]{
-    width: 770px;
+    width: 720px;
     height: 45px;
     padding: 10px;
     margin: 5px;
@@ -239,11 +221,10 @@ input[name=subject], input[name=passwd]{
     border: none;
     font-size: 15px;
 }
-#writeForm ul li label[for=passwd]{padding: 15px 23px 15px 10px;}
+li{list-style:none;}
 input[name=passwd]{width: 500px;}
-#contentLabel{float:left; padding: 15px 50px 15px 10px; margin-right: 5px;}
 textarea#content{
-    width: 770px;
+    width: 720px;
     padding: 10px;
     margin: 5px;
     margin-left: 0;
@@ -266,21 +247,73 @@ input[name=subject]:focus, input[name=passwd]:focus, textarea#content:focus{
 .label2{
     position: relative;
     top: -10px;
-    width: 350px;
+    width: 240px;
     /*background: green;*/
     margin: 0 auto;
+    margin-bottom: -50px;
 }
 .label2:after {
     content: "";
     clear: both;
     display: table;
 }
+
+/* list */
+#list_head{
+    position: relative;
+    top: 0px;
+    width: 100%; 
+    height: 27px; 
+    margin: 0; 
+    /*background: green; */
+}
+.inline{
+    float: left;
+    font-size: 15px;
+    color: #666;
+    margin-top: 5px;
+}
+#b_new{
+    float: right;
+    color: #666;
+    cursor: pointer;
+    background: white;
+    text-align: center;
+    font-size: 15px;
+    border: none;
+}#b_new:hover{color: #c999ff;}
+
+.date{padding:0; margin:0;}
+
+#jump{text-align: center; margin-top: 50px;}
+#jump button{
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
+}
+.listTableTitle_button{
+    color: #666;
+    padding: 5px 15px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 15px;
+}.listTableTitle_button:hover{color: #fff; background: #c999ff; border-color: #c999ff;}
+
+/* writerForm */
+#writeForm ul li label{padding: 15px 50px 15px 10px;}
+#writeForm ul li label[for=passwd]{padding: 15px 23px 15px 10px;}
+#contentLabel{float:left; padding: 15px 50px 15px 10px; margin-right: 5px;}
+.label2-edit{width: 360px;}
 #b_regist,  #b_cancle{
     color: #666;
     padding: 14px 0;
     margin: 40px 10px;
     cursor: pointer;
-    width: 150px;
+    width: 100px;
     background: white;
     border: 2px solid #e5e5e5;
     border-radius: 3px;
@@ -290,7 +323,9 @@ input[name=subject]:focus, input[name=passwd]:focus, textarea#content:focus{
 }
 #b_regist:hover, #b_cancle:hover{color: #fff; background: #c999ff; border-color: #c999ff;}
 
+
 /* updateForm */
+/*#editForm{margin-top: 30px;}*/
 #editForm ul li label{padding: 15px 50px 15px 10px;}
 #editForm ul li label[for=passwd]{padding: 15px 23px 15px 10px;}
 #b_update{
@@ -298,7 +333,7 @@ input[name=subject]:focus, input[name=passwd]:focus, textarea#content:focus{
     padding: 14px 0;
     margin: 40px 10px;
     cursor: pointer;
-    width: 150px;
+    width: 100px;
     background: white;
     border: 2px solid #e5e5e5;
     border-radius: 3px;
@@ -315,7 +350,7 @@ input[name=subject]:focus, input[name=passwd]:focus, textarea#content:focus{
     padding: 14px 0;
     margin: 40px 10px;
     cursor: pointer;
-    width: 150px;
+    width: 100px;
     background: white;
     border: 2px solid #e5e5e5;
     border-radius: 3px;
@@ -323,3 +358,24 @@ input[name=subject]:focus, input[name=passwd]:focus, textarea#content:focus{
     float: left;
     font-size: 15px;
 }#b_delete:hover{color: #fff; background: #c999ff; border-color: #c999ff;}
+
+/*view*/
+#viewForm ul li label{padding: 15px 50px 15px 10px;}
+#viewForm {margin-top: -40px;}
+.inline-view{
+    font-size: 15px;
+    color: #666;
+    margin-top: 5px;
+}
+#list_head-view{
+    position: relative;
+    top: -50px;
+    left: -20px;
+    width: 100%; 
+    height: 27px; 
+    margin: 0; 
+    padding: 0;
+    /*background: green; */
+}
+
+/**/
