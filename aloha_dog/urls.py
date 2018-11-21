@@ -33,6 +33,7 @@ urlpatterns = [
     path('login', users.login, name='login'),
     path('logout', users.logout, name='logout'),
     path('profile', users.profile, name='profile'),
+    path('user/delete', users.user_delete, name='user_delete'),
 
     path('pet', pets.pet_list, name='pet_list'),
     path('pet/add', pets.pet_add, name='pet_add'),

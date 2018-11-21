@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 from django.http import JsonResponse, Http404
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
@@ -125,6 +126,7 @@ def sitter_join(request):
 def sitter_list(request):
     search_keyword = request.GET.get('keyword')
     search_city = request.GET.get('city')
+    page = request.GET.get('page')
 
     context = dict()
 
@@ -140,6 +142,9 @@ def sitter_list(request):
         context['search_message'] = str(sitter.count()) + '개의 검색 결과가 있습니다.'
     else:
         sitter = Sitter.objects.all()
+
+    paginator = Paginator(sitter, 5)
+    sitter = paginator.get_page(page)
 
     context['sitters'] = sitter
     return render(request, 'sitter/sitter_list.html', context=context)
