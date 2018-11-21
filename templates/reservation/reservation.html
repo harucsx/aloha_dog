@@ -110,7 +110,7 @@
         function calcPrice(startday, endday) {
             startday = new Date(startday);
             endday = new Date(endday);
-            today = new Date();
+            var today = new Date();
 
             var datediff = endday - startday;
             var prevdiff = startday - today;
@@ -118,8 +118,8 @@
             if (isNaN(datediff))
                 return;
 
-            if (isNan(prevdiff))
-                return
+            if (isNaN(prevdiff))
+                return;
 
             if (datediff < 0) {
                 alert('종료일이 시작일 이전일 수 없습니다.');
