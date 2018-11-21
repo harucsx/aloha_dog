@@ -166,7 +166,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="location-title">
-                        <h1>회원가입</h1>
+                        <h1>
+                            {% if user.is_active %}
+                                개인정보 수정
+                            {% else %}
+                                회원가입
+                            {% endif %}
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -448,7 +454,7 @@
                                     <span class="registerXbtn">취소</span>
                                 </a>
                                 <a id="join" href="#">
-                                    <span class="registerbtn">회원가입</span>
+                                    <span class="registerbtn">{% if user.is_active %}정보 수정{% else %}회원가입{% endif %}</span>
                                 </a>
                                 {#                                <input type="submit" value="회원가입" class="registerbtn"/>#}
                             </div>

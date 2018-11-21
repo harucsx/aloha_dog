@@ -15,7 +15,7 @@
                     </div>
                     <div class="location-content location-content-tow">
                         <ul>
-                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li><a href="{% url 'home' %}">홈</a></li>
                             <li><a href="#">펫시터 고용</a></li>
                             <li class="active">펫시터 정보</li>
                         </ul>
@@ -163,11 +163,11 @@
                                             </tr>
                                             <tr>
                                                 <th>무료서비스</th>
-                                                <td>{{ sitter.free_service }}</td>
+                                                <td>{{ sitter.free_services }}</td>
                                             </tr>
                                             <tr>
                                                 <th>유료서비스</th>
-                                                <td>{{ sitter.paid_service }}</td>
+                                                <td>{{ sitter.paid_services }}</td>
                                             </tr>
                                         </table>
                                     </div>
