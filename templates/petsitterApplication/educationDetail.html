@@ -5,7 +5,7 @@
 {% load staticfiles %}
 
 {% block content %}
-    <div class="location-tow mb-0">
+    <div class="location-tow mb-50">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -27,41 +27,73 @@
 	    <div class="container">
 	        <div class="account-dashboard">
 	            <div class="row">
-	            <div class="hhh">
-					<div class="our-history-area mt-85">
-						 <div class="container">
-						     <div class="row">
-						         <div class="col-12">
-						             <div class="section-title text-center mb-35">
-						                 <h2>Education Intro</h2>
-						                 <span>알로하도그 교육과정 소개</span>
-						             </div>
-						         </div>
-						     </div>
-						     <div class="row">
-						         <div class="col-lg-8 ml-auto mr-auto">
-						             <div class="history-area-content text-center">
-						                 <p><strong>알로하도그 오프라인 교육과정 소개입니다.</strong></p>
+					<div class="container">
+					     <div class="row">
+					         <div class="col-12">
+					             <div class="section-title text-center mb-35">
+					                 <h2>Education Intro</h2>
+					                 <span>알로하도그 교육과정 소개</span>
+					             </div>
+					         </div>
+					     </div>
+					     <div class="row">
+					         <div class="col-lg-8 ml-auto mr-auto">
+					             <div class="history-area-content text-center">
+					                 <p style="margin-bottom: 20px;"><strong>알로하도그 오프라인 교육과정 소개입니다.</strong></p>
 <pre>
 - 반려견 첫만남 시 주의사항 및 친화방법
 - 체중, 나이에 알맞은 배식방법
 - 카밍시그널, 반려견의 몸짓 제대로 알기
-- 질병과 예방접종 (예방접종 및 중성화 시기 및 유의사항, 전염질병 등)
-- 기본 그루밍 (눈물정리, 발톱/발바닥털 정리, 귀청소, 항문낭, 빗질 등)
+- 질병과 예방접종 (예방접종 및 중성화 시기 및 유의사항, 
+- 기본 그루밍 (눈물정리, 발톱/발바닥털 정리, 귀청소, 
 - 응급처치법 (CPR 및 찰과상, 화상, 타박상 대처법 등)
-- 반려견 문제행동 (마킹, 짖음, 공격성, 식분증, 물어뜯기)증세와 행동관찰
+- 반려견 문제행동 (마킹, 짖음, 공격성, 식분증, 물어뜯기)
 - 문제행동에 대한 대처방법 및 2마리 이상 돌봄 시 주의사항
 - 스트레스 해소에 좋은 반려견 놀이법
-</pre>
-						             </div>
-						             <br><br>
-						         </div>
-						     </div>
-						 </div>
+</pre>                   
+					             </div>
+					         </div>
+					     </div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>
 	</div>
 {% endblock %}
+
+{% block footer %}
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom-area pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-payments-image">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}"><img src="{% static 'logo/logo1.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><b>사업자등록번호:</b> 000-00-00000</li>
+                                        <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
+                                        <br/>
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
+                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>이메일:</b> ohmyfood_@naver.com,</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">AlohaDog</a> All Rights Reserved</p>
+                                <p><span>대표: 김아연, 김샛별, 박기나, 김지윤</span></p>
+                                <p><span><a href="#">이용약관</a> | <a href="#">개인정보취급방법</a> | <a href="#">안전보상제도</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}
