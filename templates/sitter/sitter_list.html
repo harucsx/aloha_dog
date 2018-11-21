@@ -43,7 +43,7 @@
                                     <div class="blog_area_top2"> <!-- 돌봄지역 -->
                                         <span>돌봄지역:</span>
                                         <span><select class="wide" name="city">
-                                            {% if  search_city %}
+                                            {% if search_city %}
                                                 <option data-display="Select">{{ search_city }}</option>
                                             {% endif %}
                                             <option data-display="Select">전체</option>
@@ -75,7 +75,7 @@
                                                     <i class="fa fa-star"></i>
                                                 </div>
                                                 <div class="blog_area_top3_li_price">
-                                                    <span class="price">Top1</span>
+{#                                                    <span class="price">Top1</span>#}
                                                 </div>
                                             </div>
                                         </li>
@@ -95,7 +95,7 @@
                                                     <i class="fa fa-star"></i>
                                                 </div>
                                                 <div class="blog_area_top3_li_price">
-                                                    <span class="price">Top2</span>
+{#                                                    <span class="price">Top2</span>#}
                                                 </div>
                                             </div>
                                         </li>
@@ -115,7 +115,7 @@
                                                     <i class="fa fa-star"></i>
                                                 </div>
                                                 <div class="blog_area_top3_li_price">
-                                                    <span class="price">Top3</span>
+{#                                                    <span class="price">Top3</span>#}
                                                 </div>
                                             </div>
                                         </li>
@@ -143,7 +143,9 @@
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="product-content shop-list interestedCI">
-                                                        <h2><a href="{% url 'sitter_detail' sitter.id %}">{{ sitter.userprofile.name }} 시터님</a></h2>
+                                                        <h2>
+                                                            <a href="{% url 'sitter_detail' sitter.id %}">{{ sitter.userprofile.name }}
+                                                                시터님</a></h2>
                                                         <div class="product-description">
                                                             <p>{{ sitter.introduction }}</p>
                                                         </div>
@@ -172,12 +174,15 @@
                             </div>
                             <div class="product-pagination">
                                 <ul>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                                    {% for page in sitters.paginator.page_range %}
+                                        <li {% if page == sitters.number %} class="active"{% endif %}><a
+                                                href="{% url 'sitter_list' %}?page=
+                                                        {{ page }}{% if search_keyword %}&search_keyword={{ search_keyword }}{% endif %}{% if search_city %}&search_city={{ search_city }}{% endif %}">{{ page }}</a>
+                                        </li>
+                                    {% endfor %}
+                                    <li><a href="{% url 'sitter_list' %}?page=
+                                            {{ sitters.paginator.num_pages }}{% if search_keyword %}&search_keyword={{ search_keyword }}{% endif %}{% if search_city %}&search_city={{ search_city }}{% endif %}"><i
+                                            class="fa fa-angle-double-right"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -189,3 +194,21 @@
     </div>
     </div>
 {% endblock %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if contacts.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ contacts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+        </span>
+
+        {% if contacts.has_next %}
+            <a href="?page={{ contacts.next_page_number }}">next</a>
+            <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>

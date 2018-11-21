@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/reservation/reservationHistoryM.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>결제 내역</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+                        <div id="list_head" class="box2">
+                            <h3 class="inline">결제 내역<font style="color:lightgrey;"> (전체 결제 건수
+                                : {{ payments.count }})</font>
+                            </h3>
+                        </div>
+                        <div id="list_article" class="box2">
+                            <ul class="article">
+                                <div class="table-content table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th class="listTableTitle">예약번호</th>
+                                            <th class="listTableTitle">시터</th>
+                                            <th class="listTableTitle">승인번호</th>
+                                            <th class="listTableTitle">가격</th>
+                                            <th class="listTableTitle">결제일시</th>
+                                            <th class="listTableTitle">예약내역</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for payment in payments %}
+                                            <tr>
+                                                <td class="listTableTitle_num">
+                                                    <li class="layout_f">{{ payment.reservation.reservation_no }}</li>
+                                                </td>
+                                                <td class="listTableTitle_startdate"><p
+                                                        class="date">{{ payment.reservation.sitter.userprofile.name }}<br>
+                                                </td>
+                                                <td class="listTableTitle_writer">{{ payment.amount }}</td>
+                                                <td class="listTableTitle_payment">{{ payment.apply_num }}</td>
+                                                <td class="listTableTitle_progress">{{ payment.payment_datetime }}</td>
+                                                <td class="listTableTitle_Button">
+                                                    <a href="{% url 'reservation_detail' payment.reservation.id %}"
+                                                       class="listTableTitle_button" id="edit">예약내역
+                                                    </a>
+                                                </td>
+                                                </li>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

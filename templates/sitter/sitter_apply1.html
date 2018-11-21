@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/petsitterApplication/application1.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>펫시터 신청</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="active">펫시터 신청</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="about-us-area">
+	    <div class="container-fluid p-0">
+	        <div class="row no-gutters">
+	            <div class="col-md-12 col-lg-6">
+	                <div class="about-us-img img-full">
+	                    <img src="{% static 'img/dog123.jpg' %}">
+	                </div>
+	            </div>
+	            <div class="col-md-12 col-lg-6">
+	                <div class="about-us-content">
+	                    <h2><strong>강아지를 정말로 사랑하는 당신</strong> <br><strong>지금 바로 지원해보세요!</strong></h2>
+	                    <p> 알로하도그는 강아지를 사랑하며, 소중하게 시팅해주실 분을 모집하고 있습니다. 반려동물 1000만 시대에 펫시터는 전망이 높은 직업입니다. 이미 해외에서는 고연봉 직업으로 인정을 받았습니다. 서류합격 진행 후, 오프라인에서
+	                    다양한 케어 교육또한 실시하고 있습니다. 강아지를 사랑하신다면 지금 바로 지원해보세요. </p>
+					   	{% if user.is_active %}
+	                    	<a href="{% url 'sitter_apply2' %}" class="about-btn-login">지원하기</a>
+	                    {% else %}
+	                    	<a href="{% url 'login' %}" class="about-btn-login">지원하기</a>
+					    {% endif %}
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/member/memberDelete_Done.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>이용해주셔서 감사합니다.</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">홈</a></li>
+                            <li class="active">회원탈퇴</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+                        <div id="content">
+
+    						<h1>AlohaDog에서 탈퇴되었습니다.</h1>
+
+    						<p>그동안 알로하도그를 이용해주셔서 감사합니다.</p>
+
+                            <div class="clearfix clearfix-logout">
+                                <a href="{% url 'join' %}">
+                                    <button class="registerbtn">회원가입</button>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

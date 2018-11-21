@@ -120,3 +120,22 @@ def profile(request):
             user.save()
 
         return render(request, 'user/join.html')
+
+
+def user_delete(request):
+    if request.method == "GET":
+        return render(request, 'user/user_delete.html')
+    else:
+        data = request.POST
+
+        pw = data.get('pw')
+        delete_agree = data.get('delete_agree')
+
+        user = request.user
+
+        if user.check_password(pw) and delete_agree is not None and delete_agree == 'agree':
+            user.delete()
+            auth.logout(request)
+            return render(request, 'user/user_delete_done.html')
+
+        return render(request, 'user/user_delete.html')

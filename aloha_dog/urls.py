@@ -23,6 +23,7 @@ from homepage import users
 from homepage import boards
 from homepage import pets
 from homepage import sitters
+from homepage import reviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,19 +33,28 @@ urlpatterns = [
     path('login', users.login, name='login'),
     path('logout', users.logout, name='logout'),
     path('profile', users.profile, name='profile'),
+    path('user/delete', users.user_delete, name='user_delete'),
 
     path('pet', pets.pet_list, name='pet_list'),
     path('pet/add', pets.pet_add, name='pet_add'),
     path('pet/<int:id>', pets.pet_edit, name='pet_edit'),
 
     path('sitter', sitters.sitter_list, name='sitter_list'),
+    path('sitter/like', views.sitter_like_list, name='sitter_like_list'),
     path('sitter/check', sitters.sitter_check, name='sitter_check'),
     path('sitter/join', sitters.sitter_join, name='sitter_join'),
-    path('sitter/apply', views.sitter_apply, name='sitter_apply'),
+    path('sitter/apply1', views.sitter_apply1, name='sitter_apply1'),
+    path('sitter/apply2', views.sitter_apply2, name='sitter_apply2'),
+    path('sitter/apply', sitters.sitter_apply, name='sitter_apply'),
     path('sitter/intro', views.sitter_intro, name='sitter_intro'),
     path('sitter/intro2', views.sitter_intro2, name='sitter_intro2'),
     path('sitter/<int:id>', sitters.sitter_detail, name='sitter_detail'),
 
+    path('review', reviews.review_list, name='review_list'),
+    path('review/write', reviews.review_write, name='review_write'),
+    path('review/<int:id>', reviews.review_detail, name='review_detail'),
+
+    path('payment', sitters.payment_list, name='payment_list'),
     path('payment_complete', sitters.payment_complete, name='payment_complete'),
 
     path('reservation', sitters.reservation_list, name='reservation_list'),
@@ -60,6 +70,9 @@ urlpatterns = [
     path('free-service', views.free_service, name='free-service'),
     path('paid-service', views.paid_service, name='paid-service'),
     path('faq', views.faq, name='faq'),
+    path('about', views.about_us, name='about_us'),
+    path('about/sitter', views.about_sitter, name='about_sitter'),
+    path('about/care', views.caring_preview, name='caring_preview'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

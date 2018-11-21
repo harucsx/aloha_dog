@@ -36,7 +36,8 @@
                 <div class="col-lg-9 ml-auto mr-auto">
                     <div class="blog_area">
                         <div id="list_head" class="box2">
-                            <h3 class="inline">예약목록<font style="color:lightgrey;">(전체 예약 건수 : {{ total_count }})</font></h3>
+                            <h3 class="inline">예약목록<font style="color:lightgrey;">(전체 예약 건수 : {{ total_count }})</font>
+                            </h3>
                         </div>
                         <div id="list_article" class="box2">
                             <ul class="article">
@@ -68,16 +69,17 @@
                                                 <td class="listTableTitle_progress">{{ r.progress }}</td>
                                                 <td class="listTableTitle_Button">
                                                     {% if r.progress == "예약신청" %}
-                                                    <button class="listTableTitle_button" id="edit"
-                                                            name="<%= num + ',' + pageNum %>" >예약취소
-                                                    </button>
+                                                        <button class="listTableTitle_button" id="edit"
+                                                                name="<%= num + ',' + pageNum %>">예약취소
+                                                        </button>
                                                     {% endif %}
                                                 </td>
                                                 <td class="listTableTitle_Button">
-                                                    {% if r.progress == "돌봄종료" %}
-                                                    <button class="listTableTitle_button" id="delete"
-                                                            name="<%= num + ',' + pageNum %>" >리뷰작성
-                                                    </button>
+                                                    {% if user.userprofile.id == r.userprofile.id and r.progress == "돌봄종료" and r.written_review == False %}
+                                                        <a href="{% url 'review_write' %}?rid={{ r.id }}">
+                                                            <button class="listTableTitle_button" id="delete">리뷰작성
+                                                            </button>
+                                                        </a>
                                                     {% endif %}
                                                 </td>
                                                 </li>

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/board.css" %}{% endblock %}
+
+{% block content %}
+	<div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>리뷰</h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">홈</a></li>
+                            <li class="active">리뷰</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="blog-area white-bg pt-0 pb-0 mb-70">
+		<div class="container">
+	    	<div class="row">
+	        	<div class="col-lg-9 ml-auto mr-auto">
+	            	<div class="blog_area">
+                        <div id="list_head-view" class="box2">
+                           <h3 class="inline-view">작성일자<font style="color:lightgrey;">({{ review.created_datetime }})</font></h3>
+                        </div>
+	            		<div id="viewForm" class="box">
+						   <ul>
+						      <li><label for="subject">제목</label>
+						          <input id="subject" name="inputContent" type="text" value="{{ review.title }}" style="padding-left: 0; width: 720px;" readonly>
+						          <input type="hidden" id="num" value="<%= num %>">
+						      </li>
+						      <li><label for="content" id="contentLabel">내용</label>
+						          <textarea id="content" rows="13" cols="50" readonly>{{ review.content }}</textarea>
+						      </li>
+						      <li class="label2 label2-edit">
+						          <a href="#" onclick="window.history.back();" id="b_cancle">목록</a>
+						          <a href="{% url 'sitter_detail' review.reservation.sitter.id %}" id="b_cancle">펫시터 정보</a>
+						          <a href="{% url 'reservation_detail' review.reservation.id %}" id="b_cancle">예약정보</a>
+						      </li>
+						   </ul>
+						</div>
+	            	</div>
+	            </div>
+	       	</div>
+	   	</div>
+	</div>
+{% endblock %}

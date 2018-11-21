@@ -46,7 +46,7 @@
                                         {% for article in articles %}
                                             <tr>
                                                 <td class="listTableTitle_num">
-                                                    <li class="layout_f">{{ forloop.counter }}</li>
+                                                    <li class="layout_f">{{ forloop.revcounter }}</li>
                                                 </td>
                                                 <td class="listTableTitle_title" style="width:50%;">
                                                     <a href="{% url 'board_detail' board_type article.id %}">{{ article.title }}</a></td>

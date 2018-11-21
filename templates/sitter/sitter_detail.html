@@ -6,7 +6,6 @@
 {% block extrastyle %}{% static "css/petsitterEmployment/petsitterInfo.css" %}{% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="location-tow mb-60">
         <div class="container">
             <div class="row">
@@ -14,315 +13,306 @@
                     <div class="location-title">
                         <h1>펫시터 정보</h1>
                     </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li><a href="#">펫시터 고용</a></li>
+                            <li class="active">펫시터 정보</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="my-account white-bg mb-110">
+    <div class="single-product-area mb-100">
         <div class="container">
-            <div class="account-dashboard">
-                <div class="row">
-                    <div class="single-product-area mb-115">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-5">
-                                    <div class="product-details-img-tab">
-
-                                        <div class="tab-content single-product-img">
-                                            <div class="tab-pane fade show active" id="product1">
-                                                <div class="product-large-thumb img-full">
-                                                    <div class="easyzoom easyzoom--overlay">
-                                                        <a href="/media/{{ sitter.profile }}">
-                                                            <img src="/media/{{ sitter.profile }}" alt="">
-                                                        </a>
-                                                        <a href="/media/{{ sitter.profile }}" class="popup-img venobox"
-                                                           data-gall="myGallery"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane fade" id="product2">
-                                                <div class="product-large-thumb img-full">
-                                                    <div class="easyzoom easyzoom--overlay">
-                                                        <a href="{% static 'img/single-product/large/single-product2.jpg' %}">
-                                                            <img src="{% static 'img/single-product/large/single-product2.jpg' %}"
-                                                                 alt="">
-                                                        </a>
-                                                        <a href="{% static 'img/single-product/large/single-product2.jpg' %}"
-                                                           class="popup-img venobox" data-gall="myGallery"><i
-                                                                class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane fade" id="product3">
-                                                <div class="product-large-thumb img-full">
-                                                    <div class="easyzoom easyzoom--overlay">
-                                                        <a href="{% static 'img/single-product/large/single-product3.jpg' %}">
-                                                            <img src="{% static 'img/single-product/large/single-product3.jpg' %}"
-                                                                 alt="">
-                                                        </a>
-                                                        <a href="{% static 'img/single-product/large/single-product3.jpg' %}"
-                                                           class="popup-img venobox" data-gall="myGallery"><i
-                                                                class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane fade" id="product4">
-                                                <div class="product-large-thumb img-full">
-                                                    <div class="easyzoom easyzoom--overlay">
-                                                        <a href="{% static 'img/single-product/large/single-product4.jpg' %}">
-                                                            <img src="{% static 'img/single-product/large/single-product4.jpg' %}"
-                                                                 alt="">
-                                                        </a>
-                                                        <a href="{% static 'img/single-product/large/single-product4.jpg' %}"
-                                                           class="popup-img venobox" data-gall="myGallery"><i
-                                                                class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane fade" id="product5">
-                                                <div class="product-large-thumb img-full">
-                                                    <div class="easyzoom easyzoom--overlay">
-                                                        <a href="{% static 'img/single-product/large/single-product5.jpg' %}">
-                                                            <img src="{% static 'img/single-product/large/single-product5.jpg' %}"
-                                                                 alt="">
-                                                        </a>
-                                                        <a href="{% static 'img/single-product/large/single-product5.jpg' %}"
-                                                           class="popup-img venobox" data-gall="myGallery"><i
-                                                                class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane fade" id="product6">
-                                                <div class="product-large-thumb img-full">
-                                                    <div class="easyzoom easyzoom--overlay">
-                                                        <a href="{% static 'img/single-product/large/single-product6.jpg' %}">
-                                                            <img src="{% static 'img/single-product/large/single-product6.jpg' %}"
-                                                                 alt="">
-                                                        </a>
-                                                        <a href="{% static 'img/single-product/large/single-product6.jpg' %}"
-                                                           class="popup-img venobox" data-gall="myGallery"><i
-                                                                class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-5">
+                    <div class="product-details-img-tab">
+                        <div class="tab-content single-product-img">
+                            <div class="tab-pane fade show active" id="product1">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="/media/{{ sitter.profile }}">
+                                            <img src="/media/{{ sitter.profile }}" alt="">
+                                        </a>
+                                        <a href="/media/{{ sitter.profile }}"
+                                           class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
                                     </div>
                                 </div>
-
-                                <div class="col-md-12 col-lg-7">
-                                    <div class="product-details-content">
-                                        <div class="product-nav">
-                                            <a href="#"><i class="fa fa-angle-left"></i></a>
-                                            <a href="#"><i class="fa fa-angle-right"></i></a>
-                                        </div>
-                                        <h2>{{ sitter.userprofile.name }}시터님</h2>
-                                        <div class="single-product-reviews">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <br/>
-                                            <a class="review-link" href="#">장소: {{ sitter.userprofile.address1 }}</a>
-                                        </div>
-                                        <div class="product-description">
-                                            <p>{{ sitter.introduction }}</p><br>
-                                        </div>
-                                        <p class="stock in-stock">기본 단가는 하루 케어 기준 {{ sitter.day_price }}원 입니다.</p>
-                                        {#                                        <div class="single-product-quantity">#}
-                                        {#                                            <div class="contact-form-style mb-20">#}
-                                        {#                                                <input type="date" name="date" id="userdate" value="today"#}
-                                        {#                                                       placeholder="돌봄시작일">#}
-                                        {#                                            </div>#}
-                                        {#                                        </div>#}
-                                        <div class="product-meta">
-                                  <span class="posted-in">
-                                  	가능한 서비스 (무료) : {{ sitter.free_services }}
-                                  </span>
-                                            <br>
-                                            <span class="posted-in">
-                                  	가능한 서비스 (유료) : {{ sitter.paid_services }}
-                                  </span>
-                                        </div>
-                                        <br>
-                                        <div class="add-to-link">
-                                            <a href="{% url 'reservation' sitter.id %}">
-                                                <button class="product-btn" data-text="add to cart">예약하기</button>
-                                            </a>
-                                        </div>
+                            </div>
+                            <div class="tab-pane fade" id="product2">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product2.jpg' %}">
+                                            <img src="{% static 'img/petsitter/large/single-product2.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product2.jpg' %}"
+                                           class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="product3">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product3.jpg' %}">
+                                            <img src="{% static 'img/petsitter/large/single-product3.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product3.jpg' %}"
+                                           class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="product4">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product4.jpg' %}">
+                                            <img src="{% static 'img/petsitter/large/single-product4.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product4.jpg' %}"
+                                           class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="product5">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product5.jpg' %}">
+                                            <img src="{% static 'img/petsitter/large/single-product5.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product5.jpg' %}"
+                                           class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="product6">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product6.jpg' %}">
+                                            <img src="{% static 'img/petsitter/large/single-product6.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product6.jpg' %}"
+                                           class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="product-description-review-area mb-100">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="product-review-tab">
-                                        <ul class="nav dec-and-review-menu">
-                                            {#                                            <li>#}
-                                            {#                                                <a class="active" data-toggle="tab" href="#description">돌봄정보소개</a>#}
-                                            {#                                            </li>#}
-                                            <li>
-                                                <a class="active" data-toggle="tab" href="#description">시터소개</a>
-                                            </li>
-                                            <li>
-                                                <a data-toggle="tab" href="#reviews">후기 (1)</a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content product-review-content-tab" id="myTabContent-4">
-                                            <div class="tab-pane fade active show" id="description">
-                                                <div class="single-product-description">
-
-                                                    <div style="display: inline-block;">
-                                                        <div class="single-product-description">
-                                                            <p style="font-size:20px; font-weight: bold;">{{ user.userprofile.name }}
-                                                                시터님의
-                                                                캘린더</p>
-                                                        </div>
-                                                        <br>
-                                                        <div class="month">
-                                                            <ul>
-                                                                <li class="prev">&#10094;</li>
-                                                                <li class="next">&#10095;</li>
-                                                                <li>
-                                                                    August<br>
-                                                                    <span style="font-size:18px">2017</span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <ul class="weekdays">
-                                                            <li>Mo</li>
-                                                            <li>Tu</li>
-                                                            <li>We</li>
-                                                            <li>Th</li>
-                                                            <li>Fr</li>
-                                                            <li>Sa</li>
-                                                            <li>Su</li>
-                                                        </ul>
-
-                                                        <ul class="days">
-                                                            <li>1</li>
-                                                            <li>2</li>
-                                                            <li>3</li>
-                                                            <li>4</li>
-                                                            <li>5</li>
-                                                            <li>6</li>
-                                                            <li>7</li>
-                                                            <li>8</li>
-                                                            <li>9</li>
-                                                            <li><span class="active">10</span></li>
-                                                            <li>11</li>
-                                                            <li>12</li>
-                                                            <li>13</li>
-                                                            <li>14</li>
-                                                            <li>15</li>
-                                                            <li>16</li>
-                                                            <li>17</li>
-                                                            <li>18</li>
-                                                            <li>19</li>
-                                                            <li>20</li>
-                                                            <li>21</li>
-                                                            <li>22</li>
-                                                            <li>23</li>
-                                                            <li>24</li>
-                                                            <li>25</li>
-                                                            <li>26</li>
-                                                            <li>27</li>
-                                                            <li>28</li>
-                                                            <li>29</li>
-                                                            <li>30</li>
-                                                            <li>31</li>
-                                                        </ul>
-                                                    </div>
-                                                    <br/>
-                                                    <br/>
-                                                    <br/>
-                                                    <div style="">
-                                                        <div class="animalintroduction_11">{{ sitter.userprofile.name }}
-                                                            시터님의 반려견을 소개합니다~!
-                                                        </div>
-
-                                                        {% for dog in dogs %}
-                                                            <div style="display: inline-block;">
-                                                                <img class="animalintroduction_img"
-                                                                     src="/media/{{ dog.profile }}">
-                                                                <div class="animalintroduction_text">
-                                                                    <center>이름 : {{ dog.name }}<br>
-                                                                        ({{ dog.species }}, {{ dog.age }}살)
-                                                                    </center>
-                                                                </div>
-                                                            </div>
-                                                        {% endfor %}
-
-                                                    </div>
-
-                                                    <div class="introduction_22">{{ sitter.userprofile.name }} 시터님을
-                                                        소개합니다!
-                                                    </div>
-                                                    <div class="introduction_text">
-                                                        <pre>{{ sitter.qna }}</pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="tab-pane fade" id="reviews">
-                                                <div class="review-page-comment">
-                                                    <h2>총 1개의 후기가 있습니다.</h2>
-                                                    <ul>
-                                                        <li>
-                                                            <div class="product-comment">
-                                                                {#                                                                <img src="img/icon/author.png" alt="">#}
-                                                                <div class="product-comment-content">
-                                                                    <div class="product-reviews">
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                    </div>
-                                                                    <p class="meta">
-                                                                        <strong>admin</strong> -
-                                                                        <span>November 22, 2016</span>
-                                                                        <div class="description">
-                                                                    <p>Good Product</p>
-                                                                </div>
-                                                            </div>
-                                                </div>
+                </div>
+                <div class="col-md-12 col-lg-7">
+                    <div class="product-details-content">
+                        <img src="/media/{{ sitter.profile }}" alt="petsitterIMG" class="petsitterimg">
+                        <h2>{{ sitter.userprofile.name }} 시터님</h2>
+                        <div class="single-product-reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <a class="review-link" href="#">(리뷰 {{ reviews.count }}개)</a>
+                        </div>
+                        <div class="product-description">
+                            {{ sitter.introduction }}
+                        </div>
+                        <div class="single-product-price">
+                            {#                            <span class="price new-price">40,000원</span>#}
+                            <span class="regular-price">{{ sitter.day_price }}원 / 일</span>
+                        </div>
+                        <div class="wishlist-compare-btn">
+                            <a href="{% url 'reservation' sitter.id %}">예약하기</a>
+                            <a href="#" class="wishlist-btn">찜</a>
+                        </div>
+                        <div class="single-product-sharing">
+                            <h3>SNS공유</h3>
+                            <ul>
+                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-description-review-area mb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-review-tab">
+                        <ul class="nav dec-and-review-menu">
+                            <li>
+                                <a class="active" data-toggle="tab" href="#caring">돌봄소개</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#petsitter">시터소개</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#reviews">리뷰 ({{ reviews.count }})</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content product-review-content-tab" id="myTabContent-4">
+                            <div class="tab-pane fade active show" id="caring">
+                                <div class="single-product-description">
+                                    <div class="info">
+                                        <p class="info-title">펫시터 정보</p>
+                                        <table>
+                                            <tr>
+                                                <th>주소</th>
+                                                <td>{{ sitter.userprofile.address1 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>무료서비스</th>
+                                                <td>{{ sitter.free_service }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>유료서비스</th>
+                                                <td>{{ sitter.paid_service }}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="calender">
+                                        <div class="month">
+                                            <p>{{ sitter.userprofile.name }}님의 캘린더</p>
+                                            <ul>
+                                                <li class="prev">&#10094;</li>
+                                                <li class="next">&#10095;</li>
+                                                <li>
+                                                    11월<br>
+                                                    <span style="font-size:18px">2018</span>
                                                 </li>
-                                                </ul>
-                                                <div class="review-form-wrapper">
-                                                    <div class="review-form">
-                                                        <span class="comment-reply-title">후기 작성</span>
-                                                        <form action="#">
-                                                            <div class="comment-form-rating">
-                                                                <label>평점</label>
-                                                                <div class="rating">
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                            </div>
-                                                            <div class="input-element">
-                                                                <div class="comment-form-comment">
-                                                                    <label>후기 작성</label>
-                                                                    <textarea name="message" cols="40"
-                                                                              rows="8"></textarea>
-                                                                </div>
-                                                                <div class="comment-submit">
-                                                                    <button type="submit" class="form-button">Submit
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
+                                            </ul>
+                                        </div>
+                                        <ul class="weekdays">
+                                            <li style="color: red;">일</li>
+                                            <li>월</li>
+                                            <li>화</li>
+                                            <li>수</li>
+                                            <li>목</li>
+                                            <li>금</li>
+                                            <li style="color: blue;">토</li>
+                                        </ul>
+                                        <ul class="days">
+                                            <li>1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                            <li>4</li>
+                                            <li>5</li>
+                                            <li>6</li>
+                                            <li>7</li>
+                                            <li>8</li>
+                                            <li>9</li>
+                                            <li><span class="active">10</span></li>
+                                            <li>11</li>
+                                            <li>12</li>
+                                            <li>13</li>
+                                            <li>14</li>
+                                            <li>15</li>
+                                            <li>16</li>
+                                            <li>17</li>
+                                            <li>18</li>
+                                            <li>19</li>
+                                            <li>20</li>
+                                            <li>21</li>
+                                            <li>22</li>
+                                            <li>23</li>
+                                            <li>24</li>
+                                            <li>25</li>
+                                            <li>26</li>
+                                            <li>27</li>
+                                            <li>28</li>
+                                            <li>29</li>
+                                            <li>30</li>
+                                            <li>31</li>
+                                        </ul>
+                                    </div>
+                                    <div class="environment">
+                                        <p class="environment-title">돌봄환경</p>
+                                        <table>
+                                            <tr>
+                                                <th>돌봄공간</th>
+                                                <td>{{ sitter.care_zone }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>가족동거 유무</th>
+                                                <td>{% if sitter.housemate_situation == 'Y' %}예{% else %}
+                                                    아니오{% endif %}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>다른반려동물 유무</th>
+                                                <td>{% if sitter.pet_situation == 'Y' %}예{% else %}아니오{% endif %}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="petsitter">
+                                <div class="single-product-description">
+                                    <div class="petsitter-left">
+                                        <div class="animalintroduction_11">{{ sitter.userprofile.name }} 시터님의 반려견</div>
+
+                                        {% for dog in dogs %}
+                                            <div class="animalintroduction_ALL">
+                                                <img class="animalintroduction_img"
+                                                     src="{% static 'img/sitterhire/sitterfind1.jpg' %}">
+                                                <div class="animalintroduction_text">
+                                                    <span style="font-weight: bold;">{{ dog.name }}</span>({{ dog.species }}, {{ dog.get_sex_display }}, {{ dog.age }}살)
                                                 </div>
                                             </div>
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="petsitter-right">
+                                        <div class="introduction_22">{{ sitter.userprofile.name }} 시터님 Q&A</div>
+                                        <div class="introduction_text">
+                                            <pre>{{ sitter.qna }}</pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="reviews">
+                                <div class="review-page-comment">
+                                    <div class="blog_area blog_area_board">
+                                        <div id="list_head" class="box2">
+                                            <h3 class="inline">{{ sitter.userprofile.name }} 시터님의 리뷰내역<font style="color:lightgrey;"> (전체 리뷰 : {{ reviews.count }})</font>
+                                            </h3>
+                                            {#                                      <a href="{% url 'review_write' %}" id="b_new">리뷰작성</a>#}
+                                        </div>
+                                        <div id="list_article" class="box2">
+                                            <ul class="article">
+                                                <div class="table-content table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="listTableTitle">No.</th>
+                                                            <th class="listTableTitle">펫시터</th>
+                                                            <th class="listTableTitle">제목</th>
+                                                            <th class="listTableTitle">작성일자</th>
+                                                            <th class="listTableTitle">작성자</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        {% for review in reviews %}
+                                                            <tr>
+                                                                <td class="listTableTitle_num">
+                                                                    <li class="layout_f">{{ forloop.revcounter }}</li>
+                                                                </td>
+                                                                <td class="listTableTitle_title"><a
+                                                                        href="{% url 'review_detail' review.id %}">{{ review.reservation.sitter.userprofile.name }}</a></td>
+                                                                <td class="listTableTitle_title"><a
+                                                                        href="{% url 'review_detail' review.id %}">{{ review.title }}</a></td>
+                                                                <td class="listTableTitle_regDate"><p class="date">{{ review.created_datetime }}<br></td>
+                                                                <td class="listTableTitle_writer">{{ review.reservation.userprofile.name }}</td>
+                                                                </li>
+                                                            </tr>
+                                                        {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                        <div id="jump" class="box3">
+                                            <button id="ju" name="<%= i %>" onclick="p(this)" class="w1">1</button>
                                         </div>
                                     </div>
                                 </div>
@@ -332,6 +322,7 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 {% endblock %}
+
+

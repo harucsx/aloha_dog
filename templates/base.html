@@ -69,23 +69,23 @@
                                 <nav>
                                     <ul class="main-menu">
                                         <li><a href="{% url 'sitter_list' %}">펫시터 예약</a></li>
-                                        <li><a href="#">펫시터 신청</a>
+                                        <li><a href="{% url 'sitter_apply1' %}">펫시터 신청</a>
                                             <ul class="dropdown">
                                                 <li><a href="{% url 'sitter_intro' %}">교육 소개</a></li>
-                                                <li><a href="{% url 'sitter_apply' %}">펫시터 신청</a></li>
+                                                <li><a href="{% url 'sitter_apply1' %}">펫시터 신청</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">서비스</a>
+                                        <li><a href="{% url 'free-service' %}">서비스</a>
                                             <ul class="dropdown">
                                                 <li><a href="{% url 'free-service' %}">무료 서비스</a></li>
                                                 <li><a href="{% url 'paid-service' %}">유료 서비스</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">회사 소개</a>
+                                        <li><a href="{% url 'about_us' %}">회사 소개</a>
                                             <ul class="dropdown">
-                                                <li><a href="#url">회사 소개</a></li>
-                                                <li><a href="#url">펫시터 소개</a></li>
-                                                <li><a href="#url">돌봄 미리보기</a></li>
+                                                <li><a href="{% url 'about_us' %}">회사 소개</a></li>
+                                                <li><a href="{% url 'about_sitter' %}">펫시터 소개</a></li>
+                                                <li><a href="{% url 'caring_preview' %}">돌봄 미리보기</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="{% url 'faq' %}">FAQ</a></li>
@@ -183,11 +183,12 @@
                                         <div class="search-box">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <div class="search-dropdown">
-                                                <form action="#">
-                                                    <input name="search" id="search" placeholder=""
-                                                           value="Search product..."
-                                                           onblur="if(this.value==''){this.value='Search product...'}"
-                                                           onfocus="if(this.value=='Search product...'){this.value=''}"
+                                                <form action="{% url 'sitter_list' %}" method="get">
+                                                    <input type="hidden" name="city" value="전체"/>
+                                                    <input name="keyword" id="search" placeholder=""
+                                                           value="검색어를 입력해주세요..."
+                                                           onblur="if(this.value==''){this.value='검색어를 입력해주세요...'}"
+                                                           onfocus="if(this.value=='검색어를 입력해주세요...'){this.value=''}"
                                                            type="text">
                                                     <button type="submit"><i class="fa fa-search"></i></button>
                                                 </form>
@@ -224,11 +225,11 @@
                                                         <li><a href="{% url 'pet_list' %}">반려동물 정보</a></li>
                                                         <li><a href="{% url 'sitter_check' %}">펫시터 정보</a></li>
                                                         <li><a href="{% url 'reservation_list' %}">예약내역</a></li>
-                                                        <li><a href="#url">결제내역</a></li>
-                                                        <li><a href="#url">관심 펫시터</a></li>
+                                                        <li><a href="{% url 'payment_list' %}">결제내역</a></li>
+                                                        <li><a href="{% url 'sitter_like_list' %}">관심 펫시터</a></li>
                                                         <li><a href="{% url 'board_list' 'qna' %}">1:1문의 내역</a></li>
-                                                        <li><a href="#url">리뷰 내역</a></li>
-                                                        <li><a href="#url">회원탈퇴</a></li>
+                                                        <li><a href="{% url 'review_list' %}">리뷰 내역</a></li>
+                                                        <li><a href="{% url 'user_delete' %}">회원탈퇴</a></li>
                                                     </ul>
                                                 {% endif %}
                                             </div>
