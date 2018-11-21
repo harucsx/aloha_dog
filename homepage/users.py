@@ -14,10 +14,10 @@ from homepage.models import UserProfile, Board
 def save_userprofile(user_profile, data):
     user_profile.name = data.get('name')
 
-    if data.get('name') == "남자":
-        user_profile.gender = 'M'
+    if data.get('gender') == "남자":
+        user_profile.sex = 'M'
     else:
-        user_profile.gender = 'F'
+        user_profile.sex = 'F'
 
     birthday = datetime.date(int(data.get('birth_year')),
                              int(data.get('birth_month')),
@@ -113,14 +113,16 @@ def profile(request):
         data = request.POST
         user = request.user
 
+        print(data)
         user_profile = user.userprofile
+        print(user_profile.sex)
         save_userprofile(user_profile, data)
+        print(user_profile.sex)
 
         pw = data.get('pw')
         if pw:
             user.set_password(pw)
             user.save()
-
         auth.login(request, user)
 
         return render(request, 'user/join.html')
