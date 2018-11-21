@@ -66,3 +66,13 @@ def board_detail(request, board_type, id):
     context['board_type'] = board_type
     context['article'] = Board.objects.get(id=id)
     return render(request, 'board/board_detail.html', context=context)
+
+
+def board_delete(request, board_type, id):
+    userprofile = request.user.userprofile
+    article = Board.objects.get(id=id)
+
+    if article.userprofile.id == userprofile.id:
+        article.delete()
+
+    return redirect('board_list', board_type)

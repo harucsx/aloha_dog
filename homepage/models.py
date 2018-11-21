@@ -28,6 +28,7 @@ class UserProfile(models.Model):
     birth_date = models.DateField(verbose_name='회원 생일')
     phone_number = models.CharField(max_length=20, verbose_name='회원 핸드폰번호')
     email = models.EmailField(max_length=50, verbose_name='회원 이메일')
+    zip_code = models.CharField(max_length=10, verbose_name='우편 번호')
     address1 = models.CharField(max_length=50, verbose_name='회원 주소1')
     address2 = models.CharField(max_length=50, verbose_name='회원 주소2')
     profile = models.FileField(upload_to='uploads/', verbose_name='회원 사진')

@@ -31,6 +31,7 @@ def save_userprofile(user_profile, data):
     user_profile.email = data.get('email1') + '@' + \
                          data.get('email2')
 
+    user_profile.zip_code = data.get('zip_code')
     user_profile.address1 = data.get('address1')
     user_profile.address2 = data.get('address2')
 
@@ -105,6 +106,7 @@ def profile(request):
         context["email2"] = email[1]
 
         context['gender'] = userprofile.get_sex_display()
+        context['zip_code'] = userprofile.zip_code
 
         return render(request, 'user/join.html', context=context)
     elif request.method == "POST":
@@ -139,3 +141,18 @@ def user_delete(request):
             return render(request, 'user/user_delete_done.html')
 
         return render(request, 'user/user_delete.html')
+
+
+def user_check_id(request):
+    id = request.GET.get('id')
+    users = User.objects.filter(username=id)
+
+    result = {}
+
+    if users.count() > 0:
+        result['result'] = 'existed'
+    else:
+        result['result'] = 'ok'
+
+    return JsonResponse(result)
+

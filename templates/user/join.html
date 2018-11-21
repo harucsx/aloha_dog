@@ -27,17 +27,18 @@
                     var query = {id: $("#id").val()};
                     document.getElementById("checkId").value = "중복확인";
                     $.ajax({
-                        type: "post",
-                        url: "<%= CTX %>/confirmId.do",
+                        type: "get",
+                        url: "{% url 'user_check_id' %}?id=" + $("#id").val(),
                         data: query,
                         success: function (data) {
-                            data = data.trim();
-                            if (data == "false") {//사용할 수 없는 아이디
-                                alert("사용할 수 없는 아이디");
+                            if (data.result == "ok") {
+                                //사용할 수 있는 아이디
+                                alert("사용할 수 있는 아이디입니다.");
+                                document.getElementById("checkId").value = "확인 완료";
+                            } else {
+                                //사용할 수 없는 아이디
+                                alert("이미 존재하는 아이디입니다.");
                                 $("#id").val("");
-                            } else { //사용할 수 있는 아이디
-                                alert("사용할 수 있는 아이디");
-                                document.getElementById("checkId").value = "확인완료";
                             }
                         }
                     });
@@ -368,14 +369,15 @@
                                         });
                                     });
                                     </script>
-                                    <!--                                    <input type="button" name="checkEmail" id="checkEmail" value="중복확인"> -->
+                                    <!--<input type="button" name="checkEmail" id="checkEmail" value="중복확인"> -->
                                 </div>
 
                                 <div class="form-row">
-                                    <span class="registerPostcode">우편번호</span> <input type="text" name="postcode"
-                                                                                      id="postcode" required> <input
-                                        type="button" name="postcode-search" onclick="daumPostcode()" value="우편번호 찾기"
-                                        id="postcode-search">
+                                    <span class="registerPostcode">우편번호</span>
+                                    <input type="text" name="zip_code" id="postcode"
+                                           value="{{ user.userprofile.zip_code }}" required>
+                                    <input type="button" name="postcode-search" onclick="daumPostcode()" value="우편번호 찾기"
+                                           id="postcode-search">
                                 </div>
 
                                 <div class="form-row">

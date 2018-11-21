@@ -57,7 +57,7 @@ def review_write(request):
         review = Review()
         review.reservation = r
         review.title = subject
-        review.contents = content
+        review.content = content
         review.save()
 
         r.written_review = True

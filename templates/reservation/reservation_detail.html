@@ -154,7 +154,7 @@
                     </div>
 
                     <div class="label2">
-                        <a href="#" class="reservationHistory" id="b_cancle" onclick="window.history.back()">예약내역</a>
+                        <a href="{% url 'reservation_list' %}" class="reservationHistory" id="b_cancle">예약내역</a>
 
                         {% if user.userprofile.id == r.sitter.userprofile.id and r.progress == "예약신청" %}
                             <a href="{% url 'reservation_progress' r.id %}?progress=예약승락"
@@ -175,6 +175,11 @@
                         {% if user.userprofile.id == r.sitter.userprofile.id and r.progress == "돌봄이용중" %}
                             <a href="{% url 'reservation_progress' r.id %}?progress=돌봄종료"
                                class="reservationHistory" id="b_cancle">돌봄 종료</a>
+                        {% endif %}
+
+                        {% if r.progress == "예약신청" %}
+                            <a href="{% url 'reservation_progress' r.id %}?progress=예약취소"
+                               class="reservationHistory" id="b_cancle">예약취소</a>
                         {% endif %}
 
                         {% if user.userprofile.id == r.userprofile.id and r.progress == "돌봄종료" and r.written_review == False %}
