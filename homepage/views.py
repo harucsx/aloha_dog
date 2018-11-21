@@ -15,16 +15,20 @@ def index(request):
     return render(request, 'home.html')
 
 
-def sitter_apply(request):
-    return render(request, 'sitter/sitter_apply.html')
-
-
 def sitter_intro(request):
     return render(request, 'sitter/sitter_intro.html')
 
 
 def sitter_intro2(request):
     return render(request, 'sitter/sitter_intro2.html')
+
+
+def sitter_apply1(request):
+    return render(request, 'sitter/sitter_apply1.html')
+
+
+def sitter_apply2(request):
+    return render(request, 'sitter/sitter_apply2.html')
 
 
 def faq(request):

@@ -166,6 +166,21 @@
                                onclick="do_payment()"
                                class="reservationHistory" id="b_cancle">결제하기</a>
                         {% endif %}
+
+                        {% if user.userprofile.id == r.sitter.userprofile.id and r.progress == "결제완료" %}
+                            <a href="{% url 'reservation_progress' r.id %}?progress=돌봄이용중"
+                               class="reservationHistory" id="b_cancle">돌봄 시작</a>
+                        {% endif %}
+
+                        {% if user.userprofile.id == r.sitter.userprofile.id and r.progress == "돌봄이용중" %}
+                            <a href="{% url 'reservation_progress' r.id %}?progress=돌봄종료"
+                               class="reservationHistory" id="b_cancle">돌봄 종료</a>
+                        {% endif %}
+
+                        {% if user.userprofile.id == r.userprofile.id and r.progress == "돌봄종료" and r.written_review == False %}
+                            <a href="{% url 'review_write' %}?rid={{ r.id }}"
+                               class="reservationHistory" id="b_cancle">리뷰 작성하기</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

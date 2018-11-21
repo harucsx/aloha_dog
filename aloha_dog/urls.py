@@ -23,6 +23,7 @@ from homepage import users
 from homepage import boards
 from homepage import pets
 from homepage import sitters
+from homepage import reviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,11 +41,18 @@ urlpatterns = [
     path('sitter', sitters.sitter_list, name='sitter_list'),
     path('sitter/check', sitters.sitter_check, name='sitter_check'),
     path('sitter/join', sitters.sitter_join, name='sitter_join'),
-    path('sitter/apply', views.sitter_apply, name='sitter_apply'),
+    path('sitter/apply1', views.sitter_apply1, name='sitter_apply1'),
+    path('sitter/apply2', views.sitter_apply2, name='sitter_apply2'),
+    path('sitter/apply', sitters.sitter_apply, name='sitter_apply'),
     path('sitter/intro', views.sitter_intro, name='sitter_intro'),
     path('sitter/intro2', views.sitter_intro2, name='sitter_intro2'),
     path('sitter/<int:id>', sitters.sitter_detail, name='sitter_detail'),
 
+    path('review', reviews.review_list, name='review_list'),
+    path('review/write', reviews.review_write, name='review_write'),
+    path('review/<int:id>', reviews.review_detail, name='review_detail'),
+
+    path('payment', sitters.payment_list, name='payment_list'),
     path('payment_complete', sitters.payment_complete, name='payment_complete'),
 
     path('reservation', sitters.reservation_list, name='reservation_list'),

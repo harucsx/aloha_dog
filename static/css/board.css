@@ -308,7 +308,7 @@ input[name=subject]:focus, input[name=passwd]:focus, textarea#content:focus{
 #writeForm ul li label[for=passwd]{padding: 15px 23px 15px 10px;}
 #contentLabel{float:left; padding: 15px 50px 15px 10px; margin-right: 5px;}
 .label2-edit{width: 360px;}
-#b_regist,  #b_cancle{
+#b_regist,  #b_cancle, .bbutton{
     color: #666;
     padding: 14px 0;
     margin: 40px 10px;

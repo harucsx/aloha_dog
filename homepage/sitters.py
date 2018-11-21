@@ -9,7 +9,38 @@ from django.http import JsonResponse, Http404
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
-from homepage.models import UserProfile, Board, Dog, Sitter, Reservation
+from homepage.models import UserProfile, Board, Dog, Sitter, Reservation, Review, Payment, Application
+
+
+def sitter_apply(request):
+    if request.method == "GET":
+        pets = Dog.objects.filter(owner=request.user.userprofile)
+        context = {'pets_count': pets.count()}
+        return render(request, 'sitter/sitter_apply.html', context=context)
+    elif request.method == "POST":
+        data = request.POST
+        app = Application()
+        app.userprofile = request.user.userprofile
+        app.job = data.get('job')
+        app.permission = True if data.get('permission') == "Y" else False
+        app.whether_smoker = True if data.get('whether_smoker') == "Y" else False
+        app.maximum_caring_period = int(data.get('maximum_caring_period'))
+        app.minors_status = True if data.get('minors_status') == "Y" else False
+        app.sitter_career = True if data.get('sitter_career') == "Y" else False
+        app.time_together = int(data.get('time_together'))
+        app.pet_count = int(data.get('pet_count'))
+        app.experience = data.get('experience')
+        app.responsibility = True if data.get('responsibility') == "Y" else False
+        app.save()
+
+        return redirect('index')
+
+
+# <QueryDict: {'csrfmiddlewaretoken': ['RlWZCOdvR26yRAgFo2fND1mqWfRPnUTtC20B3FUXCdsO9L0nuaLIzOZbO
+# 2T0SmbS'], 'name': ['홍길동'], 'job': ['학생'], 'petsitter_job_selectDirect': [''],
+# 'permission': ['N'], 'whether_smoker': ['N'], 'maximum_caring_period': ['20'],
+# 'minors_status': ['N'], 'sitter_career': ['N'], 'time_together': ['50'],
+# 'pet_count': ['4'], 'experience': ['tete'], 'responsibility': ['N']}>
 
 
 def sitter_check(request):
@@ -119,6 +150,7 @@ def sitter_detail(request, id):
     context = dict()
     context['sitter'] = sitter
     context['dogs'] = Dog.objects.filter(owner=sitter.userprofile)
+    context['reviews'] = Review.objects.filter(reservation__sitter=sitter)
     return render(request, 'sitter/sitter_detail.html', context=context)
 
 
@@ -210,17 +242,30 @@ def reservation_progress(request, id):
 @csrf_exempt
 def payment_complete(request):
     data = request.POST
-    id = int(data.get('id'))
-    rid = data.get('rid')
-    mid = data.get('mid')
-    uid = data.get('uid')
-    amount = data.get('amount')
-    apply_num = data.get('apply_num')
+    id = int(data.get('id'))  # 예약 인스턴스의 PK
+    rid = data.get('rid')  # 예약번호
+    mid = data.get('mid')  # 거래번호 (중복 불가)
+    uid = data.get('uid')  # imp uid
+    amount = data.get('amount')  # 결제 금액
+    apply_num = data.get('apply_num')  # 승인 번호
 
     print(data)
     r = Reservation.objects.get(id=id)
-    userprofile = request.user.userprofile
+
+    payment = Payment()
+    payment.reservation = r
+    payment.merchant_uid = mid
+    payment.amount = int(amount)
+    payment.apply_num = apply_num
+    payment.save()
 
     r.progress = "결제완료"
     r.save()
-    return JsonResponse({})
+    return JsonResponse({'result': 'success'})
+
+
+def payment_list(request):
+    userprofile = request.user.userprofile
+    payments = Payment.objects.filter(reservation__userprofile=userprofile)
+    context = {'payments': payments}
+    return render(request, 'payment/payment_list.html', context=context)

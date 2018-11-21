@@ -1,0 +1,338 @@
+
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/petsitterEmployment/petsitterInfo.css" %}{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>펫시터 정보</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="my-account white-bg mb-110">
+        <div class="container">
+            <div class="account-dashboard">
+                <div class="row">
+                    <div class="single-product-area mb-115">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-5">
+                                    <div class="product-details-img-tab">
+
+                                        <div class="tab-content single-product-img">
+                                            <div class="tab-pane fade show active" id="product1">
+                                                <div class="product-large-thumb img-full">
+                                                    <div class="easyzoom easyzoom--overlay">
+                                                        <a href="/media/{{ sitter.profile }}">
+                                                            <img src="/media/{{ sitter.profile }}" alt="">
+                                                        </a>
+                                                        <a href="/media/{{ sitter.profile }}" class="popup-img venobox"
+                                                           data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="product2">
+                                                <div class="product-large-thumb img-full">
+                                                    <div class="easyzoom easyzoom--overlay">
+                                                        <a href="{% static 'img/single-product/large/single-product2.jpg' %}">
+                                                            <img src="{% static 'img/single-product/large/single-product2.jpg' %}"
+                                                                 alt="">
+                                                        </a>
+                                                        <a href="{% static 'img/single-product/large/single-product2.jpg' %}"
+                                                           class="popup-img venobox" data-gall="myGallery"><i
+                                                                class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="product3">
+                                                <div class="product-large-thumb img-full">
+                                                    <div class="easyzoom easyzoom--overlay">
+                                                        <a href="{% static 'img/single-product/large/single-product3.jpg' %}">
+                                                            <img src="{% static 'img/single-product/large/single-product3.jpg' %}"
+                                                                 alt="">
+                                                        </a>
+                                                        <a href="{% static 'img/single-product/large/single-product3.jpg' %}"
+                                                           class="popup-img venobox" data-gall="myGallery"><i
+                                                                class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="product4">
+                                                <div class="product-large-thumb img-full">
+                                                    <div class="easyzoom easyzoom--overlay">
+                                                        <a href="{% static 'img/single-product/large/single-product4.jpg' %}">
+                                                            <img src="{% static 'img/single-product/large/single-product4.jpg' %}"
+                                                                 alt="">
+                                                        </a>
+                                                        <a href="{% static 'img/single-product/large/single-product4.jpg' %}"
+                                                           class="popup-img venobox" data-gall="myGallery"><i
+                                                                class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="product5">
+                                                <div class="product-large-thumb img-full">
+                                                    <div class="easyzoom easyzoom--overlay">
+                                                        <a href="{% static 'img/single-product/large/single-product5.jpg' %}">
+                                                            <img src="{% static 'img/single-product/large/single-product5.jpg' %}"
+                                                                 alt="">
+                                                        </a>
+                                                        <a href="{% static 'img/single-product/large/single-product5.jpg' %}"
+                                                           class="popup-img venobox" data-gall="myGallery"><i
+                                                                class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="product6">
+                                                <div class="product-large-thumb img-full">
+                                                    <div class="easyzoom easyzoom--overlay">
+                                                        <a href="{% static 'img/single-product/large/single-product6.jpg' %}">
+                                                            <img src="{% static 'img/single-product/large/single-product6.jpg' %}"
+                                                                 alt="">
+                                                        </a>
+                                                        <a href="{% static 'img/single-product/large/single-product6.jpg' %}"
+                                                           class="popup-img venobox" data-gall="myGallery"><i
+                                                                class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-lg-7">
+                                    <div class="product-details-content">
+                                        <div class="product-nav">
+                                            <a href="#"><i class="fa fa-angle-left"></i></a>
+                                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                        <h2>{{ sitter.userprofile.name }}시터님</h2>
+                                        <div class="single-product-reviews">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <br/>
+                                            <a class="review-link" href="#">장소: {{ sitter.userprofile.address1 }}</a>
+                                        </div>
+                                        <div class="product-description">
+                                            <p>{{ sitter.introduction }}</p><br>
+                                        </div>
+                                        <p class="stock in-stock">기본 단가는 하루 케어 기준 {{ sitter.day_price }}원 입니다.</p>
+                                        {#                                        <div class="single-product-quantity">#}
+                                        {#                                            <div class="contact-form-style mb-20">#}
+                                        {#                                                <input type="date" name="date" id="userdate" value="today"#}
+                                        {#                                                       placeholder="돌봄시작일">#}
+                                        {#                                            </div>#}
+                                        {#                                        </div>#}
+                                        <div class="product-meta">
+                                  <span class="posted-in">
+                                  	가능한 서비스 (무료) : {{ sitter.free_services }}
+                                  </span>
+                                            <br>
+                                            <span class="posted-in">
+                                  	가능한 서비스 (유료) : {{ sitter.paid_services }}
+                                  </span>
+                                        </div>
+                                        <br>
+                                        <div class="add-to-link">
+                                            <a href="{% url 'reservation' sitter.id %}">
+                                                <button class="product-btn" data-text="add to cart">예약하기</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-description-review-area mb-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="product-review-tab">
+                                        <ul class="nav dec-and-review-menu">
+                                            {#                                            <li>#}
+                                            {#                                                <a class="active" data-toggle="tab" href="#description">돌봄정보소개</a>#}
+                                            {#                                            </li>#}
+                                            <li>
+                                                <a class="active" data-toggle="tab" href="#description">시터소개</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tab" href="#reviews">후기 (1)</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content product-review-content-tab" id="myTabContent-4">
+                                            <div class="tab-pane fade active show" id="description">
+                                                <div class="single-product-description">
+
+                                                    <div style="display: inline-block;">
+                                                        <div class="single-product-description">
+                                                            <p style="font-size:20px; font-weight: bold;">{{ user.userprofile.name }}
+                                                                시터님의
+                                                                캘린더</p>
+                                                        </div>
+                                                        <br>
+                                                        <div class="month">
+                                                            <ul>
+                                                                <li class="prev">&#10094;</li>
+                                                                <li class="next">&#10095;</li>
+                                                                <li>
+                                                                    August<br>
+                                                                    <span style="font-size:18px">2017</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <ul class="weekdays">
+                                                            <li>Mo</li>
+                                                            <li>Tu</li>
+                                                            <li>We</li>
+                                                            <li>Th</li>
+                                                            <li>Fr</li>
+                                                            <li>Sa</li>
+                                                            <li>Su</li>
+                                                        </ul>
+
+                                                        <ul class="days">
+                                                            <li>1</li>
+                                                            <li>2</li>
+                                                            <li>3</li>
+                                                            <li>4</li>
+                                                            <li>5</li>
+                                                            <li>6</li>
+                                                            <li>7</li>
+                                                            <li>8</li>
+                                                            <li>9</li>
+                                                            <li><span class="active">10</span></li>
+                                                            <li>11</li>
+                                                            <li>12</li>
+                                                            <li>13</li>
+                                                            <li>14</li>
+                                                            <li>15</li>
+                                                            <li>16</li>
+                                                            <li>17</li>
+                                                            <li>18</li>
+                                                            <li>19</li>
+                                                            <li>20</li>
+                                                            <li>21</li>
+                                                            <li>22</li>
+                                                            <li>23</li>
+                                                            <li>24</li>
+                                                            <li>25</li>
+                                                            <li>26</li>
+                                                            <li>27</li>
+                                                            <li>28</li>
+                                                            <li>29</li>
+                                                            <li>30</li>
+                                                            <li>31</li>
+                                                        </ul>
+                                                    </div>
+                                                    <br/>
+                                                    <br/>
+                                                    <br/>
+                                                    <div style="">
+                                                        <div class="animalintroduction_11">{{ sitter.userprofile.name }}
+                                                            시터님의 반려견을 소개합니다~!
+                                                        </div>
+
+                                                        {% for dog in dogs %}
+                                                            <div style="display: inline-block;">
+                                                                <img class="animalintroduction_img"
+                                                                     src="/media/{{ dog.profile }}">
+                                                                <div class="animalintroduction_text">
+                                                                    <center>이름 : {{ dog.name }}<br>
+                                                                        ({{ dog.species }}, {{ dog.age }}살)
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+                                                        {% endfor %}
+
+                                                    </div>
+
+                                                    <div class="introduction_22">{{ sitter.userprofile.name }} 시터님을
+                                                        소개합니다!
+                                                    </div>
+                                                    <div class="introduction_text">
+                                                        <pre>{{ sitter.qna }}</pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane fade" id="reviews">
+                                                <div class="review-page-comment">
+                                                    <h2>총 1개의 후기가 있습니다.</h2>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="product-comment">
+                                                                {#                                                                <img src="img/icon/author.png" alt="">#}
+                                                                <div class="product-comment-content">
+                                                                    <div class="product-reviews">
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                    </div>
+                                                                    <p class="meta">
+                                                                        <strong>admin</strong> -
+                                                                        <span>November 22, 2016</span>
+                                                                        <div class="description">
+                                                                    <p>Good Product</p>
+                                                                </div>
+                                                            </div>
+                                                </div>
+                                                </li>
+                                                </ul>
+                                                <div class="review-form-wrapper">
+                                                    <div class="review-form">
+                                                        <span class="comment-reply-title">후기 작성</span>
+                                                        <form action="#">
+                                                            <div class="comment-form-rating">
+                                                                <label>평점</label>
+                                                                <div class="rating">
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-element">
+                                                                <div class="comment-form-comment">
+                                                                    <label>후기 작성</label>
+                                                                    <textarea name="message" cols="40"
+                                                                              rows="8"></textarea>
+                                                                </div>
+                                                                <div class="comment-submit">
+                                                                    <button type="submit" class="form-button">Submit
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

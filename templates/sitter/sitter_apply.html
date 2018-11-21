@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-9 ml-auto mr-auto">
                     <div class="blog_area">
-                    	<form method="post" action="." class="formA" name="applyForm">{% csrf_token %}
+                    	<form method="post" action="" class="formA" name="applyForm">{% csrf_token %}
                             {% if form.errors %}
                             <p class="errornote">빈칸을 전부 입력해주세요.</p>
                             {% endif %}
@@ -30,8 +30,8 @@
     						<fieldset class="aligned">
 
     							<div class="form-row">
-    								<span class="member_id">ID</span>
-    								<input name="inputContent" type="text" class="inputContent" id="id" value="{{user.username}}" readonly>
+    								<span class="member_id">이름</span>
+    								<input name="name" type="text" class="inputContent" id="id" value="{{user.userprofile.name}}" readonly>
     							</div>
 
                                 <div class="form-row">
@@ -76,28 +76,28 @@
 								<div class="form-row">
 									<span class="whetherSmoker_span">식구 중에 흡연자가 있습니까?</span> 
 									<label class="radioC">Y
-										<input type="radio" name="whetherSmoker" class="whetherSmoker" value="Y"/>
+										<input type="radio" name="whether_smoker" class="whetherSmoker" value="Y"/>
 									  	<span class="checkmark">Yes</span>
 									</label>
 									<label class="radioC">N
-										<input type="radio" name="whetherSmoker" class="whetherSmoker" value="N"/>
+										<input type="radio" name="whether_smoker" class="whetherSmoker" value="N"/>
 										<span class="checkmark">No</span>
 									</label>
 								</div>
 
                                 <div class="form-row">
                                     <span class="maximumCare">한달 내 최대 돌봄 기간</span>
-                                    <input type="number" name="maximumCare" min="1" max="30" required><span style="padding: 15px 0;">일</span>
+                                    <input type="number" name="maximum_caring_period" min="1" max="30" required><span style="padding: 15px 0;">일</span>
                                 </div>
 	
 								<div class="form-row">
 									<span class="whetherUnderage_span">식구 중에 미성년자가 있습니까?</span> 
 									<label class="radioC">Y
-										<input type="radio" name="whetherUnderage" class="whetherUnderage" value="Y"/>
+										<input type="radio" name="minors_status" class="whetherUnderage" value="Y"/>
 									  	<span class="checkmark">Yes</span>
 									</label>
 									<label class="radioC">N
-										<input type="radio" name="whetherUnderage" class="whetherUnderage" value="N"/>
+										<input type="radio" name="minors_status" class="whetherUnderage" value="N"/>
 										<span class="checkmark">No</span>
 									</label>
 								</div>
@@ -105,23 +105,23 @@
 								<div class="form-row">
 									<span class="petsitterActive_span">펫시터로 활동한 적이 있습니까?</span> 
 									<label class="radioC">Y
-										<input type="radio" name="petsitterActive" class="petsitterActive" value="Y"/>
+										<input type="radio" name="sitter_career" class="petsitterActive" value="Y"/>
 									  	<span class="checkmark">Yes</span>
 									</label>
 									<label class="radioC">N
-										<input type="radio" name="petsitterActive" class="petsitterActive" value="N"/>
+										<input type="radio" name="sitter_career" class="petsitterActive" value="N"/>
 										<span class="checkmark">No</span>
 									</label>
 								</div>
 
                                 <div class="form-row">
                                     <span class="timeTogether">반려동물과 함께한 시간은 얼마입니까?</span>
-                                    <input type="number" name="timeTogether" min="0" required><span style="padding: 15px 0;">개월</span>
+                                    <input type="number" name="time_together" min="0" required><span style="padding: 15px 0;">개월</span>
                                 </div>
 
                                 <div class="form-row">
                                     <span class="companion">현재 키우고 있는 반려동물 수</span>
-                                    <input type="number" name="companion" min="0" required><span style="padding: 15px 0;">마리</span><span style="padding: 15px 0;">
+                                    <input type="number" name="pet_count" min="0" value="{{ pets_count }}" required><span style="padding: 15px 0;">마리</span><span style="padding: 15px 0;">
                                 </div>
 
                                 <div class="form-row">
@@ -145,7 +145,7 @@
 
     						<div class="clearfix">
     					      	<a href="{% url 'index' %}" class="applicationXtn" id="cancle">취소</a>
-    					      	<button class="applicationBtn" id="apply">펫시터 교육신청</button>
+    					      	<button class="applicationBtn" type="submit" id="apply">펫시터 교육신청</button>
     					    </div>
     					</form>
                     </div>

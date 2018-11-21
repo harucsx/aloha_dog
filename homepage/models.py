@@ -35,6 +35,9 @@ class UserProfile(models.Model):
     membership_level = models.CharField(max_length=10, verbose_name='회원 등급', choices=MEMBER_SHIP_LEVEL_CHOICES,
                                         default='member')
 
+    def __str__(self):
+        return self.name
+
 
 # 예약
 class Reservation(models.Model):
@@ -48,6 +51,10 @@ class Reservation(models.Model):
     precautions = models.CharField(max_length=100, verbose_name='돌봄 주의사항')
     progress = models.CharField(max_length=100, verbose_name='진행상황')
     total_price = models.IntegerField(default=0, verbose_name='총 가격')
+    written_review = models.BooleanField(default=False, verbose_name='리뷰 작성 여부')
+
+    def __str__(self):
+        return self.reservation_no
 
 
 # 시터 지원서
@@ -56,13 +63,14 @@ class Application(models.Model):
     job = models.CharField(max_length=50, verbose_name='회원의 현재 직업')
     permission = models.BooleanField(default=True, verbose_name='가족들의 동의를 구하셨나요?')
     whether_smoker = models.BooleanField(default=True, verbose_name='가족중에 흡연자가 있나요?')
-    maximum_caring_period = models.BooleanField(default=True, verbose_name='한달 내에 최대돌봄기간은 어느정도인가요?')
+    maximum_caring_period = models.IntegerField(verbose_name='한달 내에 최대돌봄기간은 어느정도인가요?')
     minors_status = models.BooleanField(default=True, verbose_name='식구중에 미성년자가 있습니까?')
     sitter_career = models.BooleanField(default=True, verbose_name='시터로 활동한 적이 있습니까?')
     time_together = models.IntegerField(default=True, verbose_name='반려동물과 함께한 시간은 몇개월 입니까?')
     pet_count = models.IntegerField(default=True, verbose_name='현재 키우고있는 반려동물 수')
     experience = models.TextField(max_length=1000, verbose_name='반려동물과 함께해서 좋았던 기억을 입력해주세요')
     responsibility = models.BooleanField(default=True, verbose_name='펫시터로 최선을 다할것을 약속하십니까?')
+    confirm = models.BooleanField(default=False, verbose_name='합격 전송 여부')
 
 
 class Board(models.Model):
@@ -76,12 +84,10 @@ class Board(models.Model):
 
 
 class Review(models.Model):
-    userprofile = models.ForeignKey('UserProfile', on_delete=models.CASCADE, verbose_name="리뷰작성자")
-    sitter = models.ForeignKey('Sitter', on_delete=models.CASCADE, verbose_name="시터")
+    reservation = models.ForeignKey('Reservation', on_delete=models.CASCADE, verbose_name="예약")
     title = models.CharField(max_length=100, verbose_name="게시판제목")
-    contents = models.TextField(max_length=1000, verbose_name="게시판내용")
-    star_score = models.CharField(max_length=1, choices=STAR_SCORE_CHOICE, verbose_name="별점")
-    # 댓글
+    content = models.TextField(max_length=1000, verbose_name="게시판내용")
+    created_datetime = models.DateTimeField(auto_now_add=True, verbose_name="작성일")
 
 
 class SitterSchedule(models.Model):
@@ -125,3 +131,11 @@ class Dog(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+
+class Payment(models.Model):
+    reservation = models.ForeignKey('Reservation', on_delete=models.CASCADE, verbose_name="예약")
+    payment_datetime = models.DateTimeField(auto_now_add=True, verbose_name="작성일")
+    merchant_uid = models.CharField(max_length=100, verbose_name='거래 번호')
+    amount = models.IntegerField(verbose_name='결제 금액')
+    apply_num = models.CharField(max_length=100, verbose_name='승인번호')
