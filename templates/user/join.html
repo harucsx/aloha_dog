@@ -63,7 +63,7 @@
                     phone3: $("#phone3").val(),
                     email1: $("#email1").val(),
                     email2: $("#email2").val(),
-                    postcode: $("#postcode").val(),
+                    zip_code: $("#postcode").val(),
                     address1: $("#address1").val(),
                     address2: $("#address2").val()
                 };
@@ -82,7 +82,7 @@
                         window.location.href = "/";
                     },
                     error: function (data) {
-                        alert('회원 가입 중 오류가 발생했습니다.');
+                        alert('오류가 발생했습니다.');
                         $("#join").fadeIn(500);
                     }
                 });
