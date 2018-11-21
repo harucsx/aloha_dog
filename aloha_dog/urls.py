@@ -40,6 +40,7 @@ urlpatterns = [
     path('pet/<int:id>', pets.pet_edit, name='pet_edit'),
 
     path('sitter', sitters.sitter_list, name='sitter_list'),
+    path('sitter/like', views.sitter_like_list, name='sitter_like_list'),
     path('sitter/check', sitters.sitter_check, name='sitter_check'),
     path('sitter/join', sitters.sitter_join, name='sitter_join'),
     path('sitter/apply1', views.sitter_apply1, name='sitter_apply1'),

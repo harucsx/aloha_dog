@@ -53,3 +53,7 @@ def free_service(request):
 
 def paid_service(request):
     return render(request, 'etc/paid_service.html')
+
+
+def sitter_like_list(request):
+    return render(request, 'sitter/sitter_like_list.html')
