@@ -63,7 +63,7 @@ input[type=radio], input[type=checkbox]{
     user-select: none;
     font-size: 15px;
     padding: 9px;
-    
+
 }
 .radioC input {
     position: absolute;
@@ -123,16 +123,16 @@ option {
 }
 input[type=text]:hover, input[type=password]:hover,
 input[type=number]:hover, input[type=file]:hover,
-input[type=radio]:hover, input[type=email]:hover, 
+input[type=radio]:hover, input[type=email]:hover,
 input[type=time]:hover, select:hover, option:hover {
     background-color: rgba(241,230,255);
     outline: none;
     border: none;
     color: white;
 }
-input[type=text]:focus, input[type=password]:focus, 
+input[type=text]:focus, input[type=password]:focus,
 input[type=number]:focus, input[type=file]:focus,
-input[type=radio]:focus, input[type=email]:focus, 
+input[type=radio]:focus, input[type=email]:focus,
 input[type=time]:focus, select:focus, option:focus {
     background-color: #c999ff;
     outline: none;
@@ -196,7 +196,9 @@ input[type=time]:focus, select:focus, option:focus {
     font-size: 15px;
 }
 .about-btn-login:hover{
-    color: #fff; 
-    background: #c999ff; 
+    color: #fff;
+    background: #c999ff;
     border-color: #c999ff;
 }
+
+.skill-img img,.about-us-img img{height:450px; width: 100%;}
