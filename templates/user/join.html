@@ -12,7 +12,7 @@
                 var id = document.getElementById("id").value;
 
                 if (!id) {//아이디를 입력하지 않고 [ID중복확인]버튼을 클릭한 경우
-                    alert("사용할 아이디를 입력");
+                    alert("사용할 아이디를 입력해주세요.");
                     $("#id").focus();
                 }
                 else if ((id < "0" || id > "9") && (id < "A" || id > "Z") && (id < "a" || id > "z")) {
