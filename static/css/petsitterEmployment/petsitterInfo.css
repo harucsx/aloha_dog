@@ -1,196 +1,324 @@
-.animalintroduction_11{
-    font-weight: bold;
-    color: #b69bc9;
-    font-size: 20px;
-}
 
-img.animalintroduction_img{
-    position: relative;
-    top: 20px;
+* {box-sizing: border-box; user-select: none;}
+ul {list-style-type: none;}
+
+/*------------------*/
+
+/*-------------
+single-product-area
+-------------*/
+.single-product-area{/*background: #c999ff;*/ padding-top: 9px;}
+.single-product-img{
+    overflow: hidden;
+    border: 1px solid #c999ff;
+    border-radius: 10px;
+}
+.product-details-content{
+    /*background: white;*/
+    height: 98%;
+    margin-bottom: 10px;
+    padding: 30px;
+    padding-bottom: 0px;
+    border: 1px solid #c999ff;
+    border-radius: 10px;
+}
+.petsitterimg{
+    float: right;
     width: 150px;
     height: 150px;
-    border-radius: 90px;
-    border: 4px solid #e6e6e6;
+    border-radius: 100px;
 }
-
-img.animalintroduction_img:hover{
-    opacity: 0.5;
-    transition: .5s ease;
+.product-description{
+    width: 400px;
+    height: 150px;
+    background: #ebebeb;
+    border-radius: 10px;
+    padding: 10px;
 }
+.single-product-price{margin-top: 40px; margin-bottom: 20px}
+.single-product-description{/*background: blue;*/ width: 100%;}
 
-.animalintroduction_text{
-    position: relative;
-    top: 40px;
-    font-family: "fontawesome";
-    font-size: 14px;
-    line-height: 28px;
-    color: #666;
-}
-
-.introduction_22{
-    position: relative;
-    font-weight: bold;
-    color: #b69bc9;
-    font-size: 20px;
-    top: 120px;
-}
-
-.introduction_text{
-    position: relative;
-    font-size: 14px;
-    line-height: 28px;
-    color: #666;
-    top: 150px;
-}
-
-.nnn:hover{
-    color: #c999ff;
-}
-
-.greetings{
-    width: 100px;
-}
-
-* {box-sizing: border-box;}
-ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
-
-.month {
-    padding: 20px 25px;
+/*--------------
+caring
+----------------*/
+/*info*/
+.info{
+    float: left;
     width: 30%;
-    background: #1abc9c;
+    /*overflow: hidden; */
+    /*background: lightblue;*/
+    font-family: nanum;
+    margin-right: 5%;
+/*    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;*/
+}
+.info-title{
+    color: #c999ff;
+    font-weight: bold;
     text-align: center;
 }
-
+.info table{font-size: 15px;}
+.info table tr:nth-child(odd){background: #c999ff;}
+/*.info table tr{border-bottom: 1px solid #c999ff;}*/
+.info table tr:last-child{border-bottom: none;}
+.info table tr th{
+    width: 35%;
+    /*background: green;*/
+    /*border-right: 1px solid #c999ff;*/
+    padding: 10px 5px;
+}.info table tr td{
+    color: grey;
+    width: 65%;
+    /*background: green;*/
+    padding: 5px;
+}
+/*canlender*/
+.calender{
+    width: 25%;
+    float: left;
+    border-radius: 10px;
+    overflow: hidden;
+    /*background: blue;*/
+    font-family: nanum;
+    margin-right: 5%;
+}
+.calender p{
+    text-align: center;
+    font-family: squareB;
+    font-size: 20px;
+}
+.month {
+    padding: 30px 25px;
+    width: 100%;
+    background: #c999ff;
+    text-align: center;
+}
 .month ul {
     margin: 0;
     padding: 0;
 }
-
 .month ul li {
     color: white;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
-
 .month .prev {
     float: left;
     padding-top: 10px;
 }
-
 .month .next {
     float: right;
     padding-top: 10px;
 }
-
 .weekdays {
     margin: 0;
     padding: 10px 0;
     background-color: #ddd;
-    width: 30%;
 }
-
 .weekdays li {
     display: inline-block;
-    width: 11.5%;
+    width: 12.5%;
     color: #666;
     text-align: center;
 }
-
 .days {
     padding: 10px 0;
     background: #eee;
     margin: 0;
-    width: 30%;
 }
-
 .days li {
     list-style-type: none;
     display: inline-block;
-    width: 11.5%;
+    width: 12.5%;
     text-align: center;
     margin-bottom: 5px;
-    font-size:12px;
+    font-size:15px;
     color: #777;
 }
-
 .days li .active {
     padding: 5px;
-    background: #1abc9c;
+    background: #c999ff;
     color: white !important
 }
-
-.free-service,
-.paid-service{
-    position: absolute;
-    border: 2px solid #4d4dff;
-    padding: 0 0 0 15px;
-    width: 60px;
-    height: 30px;
-    font-size: 13px;
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+/*environment*/
+.environment{
+    width: 35%;
+    overflow: hidden;
+    /*background: blue;*/
     font-family: nanum;
+}
+.environment-title{
+    color: #c999ff;
     font-weight: bold;
-    border-radius: 20px;
-    top: 620px;
-    
+    text-align: center;
+}
+.environment table{font-size: 15px;}
+.environment table tr:nth-child(odd){background: #c999ff;}
+.environment table tr:last-child{border-bottom: none;}
+.environment table tr th{
+    width: 35%;
+    /*background: green;*/
+    /*border-right: 1px solid #c999ff;*/
+    padding: 10px 5px;
+}.environment table tr td{
+    color: grey;
+    width: 65%;
+    /*background: green;*/
+    padding: 5px;
 }
 
-.free-service{
-   left: 20px; 
+/*-------------
+petsitter
+--------------*/
+#petsitter .single-product-description{
+    /*background: black;*/
+    /*height: 1000px;*/
 }
-
-.paid-service{
-    left: 200px;
+.petsitter-left{
+    float: left;
+    width: 35%;
+    /*background: blue;*/
+    height: 500px;
+    padding: 0 20px;
 }
-
-.select-tag-all{
-    position: absolute;
-    top: 570px;
-    left: 520px;
-    width: 947px;
-    height: 200px;
-}
-
-.select-tag-ok{
-    position: absolute;
-    font-family: nanum;
-    color: #4d4dff;
+.animalintroduction_11{
     font-weight: bold;
-    font-size: 17px;
-    top: 20px;
-    left: 10px;
+    color: #c999ff;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
-
-.apateu, .madang, .old-age-dog-care,
-.dd-dog-care{
-    position: absolute;
-    border: 2px solid #4d4dff;
+.animalintroduction_ALL{
+    /*margin: 0 auto;*/
+    width: 90%;
+    background: #c999ff;
+    border-radius: 30px;
     padding: 10px;
-    height: 50px;
+    margin-bottom: 10px;
+}
+img.animalintroduction_img{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 90px;
+    margin-right: 10px;
+}
+.animalintroduction_text{
+    display: inline-block;
     font-size: 15px;
-    font-family: nanum;
+    line-height: 28px;
+    color: white;
+}
+.petsitter-right{
+    float: right;
+    width: 65%;
+    /*background: lightblue;*/
+}
+.introduction_22{
     font-weight: bold;
-    border-radius: 20px;
-    top: 45px;
+    color: #c999ff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.introduction_text{
+    height: 700px;
+    font-size: 15px;
+    line-height: 28px;
+    color: #666;
+    border: 1px solid #c999ff;
+    overflow-y: scroll;
+    padding: 20px;
 }
 
-.apateu{
-    width: 70px;
-    left: 10px;
+/*-------------
+review
+----------------*/
+.blog_area{
+    border: 1px solid #ebebeb;
+    padding: 20px;
 }
+.blog_area_board{border: none;padding: 0;}
+.table-content table {
+    background: #fff none repeat scroll 0 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+    /*margin-top: -45px;*/
+}
+thead {
+    background-color: white;
+}
+.table-content table th {
+    border-top: medium none;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.table-content table td {
+    padding: 10px;
+    vertical-align: middle;
+    font-size: 15px;
+}
+.table-content table th{
+    border-bottom: 1px solid #c999ff;
+    border-top: 1px solid #c999ff;
+}
+.table-content table td {border-bottom: 1px solid #ebebeb;}
+/* list */
+#list_head{
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 27px;
+    margin: 0;
+    /*background: green; */
+}
+.inline{
+    float: left;
+    font-size: 15px;
+    color: #666;
+    margin-top: 5px;
+}
+#b_new{
+    float: right;
+    color: #666;
+    cursor: pointer;
+    background: white;
+    text-align: center;
+    font-size: 15px;
+    border: none;
+}#b_new:hover{color: #c999ff;}
 
-.madang{
-    width: 70px;
-    left: 110px;
-}
+.date{padding:0; margin:0;}
 
-.old-age-dog-care{
-    width: 100px;
-    left: 210px;
+#jump{text-align: center; margin-top: 50px;}
+#jump button{
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
 }
-
-.dd-dog-care{
-    width: 100px;
-    left: 340px;
-}
+.listTableTitle_button{
+    color: #666;
+    padding: 5px 15px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 15px;
+}.listTableTitle_button:hover{color: #fff; background: #c999ff; border-color: #c999ff;}

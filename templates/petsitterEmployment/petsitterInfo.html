@@ -6,436 +6,385 @@
 {% block extrastyle %}{% static "css/petsitterEmployment/petsitterInfo.css" %}{% endblock %}
 
 {% block content %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <div class="location-tow mb-60">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="location-title">
-                        <h1>펫시터 정보</h1>
-                    </div>
-                    <div class="location-content location-content-tow">
-                        <ul>
-                            <li><a href="{% url 'home' %}">home</a></li>
-                            <li><a href="#">펫시터 예약</a></li>
-                            <li class="active">펫시터 정보</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  <div class="my-account white-bg mb-110">
       <div class="container">
-          <div class="account-dashboard">
-              <div class="row">
-          <div class="single-product-area mb-115">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-12 col-lg-5">
-                          <div class="product-details-img-tab">
-                          
-                              <div class="tab-content single-product-img">
-                                <div class="tab-pane fade show active" id="product1">
-                                    <div class="product-large-thumb img-full">
-                                       <div class="easyzoom easyzoom--overlay">
-                                          <a href="{% static 'img/single-product/large/single-product1.jpg' %}">
-                                              <img src="{% static 'img/single-product/large/single-product1.jpg' %}" alt="">
-                                          </a>
-                                          <a href="{% static 'img/single-product/large/single-product1.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
-                                       </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="product2">
-                                    <div class="product-large-thumb img-full">
-                                       <div class="easyzoom easyzoom--overlay">
-                                          <a href="{% static 'img/single-product/large/single-product2.jpg' %}">
-                                            <img src="{% static 'img/single-product/large/single-product2.jpg' %}" alt="">
-                                          </a>
-                                          <a href="{% static 'img/single-product/large/single-product2.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
-                                       </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="product3">
-                                    <div class="product-large-thumb img-full">
-                                       <div class="easyzoom easyzoom--overlay">
-                                          <a href="{% static 'img/single-product/large/single-product3.jpg' %}">
-                                            <img src="{% static 'img/single-product/large/single-product3.jpg' %}" alt="">
-                                          </a>
-                                          <a href="{% static 'img/single-product/large/single-product3.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
-                                       </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="product4">
-                                    <div class="product-large-thumb img-full">
-                                       <div class="easyzoom easyzoom--overlay">
-                                          <a href="{% static 'img/single-product/large/single-product4.jpg' %}">
-                                            <img src="{% static 'img/single-product/large/single-product4.jpg' %}" alt="">
-                                          </a>
-                                          <a href="{% static 'img/single-product/large/single-product4.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
-                                       </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="product5">
-                                    <div class="product-large-thumb img-full">
-                                      <div class="easyzoom easyzoom--overlay">
-                                          <a href="{% static 'img/single-product/large/single-product5.jpg' %}">
-                                            <img src="{% static 'img/single-product/large/single-product5.jpg' %}" alt="">
-                                          </a>
-                                          <a href="{% static 'img/single-product/large/single-product5.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
-                                       </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="product6">
-                                    <div class="product-large-thumb img-full">
-                                      <div class="easyzoom easyzoom--overlay">
-                                          <a href="{% static 'img/single-product/large/single-product6.jpg' %}">
-                                            <img src="{% static 'img/single-product/large/single-product6.jpg' %}" alt="">
-                                          </a>
-                                          <a href="{% static 'img/single-product/large/single-product6.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
-                                       </div>
-                                    </div>
-                                </div>
-                              </div>            
-                          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="location-title">
+                      <h1>펫시터 정보</h1>
+                  </div>
+                  <div class="location-content location-content-tow">
+                      <ul>
+                          <li><a href="{% url 'home' %}">home</a></li>
+                          <li><a href="#">펫시터 고용</a></li>
+                          <li class="active">펫시터 정보</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="single-product-area mb-100">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 col-lg-5">
+                  <div class="product-details-img-tab">
+                        <div class="tab-content single-product-img">
+                              <div class="tab-pane fade show active" id="product1">
+                                  <div class="product-large-thumb img-full">
+                                     <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product1.jpg' %}">
+                                            <img src="{% static 'img/petsitter/large/single-product1.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product1.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product2">
+                                  <div class="product-large-thumb img-full">
+                                     <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product2.jpg' %}">
+                                          <img src="{% static 'img/petsitter/large/single-product2.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product2.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product3">
+                                  <div class="product-large-thumb img-full">
+                                     <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product3.jpg' %}">
+                                          <img src="{% static 'img/petsitter/large/single-product3.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product3.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product4">
+                                  <div class="product-large-thumb img-full">
+                                     <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product4.jpg' %}">
+                                          <img src="{% static 'img/petsitter/large/single-product4.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product4.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product5">
+                                  <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product5.jpg' %}">
+                                          <img src="{% static 'img/petsitter/large/single-product5.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product5.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product6">
+                                  <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{% static 'img/petsitter/large/single-product6.jpg' %}">
+                                          <img src="{% static 'img/petsitter/large/single-product6.jpg' %}" alt="">
+                                        </a>
+                                        <a href="{% static 'img/petsitter/large/single-product6.jpg' %}" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                     </div>
+                                  </div>
+                              </div>
+                        </div>
+                  </div>
+              </div>
+              <div class="col-md-12 col-lg-7">
+                  <div class="product-details-content">
+                      <img src="{% static 'img/petsitter/bbb.jpg' %}" alt="petsitterIMG" class="petsitterimg">
+                      <h2>김태리 시터님</h2>
+                      <div class="single-product-reviews">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="far fa-star"></i>
+                          <a class="review-link" href="#">(리뷰 1개)</a>
                       </div>
-                      
-                      <div class="col-md-12 col-lg-7">
-                          <div class="product-details-content">
-                              <div class="product-nav">
-                                  <a href="#"><i class="fa fa-angle-left"></i></a>
-                                  <a href="#"><i class="fa fa-angle-right"></i></a>
-                              </div>
-                              <h2>${sitter.name} 시터님</h2>
-                              <div class="single-product-reviews">
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <a class="review-link" href="#">장소: ${sitter.address1}</a>
-                              </div>
-                              <div class="product-description">
-                                  <p>${sitter.petsitter_intro}</p><br>
-                              </div>
-                              <p class="stock in-stock">기본단가는 하루케어 기준  ${sitter.time_price}원 입니다.</p>
-                              <div class="single-product-quantity">
-                                <div class="contact-form-style mb-20">
-                                  <input type="date" name="date" id="userdate" value="today" placeholder="돌봄시작일">
-                                </div>
-                             </div>
-                              <div class="product-meta">
-                                  <span class="posted-in">
-                                  	가능한 서비스(무료):
-                                  		${sitter.free_service2}
-                    						${sitter.free_service3}
-                                    		${sitter.free_service4}
-                                    		${sitter.free_service5}
-                                    		${sitter.free_service6}
-                                  </span>
-                                  <br>
-                                  <span class="posted-in">
-                                  	가능한 서비스(유료):
-                                  		${sitter.paid_service1}
-                                  		${sitter.paid_service2}
-                    						${sitter.paid_service3}
-                                    		${sitter.paid_service4}
-                                    		${sitter.paid_service5}
-                                  </span>
-                              </div>
-                              <div class="single-product-sharing">
-                                  <h3>SNS</h3>
-                                  <ul>
-                                      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                      <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                      <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                                      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                  </ul>
-                              </div>
-                              <br>
-                              <div class="add-to-link">
-                                <a href="{% url 'reservation' %}">
-                                	<button class="product-btn" data-text="add to cart">예약하기</button>
-                                </a>
-                              </div>
-                          </div>
+                      <div class="product-description">
+                          정성을 다해 돌보겠습니다
+                      </div>
+                      <div class="single-product-price">
+                          <span class="price new-price">40,000원</span>
+                          <span class="regular-price">35,000원</span>
+                      </div>
+                      <div class="wishlist-compare-btn">
+                          <a href="#">예약하기</a>
+                          <a href="#" class="wishlist-btn">찜</a>
+                      </div>
+                      <div class="single-product-sharing">
+                          <h3>SNS공유</h3>
+                          <ul>
+                              <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                              <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                              <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                          </ul>
                       </div>
                   </div>
               </div>
           </div>
-          
-          <div class="product-description-review-area mb-100">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-12">
-                          <div class="product-review-tab">
-                              <ul class="nav dec-and-review-menu">
-                                <li>
-                                  <a class="active" data-toggle="tab" href="#description">돌봄정보소개</a>
-                                </li>
-                                <li>
-                                  <a data-toggle="tab" href="#description22">시터소개</a>
-                                </li>
-                                <li>
-                                  <a data-toggle="tab" href="#reviews">후기 (1)</a>
-                                </li>
-                              </ul>
-                              <div class="tab-content product-review-content-tab" id="myTabContent-4">
-
-                                <div class="tab-pane fade active show" id="description">
-                                    <div class="single-product-description">
-                                       <p style="font-size:20px; font-weight: bold;">박기나 시터님의 캘린더</p>
+      </div>
+  </div>
+  <div class="product-description-review-area mb-100">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="product-review-tab">
+                      <ul class="nav dec-and-review-menu">
+                          <li>
+                            <a class="active" data-toggle="tab" href="#caring">돌봄소개</a>
+                          </li>
+                          <li>
+                            <a data-toggle="tab" href="#petsitter">시터소개</a>
+                          </li>
+                          <li>
+                            <a data-toggle="tab" href="#reviews">리뷰 (1)</a>
+                          </li>
+                      </ul>
+                      <div class="tab-content product-review-content-tab" id="myTabContent-4">
+                            <div class="tab-pane fade active show" id="caring">
+                                <div class="single-product-description">
+                                    <div class="info">
+                                      <p class="info-title">펫시터 정보</p>
+                                      <table>
+                                        <tr>
+                                          <th>주소</th>
+                                          <td>서울 강동구</td>
+                                        </tr>
+                                        <tr>
+                                          <th>무료서비스</th>
+                                          <td>실외배변, 응급처치, 투약가능</td>
+                                        </tr>
+                                        <tr>
+                                          <th>유료서비스</th>
+                                          <td>목욕하기, 병원가기, 픽업가능, 미용가기</td>
+                                        </tr>
+                                        <tr>
+                                          <th>돌봄가능한크기</th>
+                                          <td>20kg미만</td>
+                                        </tr>
+                                        <tr>
+                                          <th>돌봄가능한나이</th>
+                                          <td>6살미만</td>
+                                        </tr>
+                                        <tr>
+                                          <th>체크인</th>
+                                          <td>체크인 11:30</td>
+                                        </tr>
+                                        <tr>
+                                          <th>체크아웃</th>
+                                          <td>체크아웃  13:00</td>
+                                        </tr>
+                                      </table>
                                     </div>
-                                    <br>
-                                    <div class="month">      
-                                      <ul>
-                                        <li class="prev">&#10094;</li>
-                                        <li class="next">&#10095;</li>
-                                        <li>
-                                          August<br>
-                                          <span style="font-size:18px">2017</span>
-                                        </li>
-                                      </ul>
+                                    <div class="calender">
+                                        <div class="month">
+                                          <p>김태리님의 캘린더</p>
+                                          <ul>
+                                            <li class="prev">&#10094;</li>
+                                            <li class="next">&#10095;</li>
+                                            <li>
+                                              11월<br>
+                                              <span style="font-size:18px">2018</span>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                        <ul class="weekdays">
+                                          <li style="color: red;">일</li>
+                                          <li>월</li>
+                                          <li>화</li>
+                                          <li>수</li>
+                                          <li>목</li>
+                                          <li>금</li>
+                                          <li style="color: blue;">토</li>
+                                        </ul>
+                                        <ul class="days">
+                                          <li>1</li>
+                                          <li>2</li>
+                                          <li>3</li>
+                                          <li>4</li>
+                                          <li>5</li>
+                                          <li>6</li>
+                                          <li>7</li>
+                                          <li>8</li>
+                                          <li>9</li>
+                                          <li><span class="active">10</span></li>
+                                          <li>11</li>
+                                          <li>12</li>
+                                          <li>13</li>
+                                          <li>14</li>
+                                          <li>15</li>
+                                          <li>16</li>
+                                          <li>17</li>
+                                          <li>18</li>
+                                          <li>19</li>
+                                          <li>20</li>
+                                          <li>21</li>
+                                          <li>22</li>
+                                          <li>23</li>
+                                          <li>24</li>
+                                          <li>25</li>
+                                          <li>26</li>
+                                          <li>27</li>
+                                          <li>28</li>
+                                          <li>29</li>
+                                          <li>30</li>
+                                          <li>31</li>
+                                        </ul>
                                     </div>
-
-                                    <ul class="weekdays">
-                                      <li>Mo</li>
-                                      <li>Tu</li>
-                                      <li>We</li>
-                                      <li>Th</li>
-                                      <li>Fr</li>
-                                      <li>Sa</li>
-                                      <li>Su</li>
-                                    </ul>
-
-                                    <ul class="days">  
-                                      <li>1</li>
-                                      <li>2</li>
-                                      <li>3</li>
-                                      <li>4</li>
-                                      <li>5</li>
-                                      <li>6</li>
-                                      <li>7</li>
-                                      <li>8</li>
-                                      <li>9</li>
-                                      <li><span class="active">10</span></li>
-                                      <li>11</li>
-                                      <li>12</li>
-                                      <li>13</li>
-                                      <li>14</li>
-                                      <li>15</li>
-                                      <li>16</li>
-                                      <li>17</li>
-                                      <li>18</li>
-                                      <li>19</li>
-                                      <li>20</li>
-                                      <li>21</li>
-                                      <li>22</li>
-                                      <li>23</li>
-                                      <li>24</li>
-                                      <li>25</li>
-                                      <li>26</li>
-                                      <li>27</li>
-                                      <li>28</li>
-                                      <li>29</li>
-                                      <li>30</li>
-                                      <li>31</li>
-                                    </ul>
-
-                                    <div class="single-product-description">
-                                       <p style="
-                                       position: relative;
-                                       font-size:20px;
-                                       font-weight: bold;
-                                       left: 500px;
-                                       top: -395px;
-                                       ">원하는 시간대</p><br>
-                                       <p style="
-                                       position: relative;
-                                       font-size: 15px;
-                                       left: 510px;
-                                       top: -395px;
-                                       ">
-                                         1.원하는 체크인 시간: ${sitter.checkInTime}<br>
-                                         2.원하는 체크아웃 시간: ${sitter.checkOutTime}<br>
-                                       </p>
-                                    </div>
-
-                                    <div class="single-product-description">
-                                      <p style="
-                                       position: relative;
-                                       font-size:20px;
-                                       font-weight: bold;
-                                       left: 0px;
-                                       top: -50px;
-                                       ">무료서비스&유료서비스</p>
-                                       <div class="free-service">무료</div><br>
-                                       <p style="
-                                       position: relative;
-                                       left: 20px;
-                                       ">
-                                        1.산책가기<br>
-                                        2.병원가기
-                                      </p>
-                                      <div class="paid-service">유료</div><br>
-                                       <p style="
-                                       position: relative;
-                                       left: 200px;
-                                       top: -85px;
-                                       ">
-                                        1.GPS대여
-                                      </p>
-                                    </div>
-
-                                    <div class="single-product-description">
-                                       <p style="
-                                       position: relative;
-                                       font-size:20px;
-                                       font-weight: bold;
-                                       left: 500px;
-                                       top: -225px;
-                                       ">돌봄가능한 조건</p><br>
-                                       <div class="select-tag-all">
-                                        <div class="apateu">아파트</div>
-                                        <div class="madang">마당</div>
-                                        <div class="old-age-dog-care">노령견케어</div>
-                                        <div class="dd-dog-care">환자견케어</div>
-                                      </div>
+                                    <div class="environment">
+                                      <p class="environment-title">돌봄환경</p>
+                                      <table>
+                                        <tr>
+                                          <th>돌봄공간</th>
+                                          <td>빌라</td>
+                                        </tr>
+                                        <tr>
+                                          <th>인근지하철역</th>
+                                          <td>강동역</td>
+                                        </tr>
+                                        <tr>
+                                          <th>마당유무</th>
+                                          <td>아니오</td>
+                                        </tr>
+                                        <tr>
+                                          <th>14세미만아동 유무</th>
+                                          <td>아니오</td>
+                                        </tr>
+                                        <tr>
+                                          <th>가족동거 유무</th>
+                                          <td>예</td>
+                                        </tr>
+                                        <tr>
+                                          <th>다른반려동물 유무</th>
+                                          <td>아니오</td>
+                                        </tr>
+                                      </table>
                                     </div>
                                 </div>
-
-                                <div class="tab-pane fade" id="description22">
-                                    <div class="single-product-description">
-                                      <div class="animalintroduction_11">박기나 시터님의 반려견을 소개합니다~!</div>
-                                      <img class="animalintroduction_img" src="{% static 'img/sitterhire//sitterfind1.jpg' %}">
+                            </div>
+                            <div class="tab-pane fade" id="petsitter">
+                                <div class="single-product-description">
+                                  <div class="petsitter-left">
+                                    <div class="animalintroduction_11">김태리 시터님의 반려견</div>
+                                    <div class="animalintroduction_ALL">
+                                      <img class="animalintroduction_img" src="{% static 'img/sitterhire/sitterfind1.jpg' %}">
                                       <div class="animalintroduction_text">
-                                        	이름: 복순이<br>
-                                        (말티즈,온순한 성격,여아,12살)
-                                      </div>
-
-                                      <div class="introduction_22">박기나 시터님을 소개합니다~!</div>
-                                      <div class="introduction_text">
-                                        	인천공항 가까운집!! 인천 서구 검암동 펫시터 입니다<br>
-                                        Q. 왜 도그메이트 펫시터를 하게 되었나요?<br>
-                                        A.<br>
-                                        1박이상 집을비우게될경우<br>
-                                        	가족중에 스케쥴이 안맞아 지원요청이안되면<br>
-                                       	 정말 맡길곳이 없더라구요<br>
-                                        	사건사고많은 호텔이나 카페는 정말 못맡기겠고...맡겨도 봤는데..가둬만 두는거같더라구욤ㅠㅠ<br>
-                                        	저희와같으신분들에게 도움이 되고싶다는 생각을하게되어 펫시터를 하게되었습니다.<br>
-                                        ----------------------------------------------------------------------------------------<br>
-
-                                        Q. 반려견을 키운 경험에 대해 알려주세요. 현재 반려견을 키우고 계시다면 자세히 소개해주세요!<br>
-                                        A.<br>
-                                        	첫째.둥이<br>
-                                        	진돗개+래브라도리트리버 믹스견 15.01.25일생 여자아이입니다.<br>
-                                        	20kg나가요~중형견정도의 덩치예요~집에 택배아저씨나 낯선사람이 오면 짖습니다.트라우마가 있어서 남자사람을 좋아하지않아요.<br>
-                                        	특히 나이있는 아저씨한테 낯가려요.젊은오빠는 좋아라함.<br>
-                                        	처음에만 짖을뿐 사회성이 없는아이는 아닙니다~방문하셨을때 첫째가짖더라도 놀라지말아주세요~<br>
-                                        	깔끔한 성격이고 물을 별로 안좋아함.<br>
-
-                                        	둘째.초코송이<br>
-                                        	래브라도리트리버 17.03.04일생 여자아이 입니다.35kg나가요~덩치는 일반 래브라도애들보다 작은데 타고난 체형과 체질이<br>뚠뚠이예요~초특급순둥이 접대견입니다. 집에오는 사람이던 강아지던 가리지않고 좋아라합니다.짖는소릴 들어본게 손에 꼽혀요.<br>
-                                        	테라스 텃밭 작물들을 잘훔쳐먹어요<br>
-                                        	텃밭도둑!!!그래서 강제 유기농재배ㅎㅎㅎ텃밭 울타리치기.<br>
-                                        	물을 너무좋아해서 비가와도 테라스에나가놀아요<br>
-
-                                        ----------------------------------------------------------------------------------------<br>
-
-                                        Q. 애견호텔이 아닌 저에게 맡겨주시면 아래와 같은 내용을 약속드립니다.<br>
-                                        A.<br>
-                                        *내 아이들처럼 돌봐드리겠습니다~<br>
-                                        *아이와 같이 열심히 놀겠습니다~<br>
-                                        *건강하게 먹이겠습니다~<br>
-                                        *안전하게 돌보겠습니다~원하시면 분리돌봄 가능합니다.<br>
-                                        *실외테라스와 실내 개문이 따로있어 출입이 자유롭습니다~<br>
-                                        *너무 멀지않다면 무료픽업 가능합니다~<br>
-
-
-                                        ----------------------------------------------------------------------------------------<br>
-
-                                        	※ 아래 유형의 아이들은 돌봄이 어려울 수 있습니다.<br>
-                                        -전염성 질병이있는아이<br>
-                                        -공격성 또는 입질이 있는아이<br>
-                                        -실내마킹이 심한 아이<br>
-                                        -짖음이 심한아이<br>
-                                        ----------------------------------------------------------------------------------------
+                                          <span style="font-weight: bold;">복순이</span>(말티즈, 여아, 12살)
                                       </div>
                                     </div>
-                                </div>
+                                    <div class="animalintroduction_ALL">
+                                      <img class="animalintroduction_img" src="{% static 'img/section2-img1.jpg' %}">
+                                      <div class="animalintroduction_text">
+                                          <span style="font-weight: bold;">순이</span>(말티즈, 여아, 10살)
+                                      </div>
+                                    </div>
+                                    <div class="animalintroduction_ALL">
+                                      <img class="animalintroduction_img" src="{% static 'img/section2-img2.jpg' %}">
+                                      <div class="animalintroduction_text">
+                                          <span style="font-weight: bold;">도니</span>(믹스, 여아, 10살)
+                                      </div>
+                                    </div>
+                                  </div>
 
-                                <div class="tab-pane fade" id="reviews">
-                                    <div class="review-page-comment">
-                                      <h2>총 1개의 후기가 있습니다.</h2>
-                                      <ul>
-                                          <li>
-                                              <div class="product-comment">
-                                                  <img src="img/icon/author.png" alt="">
-                                                  <div class="product-comment-content">
-                                                      <div class="product-reviews">
-                                                          <i class="fa fa-star"></i>
-                                                          <i class="fa fa-star"></i>
-                                                          <i class="fa fa-star"></i>
-                                                          <i class="fa fa-star"></i>
-                                                          <i class="fa fa-star"></i>
-                                                      </div>
-                                                      <p class="meta">
-                                                          <strong>admin</strong> - <span>November 22, 2016</span>
-                                                      <div class="description">
-                                                          <p>Good Product</p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </li>
+                                  <div class="petsitter-right">
+                                    <div class="introduction_22">김태리 시터님 Q&A</div>
+                                    <div class="introduction_text">
+                                        인천공항 가까운집!! 인천 서구 검암동 펫시터 입니다<br>
+                                      Q. 왜 도그메이트 펫시터를 하게 되었나요?<br>
+                                      A.<br>
+                                      1박이상 집을비우게될경우<br>
+                                        가족중에 스케쥴이 안맞아 지원요청이안되면<br>
+                                       정말 맡길곳이 없더라구요<br>
+                                        사건사고많은 호텔이나 카페는 정말 못맡기겠고...맡겨도 봤는데..가둬만 두는거같더라구욤ㅠㅠ<br>
+                                        저희와같으신분들에게 도움이 되고싶다는 생각을하게되어 펫시터를 하게되었습니다.<br>
+                                      ----------------------------------------------------------------------------------------<br>
+
+                                      Q. 반려견을 키운 경험에 대해 알려주세요. 현재 반려견을 키우고 계시다면 자세히 소개해주세요!<br>
+                                      A.<br>
+                                        첫째.둥이<br>
+                                        진돗개+래브라도리트리버 믹스견 15.01.25일생 여자아이입니다.<br>
+                                        20kg나가요~중형견정도의 덩치예요~집에 택배아저씨나 낯선사람이 오면 짖습니다.트라우마가 있어서 남자사람을 좋아하지않아요.<br>
+                                        특히 나이있는 아저씨한테 낯가려요.젊은오빠는 좋아라함.<br>
+                                        처음에만 짖을뿐 사회성이 없는아이는 아닙니다~방문하셨을때 첫째가짖더라도 놀라지말아주세요~<br>
+                                        깔끔한 성격이고 물을 별로 안좋아함.<br>
+
+                                        둘째.초코송이<br>
+                                        래브라도리트리버 17.03.04일생 여자아이 입니다.35kg나가요~덩치는 일반 래브라도애들보다 작은데 타고난 체형과 체질이<br>뚠뚠이예요~초특급순둥이 접대견입니다. 집에오는 사람이던 강아지던 가리지않고 좋아라합니다.짖는소릴 들어본게 손에 꼽혀요.<br>
+                                        테라스 텃밭 작물들을 잘훔쳐먹어요<br>
+                                        텃밭도둑!!!그래서 강제 유기농재배ㅎㅎㅎ텃밭 울타리치기.<br>
+                                        물을 너무좋아해서 비가와도 테라스에나가놀아요<br>
+
+                                      ----------------------------------------------------------------------------------------<br>
+
+                                      Q. 애견호텔이 아닌 저에게 맡겨주시면 아래와 같은 내용을 약속드립니다.<br>
+                                      A.<br>
+                                      *내 아이들처럼 돌봐드리겠습니다~<br>
+                                      *아이와 같이 열심히 놀겠습니다~<br>
+                                      *건강하게 먹이겠습니다~<br>
+                                      *안전하게 돌보겠습니다~원하시면 분리돌봄 가능합니다.<br>
+                                      *실외테라스와 실내 개문이 따로있어 출입이 자유롭습니다~<br>
+                                      *너무 멀지않다면 무료픽업 가능합니다~<br>
+
+
+                                      ----------------------------------------------------------------------------------------<br>
+
+                                        ※ 아래 유형의 아이들은 돌봄이 어려울 수 있습니다.<br>
+                                      -전염성 질병이있는아이<br>
+                                      -공격성 또는 입질이 있는아이<br>
+                                      -실내마킹이 심한 아이<br>
+                                      -짖음이 심한아이<br>
+                                      ----------------------------------------------------------------------------------------
+                                    </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="tab-pane fade" id="reviews">
+                                <div class="review-page-comment">
+                                  <div class="blog_area blog_area_board">
+                                    <div id="list_head" class="box2">
+                                      <h3 class="inline">리뷰내역<font style="color:lightgrey;">(전체 글 : 1)</font></h3>
+                                      <a href="{% url 'writeReview' %}" id="b_new">리뷰작성</a>
+                                    </div>
+                                    <div id="list_article" class="box2">
+                                      <ul class="article">
+                                        <div class="table-content table-responsive">
+                                          <table class="table">
+                                              <thead>
+                                                  <tr>
+                                                      <th class="listTableTitle">No.</th>
+                                                      <th class="listTableTitle">펫시터</th>
+                                                      <th class="listTableTitle">제목</th>
+                                                      <th class="listTableTitle">작성일자</th>
+                                                      <th class="listTableTitle">작성자</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td class="listTableTitle_num"><li class="layout_f">1</li></td>
+                                                <td class="listTableTitle_title"><a href="{% url 'viewReview' %}">김샛별</a></td>
+                                                <td class="listTableTitle_title"><a href="{% url 'viewReview' %}">안녕하세요</a></td>
+                                                <td class="listTableTitle_regDate"><p class="date">2018-11-18 15:30<br></td>
+                                                <td class="listTableTitle_writer">{{user.username}}</td>
+                                                </li>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                            </div>
                                       </ul>
-                                      <div class="review-form-wrapper">
-                                          <div class="review-form">
-                                              <span class="comment-reply-title">Add a review </span>
-                                              <form action="#">
-                                                  <p class="comment-notes">
-                                                      <span id="email-notes">Your email address will not be published.</span>
-                                                       Required fields are marked
-                                                       <span class="required">*</span>
-                                                  </p>
-                                                  <div class="comment-form-rating">
-                                                      <label>Your rating</label>
-                                                      <div class="rating">
-                                                          <i class="fa fa-star"></i>
-                                                          <i class="fa fa-star"></i>
-                                                          <i class="fa fa-star"></i>
-                                                          <i class="fa fa-star"></i>
-                                                          <i class="fa fa-star"></i>
-                                                      </div>
-                                                  </div>
-                                                  <div class="input-element">
-                                                      <div class="comment-form-comment">
-                                                          <label>Comment</label>
-                                                          <textarea name="message" cols="40" rows="8"></textarea>
-                                                      </div>
-                                                      <div class="review-comment-form-author">
-                                                          <label>Name </label>
-                                                          <input required="required" type="text">
-                                                      </div>
-                                                      <div class="review-comment-form-email">
-                                                          <label>Email </label>
-                                                          <input required="required" type="text">
-                                                      </div>
-                                                      <div class="comment-submit">
-                                                          <button type="submit" class="form-button">Submit</button>
-                                                      </div>
-                                                  </div>
-                                              </form>
-                                          </div>
-                                      </div>
                                     </div>
+                                    <div id="jump" class="box3">
+                                        <button id="ju" name="<%= i %>" onclick="p(this)" class="w1">1</button>
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                          </div>
+                            </div>
                       </div>
                   </div>
-              </div>
-              </div>
               </div>
           </div>
       </div>
@@ -460,8 +409,8 @@
                                         <li><b>사업자등록번호:</b> 000-00-00000</li>
                                         <span><b>통신판매업신고번호:</b> 제 2018-서울성동-00000 호</span>
                                         <br/>
-                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li> 
-                                        <li><b>전화번호:</b> 010-3083-8683, </li> 
+                                        <li><b>주소:</b> 서울특별시 성동구 살곶이길 200(사근동 110)</li>
+                                        <li><b>전화번호:</b> 010-3083-8683, </li>
                                         <li><b>이메일:</b> ohmyfood_@naver.com,</li>
                                     </ul>
                                 </nav>
