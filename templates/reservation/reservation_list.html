@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}ALOHA DOG{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/reservation/reservationHistoryM.css" %}{% endblock %}
+
+{% block content %}
+    <div class="location-tow mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-title">
+                        <h1>
+                            {% if sitter_mode %}
+                                나에게 예약한 목록
+                            {% else %}
+                                내가 예약한 목록
+                            {% endif %}
+                        </h1>
+                    </div>
+                    <div class="location-content location-content-tow">
+                        <ul>
+                            <li><a href="{% url 'reservation_list' %}">내가 예약한 목록</a></li>
+                            <li><a href="{% url 'reservation_list' %}?sitter">나에게 예약한 목록</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-area white-bg pt-0 pb-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 ml-auto mr-auto">
+                    <div class="blog_area">
+                        <div id="list_head" class="box2">
+                            <h3 class="inline">예약목록<font style="color:lightgrey;">(전체 예약 건수 : {{ total_count }})</font></h3>
+                        </div>
+                        <div id="list_article" class="box2">
+                            <ul class="article">
+                                <div class="table-content table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th class="listTableTitle">예약번호</th>
+                                            <th class="listTableTitle">시작일자</th>
+                                            <th class="listTableTitle">신청자</th>
+                                            <th class="listTableTitle">가격</th>
+                                            <th class="listTableTitle">신청현황</th>
+                                            <th class="listTableTitle">예약취소</th>
+                                            <th class="listTableTitle">리뷰작성</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for r in rs %}
+                                            <tr>
+                                                <td class="listTableTitle_num">
+                                                    <a href="{% url 'reservation_detail' r.id %}">
+                                                        <li class="layout_f">{{ r.reservation_no }}</li>
+                                                    </a>
+                                                </td>
+                                                <td class="listTableTitle_startdate"><p
+                                                        class="date">{{ r.start_date }}<br></td>
+                                                <td class="listTableTitle_writer">{{ r.userprofile.name }}</td>
+                                                <td class="listTableTitle_payment">{{ r.total_price }}</td>
+                                                <td class="listTableTitle_progress">{{ r.progress }}</td>
+                                                <td class="listTableTitle_Button">
+                                                    {% if r.progress == "예약신청" %}
+                                                    <button class="listTableTitle_button" id="edit"
+                                                            name="<%= num + ',' + pageNum %>" >예약취소
+                                                    </button>
+                                                    {% endif %}
+                                                </td>
+                                                <td class="listTableTitle_Button">
+                                                    {% if r.progress == "돌봄종료" %}
+                                                    <button class="listTableTitle_button" id="delete"
+                                                            name="<%= num + ',' + pageNum %>" >리뷰작성
+                                                    </button>
+                                                    {% endif %}
+                                                </td>
+                                                </li>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </ul>
+                        </div>
+                        <div id="jump" class="box3">
+                            <button id="juP" name="<%= startPage - pageBlock %>" onclick="p(this)" class="w2">이전
+                            </button>&nbsp;
+                            <a class="w1">1</a>
+                            &nbsp;
+                            &nbsp;
+                            <button id="juN" name="<%= startPage + pageBlock %>" onclick="p(this)" class="w2">다음
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
