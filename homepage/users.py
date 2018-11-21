@@ -113,16 +113,14 @@ def profile(request):
         data = request.POST
         user = request.user
 
-        print(data)
         user_profile = user.userprofile
-        print(user_profile.sex)
         save_userprofile(user_profile, data)
-        print(user_profile.sex)
 
         pw = data.get('pw')
         if pw:
             user.set_password(pw)
             user.save()
+
         auth.login(request, user)
 
         return render(request, 'user/join.html')
