@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.db.models import Q
 from django.http import JsonResponse, Http404
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
@@ -14,7 +15,14 @@ from homepage.models import UserProfile, Board, Dog, Sitter, Reservation, Review
 
 def review_list(request):
     userprofile = request.user.userprofile
-    reviews = Review.objects.filter(reservation__userprofile=userprofile)
+    sitter = Sitter.objects.filter(userprofile=userprofile)
+    if sitter.count() > 0:
+        sitter = sitter.first()
+        reviews = Review.objects.filter(Q(reservation__userprofile=userprofile) |
+                                        Q(reservation__sitter=sitter))
+    else:
+        reviews = Review.objects.filter(reservation__userprofile=userprofile)
+
     context = {'reviews': reviews}
     return render(request, 'review/review_list.html', context=context)
 
@@ -57,7 +65,7 @@ def review_write(request):
         review = Review()
         review.reservation = r
         review.title = subject
-        review.contents = content
+        review.content = content
         review.save()
 
         r.written_review = True

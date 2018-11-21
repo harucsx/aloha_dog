@@ -12,7 +12,7 @@
                 var id = document.getElementById("id").value;
 
                 if (!id) {//아이디를 입력하지 않고 [ID중복확인]버튼을 클릭한 경우
-                    alert("사용할 아이디를 입력");
+                    alert("사용할 아이디를 입력해주세요.");
                     $("#id").focus();
                 }
                 else if ((id < "0" || id > "9") && (id < "A" || id > "Z") && (id < "a" || id > "z")) {
@@ -27,17 +27,18 @@
                     var query = {id: $("#id").val()};
                     document.getElementById("checkId").value = "중복확인";
                     $.ajax({
-                        type: "post",
-                        url: "<%= CTX %>/confirmId.do",
+                        type: "get",
+                        url: "{% url 'user_check_id' %}?id=" + $("#id").val(),
                         data: query,
                         success: function (data) {
-                            data = data.trim();
-                            if (data == "false") {//사용할 수 없는 아이디
-                                alert("사용할 수 없는 아이디");
+                            if (data.result == "ok") {
+                                //사용할 수 있는 아이디
+                                alert("사용할 수 있는 아이디입니다.");
+                                document.getElementById("checkId").value = "확인 완료";
+                            } else {
+                                //사용할 수 없는 아이디
+                                alert("이미 존재하는 아이디입니다.");
                                 $("#id").val("");
-                            } else { //사용할 수 있는 아이디
-                                alert("사용할 수 있는 아이디");
-                                document.getElementById("checkId").value = "확인완료";
                             }
                         }
                     });
@@ -62,7 +63,7 @@
                     phone3: $("#phone3").val(),
                     email1: $("#email1").val(),
                     email2: $("#email2").val(),
-                    postcode: $("#postcode").val(),
+                    zip_code: $("#postcode").val(),
                     address1: $("#address1").val(),
                     address2: $("#address2").val()
                 };
@@ -81,7 +82,7 @@
                         window.location.href = "/";
                     },
                     error: function (data) {
-                        alert('회원 가입 중 오류가 발생했습니다.');
+                        alert('오류가 발생했습니다.');
                         $("#join").fadeIn(500);
                     }
                 });
@@ -165,7 +166,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="location-title">
-                        <h1>회원가입</h1>
+                        <h1>
+                            {% if user.is_active %}
+                                개인정보 수정
+                            {% else %}
+                                회원가입
+                            {% endif %}
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -368,14 +375,15 @@
                                         });
                                     });
                                     </script>
-                                    <!--                                    <input type="button" name="checkEmail" id="checkEmail" value="중복확인"> -->
+                                    <!--<input type="button" name="checkEmail" id="checkEmail" value="중복확인"> -->
                                 </div>
 
                                 <div class="form-row">
-                                    <span class="registerPostcode">우편번호</span> <input type="text" name="postcode"
-                                                                                      id="postcode" required> <input
-                                        type="button" name="postcode-search" onclick="daumPostcode()" value="우편번호 찾기"
-                                        id="postcode-search">
+                                    <span class="registerPostcode">우편번호</span>
+                                    <input type="text" name="zip_code" id="postcode" style="width:100px;"
+                                           value="{{ user.userprofile.zip_code }}" required>
+                                    <input type="button" name="postcode-search" onclick="daumPostcode()" value="우편번호 찾기"
+                                           id="postcode-search">
                                 </div>
 
                                 <div class="form-row">
@@ -446,7 +454,7 @@
                                     <span class="registerXbtn">취소</span>
                                 </a>
                                 <a id="join" href="#">
-                                    <span class="registerbtn">회원가입</span>
+                                    <span class="registerbtn">{% if user.is_active %}정보 수정{% else %}회원가입{% endif %}</span>
                                 </a>
                                 {#                                <input type="submit" value="회원가입" class="registerbtn"/>#}
                             </div>

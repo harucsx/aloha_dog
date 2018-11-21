@@ -12,9 +12,15 @@ from homepage.models import UserProfile, Board
 
 
 def board_list(request, board_type):
+    userprofile = request.user.userprofile
+    articles = Board.objects.all().filter(board_type=board_type).order_by('-created_date')
+
+    if board_type == "qna":
+        articles = articles.filter(userprofile=userprofile)
+
     context = dict()
     context['board_type'] = board_type
-    context['articles'] = Board.objects.all().filter(board_type=board_type).order_by('-created_date')
+    context['articles'] = articles
     return render(request, 'board/board_list.html', context=context)
 
 
@@ -66,3 +72,13 @@ def board_detail(request, board_type, id):
     context['board_type'] = board_type
     context['article'] = Board.objects.get(id=id)
     return render(request, 'board/board_detail.html', context=context)
+
+
+def board_delete(request, board_type, id):
+    userprofile = request.user.userprofile
+    article = Board.objects.get(id=id)
+
+    if article.userprofile.id == userprofile.id:
+        article.delete()
+
+    return redirect('board_list', board_type)

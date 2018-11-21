@@ -43,7 +43,7 @@
 						      <li class="label2 label2-edit">
 						          <a href="{% url 'board_list' board_type %}" id="b_cancle">목록</a>
                                   <a href="{% url 'board_edit' board_type article.id %}" id="b_update">수정</a>
-						          <a href="{% url 'board_edit' board_type article.id %}" id="b_delete">삭제</a>
+						          <a href="{% url 'board_delete' board_type article.id %}" id="b_delete">삭제</a>
 						      </li>
 						   </ul>
 						</div>

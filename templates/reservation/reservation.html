@@ -110,14 +110,24 @@
         function calcPrice(startday, endday) {
             startday = new Date(startday);
             endday = new Date(endday);
+            var today = new Date();
 
             var datediff = endday - startday;
+            var prevdiff = startday - today;
 
             if (isNaN(datediff))
                 return;
 
+            if (isNaN(prevdiff))
+                return;
+
             if (datediff < 0) {
                 alert('종료일이 시작일 이전일 수 없습니다.');
+                return;
+            }
+
+            if (prevdiff < 0) {
+                alert('오늘 이후의 날짜만 예약할 수 있습니다.');
                 return;
             }
 

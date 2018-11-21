@@ -179,7 +179,7 @@
                                     <span class="modifyXbtn">취소</span>
                                 </a>
                                 <input type="submit" value="수정" class="modifybtn"/>
-                                <input type="submit" value="삭제" class="modifyDeletebtn"/>
+                                <a href="{% url 'pet_delete' pet.id %}" class="modifyDeletebtn">삭제</a>
                             </div>
 
                             </form>

@@ -130,13 +130,15 @@ def sitter_list(request):
 
     context = dict()
 
-    if search_keyword and search_city:
-        context['search_keyword'] = search_keyword
-        context['search_city'] = search_city
+    if search_keyword or search_city:
+        if search_keyword:
+            context['search_keyword'] = search_keyword
+            sitter = Sitter.objects.filter(userprofile__name__contains=search_keyword)
+        else:
+            sitter = Sitter.objects.all()
 
-        sitter = Sitter.objects.all().filter(userprofile__name__contains=search_keyword)
-
-        if not search_city == "전체":
+        if search_city and not search_city == "전체":
+            context['search_city'] = search_city
             sitter = sitter.filter(userprofile__address1__contains=search_city)
 
         context['search_message'] = str(sitter.count()) + '개의 검색 결과가 있습니다.'
@@ -235,8 +237,9 @@ def reservation_progress(request, id):
     if not progress:
         return redirect('index')
 
-    if not request.user.userprofile.id == r.sitter.userprofile.id:
-        return redirect('index')
+    if not progress == "예약취소":
+        if not request.user.userprofile.id == r.sitter.userprofile.id:
+            return redirect('index')
 
     r.progress = progress
     r.save()

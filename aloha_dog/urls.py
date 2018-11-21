@@ -33,11 +33,13 @@ urlpatterns = [
     path('login', users.login, name='login'),
     path('logout', users.logout, name='logout'),
     path('profile', users.profile, name='profile'),
+    path('user/check', users.user_check_id, name='user_check_id'),
     path('user/delete', users.user_delete, name='user_delete'),
 
     path('pet', pets.pet_list, name='pet_list'),
     path('pet/add', pets.pet_add, name='pet_add'),
     path('pet/<int:id>', pets.pet_edit, name='pet_edit'),
+    path('pet/<int:id>/delete', pets.pet_delete, name='pet_delete'),
 
     path('sitter', sitters.sitter_list, name='sitter_list'),
     path('sitter/like', views.sitter_like_list, name='sitter_like_list'),
@@ -65,6 +67,7 @@ urlpatterns = [
     path('board/<str:board_type>', boards.board_list, name='board_list'),
     path('board/<str:board_type>/<int:id>', boards.board_detail, name='board_detail'),
     path('board/<str:board_type>/<int:id>/edit', boards.board_edit, name='board_edit'),
+    path('board/<str:board_type>/<int:id>/delete', boards.board_delete, name='board_delete'),
     path('board/<str:board_type>/write', boards.board_write, name='board_write'),
 
     path('free-service', views.free_service, name='free-service'),

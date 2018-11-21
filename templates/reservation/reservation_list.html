@@ -22,7 +22,9 @@
                     <div class="location-content location-content-tow">
                         <ul>
                             <li><a href="{% url 'reservation_list' %}">내가 예약한 목록</a></li>
+                            {% if user.userprofile.membership_level == 'sitter' %}
                             <li><a href="{% url 'reservation_list' %}?sitter">나에게 예약한 목록</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -69,9 +71,8 @@
                                                 <td class="listTableTitle_progress">{{ r.progress }}</td>
                                                 <td class="listTableTitle_Button">
                                                     {% if r.progress == "예약신청" %}
-                                                        <button class="listTableTitle_button" id="edit"
-                                                                name="<%= num + ',' + pageNum %>">예약취소
-                                                        </button>
+                                                        <a class="listTableTitle_button" id="edit" href="{% url 'reservation_progress' r.id %}?progress=예약취소">예약취소
+                                                        </a>
                                                     {% endif %}
                                                 </td>
                                                 <td class="listTableTitle_Button">

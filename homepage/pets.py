@@ -77,16 +77,11 @@ def pet_add(request):
         finally:
             return redirect('pet_list')
 
-# <QueryDict: {'csrfmiddlewaretoken':
-#                  ['jyueYdwmZJQppCZEMysvBtHm4qAGUjLLqHaOeYfSuL55wRRC8JOL8YqrHRo0928y'],
-#  'name': ['name'], 'age': ['3'], 'sex': ['F'], 'species': ['말티즈'], 'selectDirect': [''],
-#              'weight': ['1.2'], 'dogimg[]': ['alohadog_model2.txt'], 'neutralization': ['Y'],
-#              'a1': ['N'], 'pet_q1': ['반가워하며 함께 놀아요'], 'pet_q2': ['별로 관심을 두지 않아요'],
-#              'pet_p3': ['Y']}>
 
-# if request.method == 'POST' and request.FILES['myfile']:
-#     myfile = request.FILES['myfile']
-#     fs = FileSystemStorage()
-#     filename = fs.save(myfile.name, myfile)
-#     uploaded_file_url = fs.url(filename)
-#     return render(request, 'core/simple_up
+def pet_delete(request, id):
+    dog = Dog.objects.get(id=id)
+
+    if request.user.userprofile.id == dog.owner.id:
+        dog.delete()
+
+    return redirect('pet_list')
