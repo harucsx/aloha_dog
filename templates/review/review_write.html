@@ -127,10 +127,10 @@
                                         %> -->
                                         <input type="hidden" name="rid" value="{{ rid }}"/>
                                         <input id="subject" name="subject" type="text" size="50" placeholder="제목"
-                                               maxlength="50">
+                                               maxlength="50" value="{{ review.title }}">
                                     </li>
                                     <li><label id="contentLabel" for="content">내용</label>
-                                        <textarea id="content" rows="13" cols="50" name="content"></textarea></li>
+                                        <textarea id="content" rows="13" cols="50" name="content">{{ review.content }}</textarea></li>
                                     <li class="label2">
                                         <a class="bbutton" onclick="window.history.back()">취소</a>
                                         <button id="b_regist" type="submit">등록</button>

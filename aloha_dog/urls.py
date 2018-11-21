@@ -55,6 +55,8 @@ urlpatterns = [
     path('review', reviews.review_list, name='review_list'),
     path('review/write', reviews.review_write, name='review_write'),
     path('review/<int:id>', reviews.review_detail, name='review_detail'),
+    path('review/<int:id>/edit', reviews.review_edit, name='review_edit'),
+    path('review/<int:id>/delete', reviews.review_delete, name='review_delete'),
 
     path('payment', sitters.payment_list, name='payment_list'),
     path('payment_complete', sitters.payment_complete, name='payment_complete'),

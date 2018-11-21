@@ -72,3 +72,47 @@ def review_write(request):
         r.save()
 
         return redirect('sitter_detail', r.sitter.id)
+
+
+def review_edit(request, id):
+    userprofile = request.user.userprofile
+    review = Review.objects.get(id=id)
+
+    if request.method == "GET":
+        r = review.reservation
+
+        context = {
+            'rid': r.id,
+            'review': review,
+        }
+
+        if userprofile.id == r.userprofile.id:
+            return render(request, 'review/review_write.html', context=context)
+
+        return redirect('index')
+
+    elif request.method == "POST":
+        data = request.POST
+
+        subject = data.get('subject')
+        content = data.get('content')
+
+        if not review.reservation.userprofile.id == userprofile.id:
+            return redirect('index')
+
+        review.title = subject
+        review.content = content
+        review.save()
+
+        return redirect('sitter_detail', review.reservation.sitter.id)
+
+
+def review_delete(request, id):
+    userprofile = request.user.userprofile
+    review = Review.objects.get(id=id)
+
+    if not review.reservation.userprofile.id == userprofile.id:
+        return redirect('index')
+
+    review.delete()
+    return redirect('review_list')
