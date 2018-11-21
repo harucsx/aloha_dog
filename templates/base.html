@@ -81,11 +81,11 @@
                                                 <li><a href="{% url 'paid-service' %}">유료 서비스</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">회사 소개</a>
+                                        <li><a href="{% url 'about_us' %}">회사 소개</a>
                                             <ul class="dropdown">
-                                                <li><a href="#url">회사 소개</a></li>
-                                                <li><a href="#url">펫시터 소개</a></li>
-                                                <li><a href="#url">돌봄 미리보기</a></li>
+                                                <li><a href="{% url 'about_us' %}">회사 소개</a></li>
+                                                <li><a href="{% url 'about_sitter' %}">펫시터 소개</a></li>
+                                                <li><a href="{% url 'caring_preview' %}">돌봄 미리보기</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="{% url 'faq' %}">FAQ</a></li>

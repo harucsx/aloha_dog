@@ -68,6 +68,9 @@ urlpatterns = [
     path('free-service', views.free_service, name='free-service'),
     path('paid-service', views.paid_service, name='paid-service'),
     path('faq', views.faq, name='faq'),
+    path('about', views.about_us, name='about_us'),
+    path('about/sitter', views.about_sitter, name='about_sitter'),
+    path('about/care', views.caring_preview, name='caring_preview'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

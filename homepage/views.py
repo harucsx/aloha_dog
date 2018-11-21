@@ -31,6 +31,18 @@ def sitter_apply2(request):
     return render(request, 'sitter/sitter_apply2.html')
 
 
+def about_us(request):
+    return render(request, 'etc/about_us.html')
+
+
+def about_sitter(request):
+    return render(request, 'etc/about_sitter.html')
+
+
+def caring_preview(request):
+    return render(request, 'etc/caring_preview.html')
+
+
 def faq(request):
     return render(request, 'etc/faq.html')
 
