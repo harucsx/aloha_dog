@@ -177,6 +177,9 @@ def reservation(request, sitter_id):
 
         pet_id = int(data.get('pet'))
 
+        if sitter.userprofile.id == userprofile.id:
+            return redirect('reservation', sitter_id)
+
         r = Reservation()
         r.reservation_no = random.randint(10000000, 99999999)
         r.userprofile = userprofile

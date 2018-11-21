@@ -114,5 +114,9 @@ def review_delete(request, id):
     if not review.reservation.userprofile.id == userprofile.id:
         return redirect('index')
 
+    r = review.reservation
+    r.written_review = False
+    r.save()
+
     review.delete()
     return redirect('review_list')
