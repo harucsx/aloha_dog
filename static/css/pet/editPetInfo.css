@@ -14,7 +14,7 @@
 li{list-style: none;}
 .form-row{
     border-bottom: 1px solid #c999ff;
-    margin: 0 100px;
+    margin: 0 85px;
     font-size: 15px;
 }
 @media screen and (max-width: 800px) {
