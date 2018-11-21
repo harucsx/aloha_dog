@@ -121,6 +121,8 @@ def profile(request):
             user.set_password(pw)
             user.save()
 
+        auth.login(request, user)
+
         return render(request, 'user/join.html')
 
 
